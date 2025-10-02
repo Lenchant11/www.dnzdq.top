@@ -8,6 +8,31 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17512015354"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17512015354');
+  </script>
+
+  <!-- Event snippet for 表单提交 conversion page -->
+  <script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-17512015354/4NE3CN387qUbEPrLsJ5B',
+        'event_callback': callback
+    });
+    return false;
+  }
+  </script>
 </head>
 <body>
   <!-- Top Nav -->
@@ -42,6 +67,26 @@
         <p class="subtitle">
           🇺🇸 Flexible online jobs perfect for Hawaii residents! Simple micro tasks, daily payments, and no experience needed. Enjoy the island lifestyle while earning!
         </p>
+
+        <!-- Trust Badges -->
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <div class="trust-icon">🔒</div>
+            <span>SSL Secure</span>
+          </div>
+          <div class="trust-badge">
+            <div class="trust-icon">⭐</div>
+            <span>4.9/5 Rating</span>
+          </div>
+          <div class="trust-badge">
+            <div class="trust-icon">👥</div>
+            <span>50K+ Members</span>
+          </div>
+          <div class="trust-badge">
+            <div class="trust-icon">💳</div>
+            <span>Secure Payments</span>
+          </div>
+        </div>
 
         <!-- credibility logos -->
         <div class="logos" aria-label="Companies">
@@ -200,7 +245,9 @@
 
       <div class="cards two-col">
         <article class="card fade-in">
-          <div class="card-media media-pt"></div>
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Person working part-time from home with laptop and coffee" loading="lazy">
+          </div>
           <div class="card-body">
             <div class="earnings-badge">$50–$300 / day</div>
             <h3>Part-Time Work</h3>
@@ -217,7 +264,9 @@
         </article>
 
         <article class="card fade-in delay-1">
-          <div class="card-media media-ft"></div>
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Professional working full-time from home office setup" loading="lazy">
+          </div>
           <div class="card-body">
             <div class="earnings-badge">$150–$500+ / day</div>
             <h3>Full-Time Work</h3>
@@ -423,6 +472,9 @@
   <div class="modal" id="successModal">
     <div class="modal-content" aria-labelledby="modalTitle" role="dialog" aria-modal="true">
       <button class="modal-close" id="modalCloseBtn" aria-label="Close">&times;</button>
+      <div class="success-animation">
+        <div class="checkmark">✓</div>
+      </div>
       <h3 class="modal-title" id="modalTitle">🎉 Success!</h3>
       <p class="modal-message">Your application has been submitted successfully. Click ACCEPT to immediately contact our customer service via WhatsApp.</p>
       <button class="modal-btn" id="modalOkBtn">ACCEPT</button>
@@ -431,14 +483,22 @@
 
   <!-- Exit Intent Modal -->
   <div class="modal" id="exitIntentModal">
-    <div class="modal-content" aria-labelledby="exitModalTitle" role="dialog" aria-modal="true">
+    <div class="modal-content exit-intent-modal" aria-labelledby="exitModalTitle" role="dialog" aria-modal="true">
       <button class="modal-close" id="exitModalCloseBtn" aria-label="Close">&times;</button>
-      <h3 class="modal-title" id="exitModalTitle">⏳ Wait!</h3>
-      <p class="modal-message">Are you sure you want to miss this earning opportunity? This special offer is only available now and positions are limited.</p>
+      <div class="exit-offer">
+        <div class="exit-icon">🎁</div>
+        <h3 class="modal-title" id="exitModalTitle">Wait! Special Offer Just For You</h3>
+        <p class="modal-message">Get <strong>instant access</strong> to our highest-paying micro tasks when you apply now. Limited positions available!</p>
+        <ul class="exit-benefits">
+          <li>✅ $50 instant sign-up bonus</li>
+          <li>✅ Priority task access</li>
+          <li>✅ 24/7 dedicated support</li>
+        </ul>
+      </div>
       <div class="modal-buttons">
-        <button class="modal-btn" id="continueFormBtn">Yes, Continue with the Form</button>
-        <button class="modal-btn secondary" id="whatsappFirstBtn">I Want Information via WhatsApp First</button>
-        <button class="modal-btn outline" id="exitWebsiteBtn">No, I Want to Leave the Site</button>
+        <button class="modal-btn" id="continueFormBtn">Yes, I Want This Offer!</button>
+        <button class="modal-btn secondary" id="whatsappFirstBtn">Contact Me via WhatsApp</button>
+        <button class="modal-btn outline" id="exitWebsiteBtn">No Thanks, I'll Pass</button>
       </div>
     </div>
   </div>
@@ -707,20 +767,21 @@
         // Form validation successful, show success message
         setTimeout(() => {
           formSubmitted = true;
+          
+          // Report conversion to Google Analytics
+          try {
+            gtag_report_conversion(assignedWhatsAppLink);
+          } catch (error) {
+            console.error('Error sending GA event:', error);
+            // If GA fails, still redirect to WhatsApp
+            window.location.href = assignedWhatsAppLink;
+          }
+          
           openSuccessModal();
           
           // If it's the modal form, close it
           if (formElement === modalForm) {
             closeFormModal();
-          }
-          
-          // Send GA event (async)
-          try {
-            // gtag_report_conversion(assignedWhatsAppLink);
-          } catch (error) {
-            console.error('Error sending GA event:', error);
-            // Even if GA fails, redirect to WhatsApp
-            window.location.href = assignedWhatsAppLink;
           }
           
           // Reset loading state
