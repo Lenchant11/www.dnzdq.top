@@ -146,7 +146,7 @@
     /* Hero Section */
     .hero {
       position: relative;
-      padding: 150px 0 100px;
+      padding: 120px 0 60px;
       background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
       color: white;
       overflow: hidden;
@@ -230,6 +230,38 @@
       background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') no-repeat center center;
       background-size: cover;
       opacity: 0.2;
+      z-index: 0;
+    }
+    
+    /* Micro Tasks in Hero */
+    .micro-tasks-hero {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin: 25px 0;
+    }
+    
+    .micro-task-hero {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 15px;
+      border-radius: var(--radius);
+      text-align: center;
+      backdrop-filter: blur(5px);
+    }
+    
+    .micro-task-hero-icon {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+    
+    .micro-task-hero h4 {
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+    }
+    
+    .micro-task-hero p {
+      font-size: 0.8rem;
+      opacity: 0.9;
     }
     
     /* Form Card */
@@ -239,6 +271,8 @@
       padding: 30px;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
+      position: relative;
+      z-index: 1;
     }
     
     .form-title {
@@ -379,7 +413,7 @@
     
     /* Sections */
     .section {
-      padding: 80px 0;
+      padding: 60px 0;
     }
     
     .section.alt {
@@ -389,7 +423,7 @@
     .section-header {
       text-align: center;
       max-width: 700px;
-      margin: 0 auto 50px;
+      margin: 0 auto 40px;
     }
     
     .section-header h2 {
@@ -643,7 +677,7 @@
     .footer {
       background: var(--text);
       color: white;
-      padding: 50px 0 20px;
+      padding: 40px 0 20px;
     }
     
     .footer-grid {
@@ -837,6 +871,10 @@
       .hero-bg {
         display: none;
       }
+      
+      .micro-tasks-hero {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
     
     @media (max-width: 768px) {
@@ -862,6 +900,10 @@
       
       .section-header h2 {
         font-size: 1.8rem;
+      }
+      
+      .micro-tasks-hero {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -906,7 +948,25 @@
           <span class="logo" aria-label="Matson" title="Matson">Matson</span>
           <span class="logo" aria-label="First Hawaiian Bank" title="First Hawaiian Bank">First Hawaiian Bank</span>
           <span class="logo" aria-label="Kamehameha Schools" title="Kamehameha Schools">Kamehameha Schools</span>
-          <span class="logo" aria-label="Alexander & Baldwin" title="Alexander & Baldwin">Alexander & Baldwin</span>
+        </div>
+
+        <!-- Micro Tasks in Hero -->
+        <div class="micro-tasks-hero">
+          <div class="micro-task-hero">
+            <div class="micro-task-hero-icon">🎵</div>
+            <h4>Listen to Music</h4>
+            <p>Get paid for enjoying songs</p>
+          </div>
+          <div class="micro-task-hero">
+            <div class="micro-task-hero-icon">📺</div>
+            <h4>Watch Videos</h4>
+            <p>Earn by viewing content</p>
+          </div>
+          <div class="micro-task-hero">
+            <div class="micro-task-hero-icon">🗺️</div>
+            <h4>Map Labeling</h4>
+            <p>Simple location tagging</p>
+          </div>
         </div>
 
         <ul class="hero-points">
