@@ -91,16 +91,16 @@
             animation: none;
         }
         
-        .btn-whatsapp {
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+        .btn-telegram {
+            background: linear-gradient(135deg, #0088cc 0%, #006699 100%);
             color: white;
-            animation: pulse-green 2s infinite;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            animation: pulse-blue 2s infinite;
+            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.3);
         }
         
-        .btn-whatsapp:hover {
+        .btn-telegram:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 10px 25px rgba(0, 136, 204, 0.5);
             animation: none;
         }
         
@@ -174,15 +174,15 @@
             }
         }
 
-        @keyframes pulse-green {
+        @keyframes pulse-blue {
             0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+                box-shadow: 0 0 0 0 rgba(0, 136, 204, 0.4);
             }
             70% {
-                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+                box-shadow: 0 0 0 15px rgba(0, 136, 204, 0);
             }
             100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+                box-shadow: 0 0 0 0 rgba(0, 136, 204, 0);
             }
         }
 
@@ -712,6 +712,11 @@
             font-size: 15px;
         }
         
+        .required-field::after {
+            content: " *";
+            color: var(--accent-red);
+        }
+        
         .form-control {
             width: 100%;
             padding: 12px 15px;
@@ -726,6 +731,37 @@
         
         select.form-control {
             height: 48px;
+        }
+        
+        .phone-input-group {
+            display: flex;
+        }
+        
+        .phone-prefix {
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+            background-color: #3a4255;
+            border: 1px solid #3a4255;
+            border-right: none;
+            border-radius: 6px 0 0 6px;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        
+        .phone-input {
+            border-radius: 0 6px 6px 0;
+            flex: 1;
+        }
+
+        /* Honeypot field */
+        .honeypot-field {
+            position: absolute;
+            left: -9999px;
+            opacity: 0;
+            height: 0;
+            width: 0;
+            overflow: hidden;
         }
 
         /* Success Modal */
@@ -779,6 +815,23 @@
             
             nav ul {
                 display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--secondary-dark);
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                z-index: 1000;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
             }
             
             .mobile-menu-btn {
@@ -802,6 +855,50 @@
             .modal-content {
                 padding: 25px 20px;
             }
+            
+            .nav-cta {
+                margin-left: 15px;
+            }
+            
+            .hero {
+                padding: 20px 0 30px;
+            }
+            
+            section {
+                padding: 50px 0;
+            }
+            
+            .final-cta {
+                padding: 60px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .btn {
+                padding: 12px 24px;
+                font-size: 15px;
+            }
+            
+            .mega-cta {
+                font-size: 1.1rem;
+                padding: 15px 30px;
+            }
+            
+            .hero-left, .hero-right {
+                padding: 20px;
+            }
+            
+            .pain-point, .service-card, .trust-box {
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -812,7 +909,7 @@
             <div class="header-content">
                 <div class="logo">Jus<span>tice</span></div>
                 <nav>
-                    <ul>
+                    <ul id="navMenu">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#process">Our Process</a></li>
@@ -978,7 +1075,7 @@
             </div>
             
             <div class="text-center" style="margin-top: 40px;">
-                <button class="btn btn-secondary" id="servicesCtaBtn">DOES MY SCAM QUALIFY? ASK AN EXPERT</button>
+                <button class="btn btn-secondary" id="servicesCtaBtn">DOES MY SCAM QUALIFY? ASK AN EXPORT</button>
             </div>
         </div>
     </section>
@@ -1104,17 +1201,20 @@
             
             <form id="assessment-form">
                 <div class="form-group">
-                    <label for="name">Full Name</label>
+                    <label for="name" class="required-field">Full Name</label>
                     <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
                 </div>
                 <div class="form-group">
-                    <label for="phone">Mobile Number</label>
-                    <input type="tel" id="phone" class="form-control" placeholder="+91 XXXXXXXXXX" required>
+                    <label for="phone" class="required-field">WhatsApp Mobile Number</label>
+                    <div class="phone-input-group">
+                        <div class="phone-prefix">+91</div>
+                        <input type="tel" id="phone" class="form-control phone-input" placeholder="请输入WhatsApp手机号码" required>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="scam-type">Type of Scam</label>
-                    <select id="scam-type" class="form-control" required>
-                        <option value="">Select scam type</option>
+                    <select id="scam-type" class="form-control">
+                        <option value="">Select scam type (optional)</option>
                         <option value="investment">Investment/Trading Scam</option>
                         <option value="task">Task-Based/Job Fraud</option>
                         <option value="upi">UPI/Payment Fraud</option>
@@ -1126,8 +1226,8 @@
                 </div>
                 <div class="form-group">
                     <label for="amount">Estimated Amount Lost</label>
-                    <select id="amount" class="form-control" required>
-                        <option value="">Select amount range</option>
+                    <select id="amount" class="form-control">
+                        <option value="">Select amount range (optional)</option>
                         <option value="under-50k">Under ₹50,000</option>
                         <option value="50k-2l">₹50,000 - ₹2,00,000</option>
                         <option value="2l-5l">₹2,00,000 - ₹5,00,000</option>
@@ -1135,6 +1235,13 @@
                         <option value="over-10l">Over ₹10,00,000</option>
                     </select>
                 </div>
+                
+                <!-- Honeypot field for spam protection -->
+                <div class="honeypot-field">
+                    <label for="country">Country</label>
+                    <input type="text" id="country" name="country" tabindex="-1" autocomplete="off">
+                </div>
+                
                 <button type="submit" class="btn btn-primary" style="width: 100%;">SUBMIT FOR FREE EVALUATION</button>
             </form>
         </div>
@@ -1148,15 +1255,39 @@
             </div>
             <h3>Case Submitted Successfully!</h3>
             <p>Your information has been received. Our legal team will review your case and contact you shortly.</p>
-            <p><strong>For immediate assistance, click the button below to connect with us on WhatsApp:</strong></p>
-            <button class="btn btn-whatsapp" id="whatsappBtn" style="width: 100%; margin-top: 15px;">
-                <i class="fab fa-whatsapp"></i> CONTINUE TO WHATSAPP FOR IMMEDIATE SUPPORT
+            <p><strong>For immediate assistance, click the button below to connect with us on Telegram:</strong></p>
+            <button class="btn btn-telegram" id="telegramBtn" style="width: 100%; margin-top: 15px;">
+                <i class="fab fa-telegram"></i> CONTINUE TO TELEGRAM FOR IMMEDIATE SUPPORT
             </button>
             <p style="font-size: 14px; margin-top: 15px; color: var(--text-gray);">Our legal advisors are standing by to assist you</p>
         </div>
     </div>
 
     <script>
+        // Telegram account array - replace with actual Telegram usernames
+        const telegramAccounts = [
+            "cyberjustice_india",
+            "fraud_recovery_expert",
+            "legal_assistance_india",
+            "cyber_crime_help"
+        ];
+        
+        // Global variable to store the selected Telegram account
+        let selectedTelegramAccount = "";
+        
+        // Function to initialize Telegram URL
+        function initTelegramUrl() {
+            // Select a random Telegram account from the array
+            const randomIndex = Math.floor(Math.random() * telegramAccounts.length);
+            selectedTelegramAccount = telegramAccounts[randomIndex];
+            
+            // Create Telegram URL (no pre-filled message)
+            return `https://t.me/${selectedTelegramAccount}`;
+        }
+        
+        // Initialize Telegram URL as soon as possible
+        let telegramUrl = initTelegramUrl();
+        
         // Modal functionality
         const consultationModal = document.getElementById('consultationModal');
         const successModal = document.getElementById('successModal');
@@ -1167,10 +1298,7 @@
         const problemCtaBtn = document.getElementById('problemCtaBtn');
         const servicesCtaBtn = document.getElementById('servicesCtaBtn');
         const finalCtaBtn = document.getElementById('finalCtaBtn');
-        const whatsappBtn = document.getElementById('whatsappBtn');
-
-        // WhatsApp URL - Replace with your actual WhatsApp number
-        const whatsappUrl = "https://wa.me/911123456789?text=Hello%2C%20I%20submitted%20my%20case%20on%20your%20website%20and%20need%20immediate%20legal%20assistance%20for%20fund%20recovery.";
+        const telegramBtn = document.getElementById('telegramBtn');
 
         // Function to open consultation modal
         function openConsultationModal() {
@@ -1213,6 +1341,15 @@
         document.getElementById('assessment-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
+            // Honeypot validation
+            const honeypotValue = document.getElementById('country').value;
+            if (honeypotValue) {
+                // If honeypot field is filled, likely a bot - silently fail
+                console.log('Potential bot submission detected');
+                closeModals();
+                return;
+            }
+            
             // Send conversion data to Google
             gtag('event', 'conversion', {
                 'send_to': 'AW-17512015354/YnLUCMy_t6obEPrLsJ5B',
@@ -1233,17 +1370,17 @@
             openSuccessModal();
         });
 
-        // WhatsApp button handler
-        whatsappBtn.addEventListener('click', function() {
-            // Send WhatsApp conversion event to Google
+        // Telegram button handler
+        telegramBtn.addEventListener('click', function() {
+            // Send Telegram conversion event to Google
             gtag('event', 'conversion', {
                 'send_to': 'AW-17512015354/YnLUCMy_t6obEPrLsJ5B',
                 'value': 2.0,
                 'currency': 'USD'
             });
             
-            // Redirect to WhatsApp
-            window.open(whatsappUrl, '_blank');
+            // Redirect to Telegram
+            window.open(telegramUrl, '_blank');
             
             // Close success modal after a short delay
             setTimeout(() => {
@@ -1253,10 +1390,10 @@
         
         // Mobile menu functionality
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const nav = document.querySelector('nav ul');
+        const navMenu = document.getElementById('navMenu');
         
         mobileMenuBtn.addEventListener('click', () => {
-            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+            navMenu.classList.toggle('show');
         });
         
         // Smooth scrolling for anchor links
@@ -1276,7 +1413,7 @@
                     
                     // Close mobile menu if open
                     if (window.innerWidth <= 768) {
-                        nav.style.display = 'none';
+                        navMenu.classList.remove('show');
                     }
                 }
             });
@@ -1286,9 +1423,25 @@
         document.querySelectorAll('nav ul li a').forEach(link => {
             link.addEventListener('click', () => {
                 if (window.innerWidth <= 768) {
-                    nav.style.display = 'none';
+                    navMenu.classList.remove('show');
                 }
             });
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768 && navMenu.classList.contains('show') && 
+                !navMenu.contains(e.target) && e.target !== mobileMenuBtn) {
+                navMenu.classList.remove('show');
+            }
+        });
+        
+        // Optimize for mobile performance
+        window.addEventListener('load', function() {
+            // Ensure Telegram URL is ready
+            if (!telegramUrl) {
+                telegramUrl = initTelegramUrl();
+            }
         });
     </script>
 </body>
