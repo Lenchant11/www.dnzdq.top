@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Agreement Template | Cyber Justice India</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #0a0e17;
+            --secondary-dark: #131825;
+            --accent-gold: #D4AF37;
+            --accent-blue: #3498db;
+            --accent-green: #2ecc71;
+            --accent-red: #e74c3c;
+            --text-light: #FFFFFF;
+            --text-gray: #b0b7c8;
+            --card-bg: #1a2030;
+            --gradient-primary: linear-gradient(135deg, #D4AF37 0%, #FF9933 100%);
+            --gradient-text: linear-gradient(135deg, #D4AF37 0%, #FF9933 100%);
+            --gradient-alert: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            --pulse-shadow: 0 0 0 rgba(212, 175, 55, 0.4);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 70px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--primary-dark);
+            animation: pulse 2s infinite;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.5);
+            animation: none;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--accent-gold);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .mb-2 {
+            margin-bottom: 1rem;
+        }
+        
+        .mb-3 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .mb-4 {
+            margin-bottom: 2rem;
+        }
+        
+        .gradient-text {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .highlight {
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--secondary-dark);
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--accent-gold);
+        }
+        
+        .logo span {
+            color: var(--text-light);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 28px;
+        }
+        
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 16px;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-gold);
+        }
+        
+        .nav-cta {
+            margin-left: 30px;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 14, 23, 0.85), rgba(10, 14, 23, 0.9)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 30px 0 40px;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            color: var(--text-gray);
+        }
+
+        /* Content Section */
+        .content {
+            background-color: var(--secondary-dark);
+        }
+        
+        .agreement-container {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .agreement-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #3a4255;
+        }
+        
+        .agreement-header h2 {
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+        
+        .agreement-header p {
+            color: var(--text-gray);
+        }
+        
+        .agreement-body {
+            margin-bottom: 40px;
+        }
+        
+        .agreement-section {
+            margin-bottom: 30px;
+        }
+        
+        .agreement-section h3 {
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #3a4255;
+        }
+        
+        .agreement-section p {
+            margin-bottom: 15px;
+            color: var(--text-gray);
+        }
+        
+        .agreement-section ul, .agreement-section ol {
+            margin: 15px 0 15px 30px;
+            color: var(--text-gray);
+        }
+        
+        .agreement-section li {
+            margin-bottom: 10px;
+        }
+        
+        .info-box {
+            background-color: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--accent-gold);
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        
+        .info-box p {
+            margin-bottom: 0;
+            color: var(--text-light);
+        }
+        
+        .warning-box {
+            background-color: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid var(--accent-red);
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        
+        .warning-box p {
+            margin-bottom: 0;
+            color: var(--text-light);
+        }
+        
+        .signature-section {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #3a4255;
+        }
+        
+        .signature-fields {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .signature-field {
+            margin-bottom: 30px;
+        }
+        
+        .signature-field label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+        
+        .signature-line {
+            border-bottom: 1px solid #3a4255;
+            padding: 15px 0;
+            min-height: 50px;
+        }
+        
+        .signature-note {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            margin-top: 5px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary-dark);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column p, .footer-column a {
+            color: var(--text-gray);
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .footer-column a:hover {
+            color: var(--accent-gold);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #3a4255;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        
+        .disclaimer {
+            background-color: rgba(255, 153, 51, 0.1);
+            padding: 18px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            border-left: 4px solid var(--accent-gold);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .signature-fields {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .agreement-container {
+                padding: 25px 20px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Jus<span>tice</span></div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#process">Our Process</a></li>
+                        <li><a href="index.html#results">Success Stories</a></li>
+                    </ul>
+                </nav>
+                <button class="btn btn-primary nav-cta" onclick="window.location.href='index.html#contact'">I NEED HELP</button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Service <span class="gradient-text">Agreement</span></h1>
+                <p>Professional agreement template for fraud recovery services with comprehensive terms and conditions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content">
+        <div class="container">
+            <div class="agreement-container">
+                <div class="agreement-header">
+                    <h2>FRAUD RECOVERY SERVICES AGREEMENT</h2>
+                    <p>This Agreement is made and entered into as of <span id="agreementDate">[Date]</span></p>
+                </div>
+                
+                <div class="agreement-body">
+                    <div class="agreement-section">
+                        <h3>1. PARTIES</h3>
+                        <p><strong>Service Provider:</strong> Cyber Justice India (hereinafter referred to as "Provider")</p>
+                        <p><strong>Address:</strong> [Provider's Address]</p>
+                        <p><strong>Email:</strong> legal@cyberjusticeindia.in</p>
+                        
+                        <p><strong>Client:</strong> <span id="clientName">[Client Full Name]</span> (hereinafter referred to as "Client")</p>
+                        <p><strong>Address:</strong> <span id="clientAddress">[Client Address]</span></p>
+                        <p><strong>Email:</strong> <span id="clientEmail">[Client Email]</span></p>
+                        <p><strong>Phone:</strong> <span id="clientPhone">[Client Phone]</span></p>
+                    </div>
+                    
+                    <div class="agreement-section">
+                        <h3>2. SERVICES TO BE PROVIDED</h3>
+                        <p>Provider agrees to provide the following services to Client:</p>
+                        <ul>
+                            <li>Comprehensive evaluation of the fraud case</li>
+                            <li>Digital forensics and evidence collection</li>
+                            <li>Coordination with financial institutions and relevant authorities</li>
+                            <li>Legal consultation and strategy development</li>
+                            <li>Recovery efforts including communication with involved parties</li>
+                            <li>Regular updates on case progress</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <p><strong>Case Details:</strong> This agreement pertains to the fraud case involving an estimated amount of <span id="caseAmount">[Amount]</span> lost through <span id="fraudType">[Type of Fraud]</span>.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="agreement-section">
+                        <h3>3. CLIENT RESPONSIBILITIES</h3>
+                        <p>Client agrees to:</p>
+                        <ul>
+                            <li>Provide complete and accurate information regarding the fraud incident</li>
+                            <li>Submit all relevant documentation and evidence promptly</li>
+                            <li>Cooperate with Provider and provide necessary authorizations</li>
+                            <li>Make timely decisions regarding case strategy when requested</li>
+                            <li>Notify Provider of any changes in contact information</li>
+                            <li>Pay fees as outlined in Section 4 of this agreement</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="agreement-section">
+                        <h3>4. FEE STRUCTURE AND PAYMENT TERMS</h3>
+                        <p><strong>4.1 Retainer Fee:</strong> Client shall pay a non-refundable retainer fee of ₹5,000 upon execution of this agreement to initiate services.</p>
+                        
+                        <p><strong>4.2 Success Fee:</strong> Provider shall receive a success fee of <span id="successPercentage">[15-25%]</span> of the gross amount recovered on behalf of Client.</p>
+                        
+                        <p><strong>4.3 No Recovery, No Fee Guarantee:</strong> If no funds are recovered, Client will not owe any success fees. The retainer fee remains non-refundable as compensation for initial work performed.</p>
+                        
+                        <p><strong>4.4 Payment Terms:</strong> Success fees are due within 7 days of Client's receipt of recovered funds. Late payments may incur interest charges of 1.5% per month.</p>
+                    </div>
+                    
+                    <div class="agreement-section">
+                        <h3>5. TERM AND TERMINATION</h3>
+                        <p><strong>5.1 Term:</strong> This agreement shall commence on the effective date and continue until the earlier of: (a) successful recovery of funds; (b) mutual agreement to terminate; or (c) 12 months from the effective date.</p>
+                        
+                        <p><strong>5.2 Termination by Client:</strong> Client may terminate this agreement with 30 days written notice. Upon termination, Client shall pay for all services rendered up to the termination date.</p>
+                        
+                        <p><strong>5.3 Termination by Provider:</strong> Provider may terminate this agreement if Client fails to fulfill responsibilities, provides false information, or fails to make required payments.</p>
+                    </div>
+                    
+                    <div class="agreement-section">
+                        <h3>6. CONFIDENTIALITY</h3>
+                        <p>Both parties agree to maintain the confidentiality of all information shared during the course of this engagement. Provider will not disclose Client's identity or case details without explicit permission, except as required by law or necessary for recovery efforts.</p>
+                    </div>
+                    
+                    <div class="agreement-section">
+                        <h3>7. DISCLAIMER AND LIMITATION OF LIABILITY</h3>
+                        
+                        <div class="warning-box">
+                            <p><strong>7.1 No Guarantee of Results:</strong> Provider makes no guarantees, warranties, or representations regarding the outcome of recovery efforts. While Provider will employ best efforts, success depends on numerous factors beyond Provider's control.</p>
+                        </div>
+                        
+                        <p><strong>7.2 Limitation of Liability:</strong> Provider's total liability under this agreement, regardless of the form of action, shall not exceed the total fees paid by Client to Provider under this agreement.</p>
+                        
+                        <p><strong>7.3 No Consequential Damages:</strong> In no event shall Provider be liable for any indirect, special, incidental, consequential, or punitive damages, including but not limited to lost profits, emotional distress, or business interruption.</p>
+                        
+                        <p><strong>7.4 Third-Party Actions:</strong> Provider shall not be liable for actions or inactions of third parties, including financial institutions, law enforcement, or legal professionals involved in the recovery process.</p>
+                        
+                        <p><strong>7.5 Client Verification:</strong> Client acknowledges that Provider relies on information provided by Client and shall not be liable for inaccuracies in such information.</p>
+                        
+                        <p><strong>7.6 Force Majeure:</strong> Provider shall not be liable for delays or failures in performance resulting from causes beyond its reasonable control.</p>
+                    </div>
+                    
+                    <div class="agreement-section">
+                        <h3>8. INDEMNIFICATION</h3>
+                        <p>Client agrees to indemnify and hold harmless Provider, its employees, and affiliates from any claims, damages, losses, or expenses arising from: (a) Client's breach of this agreement; (b) inaccurate information provided by Client; or (c) Client's failure to comply with applicable laws.</p>
+                    </div>
+                    
+                    <div class="agreement-section">
+                        <h3>9. GOVERNING LAW AND DISPUTE RESOLUTION</h3>
+                        <p><strong>9.1 Governing Law:</strong> This agreement shall be governed by and construed in accordance with the laws of India.</p>
+                        
+                        <p><strong>9.2 Dispute Resolution:</strong> Any disputes arising under this agreement shall first be attempted to be resolved through good faith negotiation. If unresolved, parties agree to binding arbitration in New Delhi, India.</p>
+                    </div>
+                    
+                    <div class="agreement-section">
+                        <h3>10. MISCELLANEOUS</h3>
+                        <p><strong>10.1 Entire Agreement:</strong> This document constitutes the entire agreement between the parties and supersedes all prior discussions, negotiations, and agreements.</p>
+                        
+                        <p><strong>10.2 Amendment:</strong> This agreement may only be amended in writing signed by both parties.</p>
+                        
+                        <p><strong>10.3 Severability:</strong> If any provision of this agreement is found to be invalid or unenforceable, the remaining provisions shall remain in full force and effect.</p>
+                        
+                        <p><strong>10.4 Notices:</strong> All notices required under this agreement shall be in writing and sent to the addresses specified in Section 1.</p>
+                    </div>
+                    
+                    <div class="signature-section">
+                        <h3>ACCEPTANCE AND SIGNATURES</h3>
+                        <p>The parties hereby acknowledge that they have read, understand, and agree to be bound by the terms and conditions of this agreement.</p>
+                        
+                        <div class="signature-fields">
+                            <div class="signature-field">
+                                <label for="providerSignature">FOR CYBER JUSTICE INDIA:</label>
+                                <div class="signature-line" id="providerSignature"></div>
+                                <div class="signature-note">Authorized Signature</div>
+                                
+                                <div class="signature-line" id="providerName"></div>
+                                <div class="signature-note">Printed Name</div>
+                                
+                                <div class="signature-line" id="providerTitle"></div>
+                                <div class="signature-note">Title</div>
+                                
+                                <div class="signature-line" id="providerDate"></div>
+                                <div class="signature-note">Date</div>
+                            </div>
+                            
+                            <div class="signature-field">
+                                <label for="clientSignature">FOR CLIENT:</label>
+                                <div class="signature-line" id="clientSignature"></div>
+                                <div class="signature-note">Signature</div>
+                                
+                                <div class="signature-line" id="clientPrintedName"></div>
+                                <div class="signature-note">Printed Name</div>
+                                
+                                <div class="signature-line" id="clientDate"></div>
+                                <div class="signature-note">Date</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="printAgreement">
+                        <i class="fas fa-print"></i> PRINT AGREEMENT
+                    </button>
+                    <button class="btn btn-secondary" id="downloadAgreement">
+                        <i class="fas fa-download"></i> DOWNLOAD AS PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Cyber Justice India</h3>
+                    <p>India's premier cyber fraud recovery service, combining legal expertise with cutting-edge digital forensics to help victims reclaim their financial security.</p>
+                    <p><i class="fas fa-envelope"></i> help@cyberjusticeindia.in</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="index.html#services">Our Services</a>
+                    <a href="index.html#process">Our Process</a>
+                    <a href="index.html#results">Success Stories</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="userterms.html">Terms of Service</a>
+                    <a href="agreement.html" style="color: var(--accent-gold);">Service Agreement</a>
+                </div>
+            </div>
+            
+            <div class="disclaimer">
+                <p><strong>Disclaimer:</strong> This service agreement template is provided for reference purposes only and does not constitute legal advice. We recommend consulting with a legal professional before using this template for actual business purposes.</p>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Cyber Justice India. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set current date
+        document.getElementById('agreementDate').textContent = new Date().toLocaleDateString('en-IN', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const nav = document.querySelector('nav ul');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Print agreement functionality
+        document.getElementById('printAgreement').addEventListener('click', function() {
+            window.print();
+        });
+        
+        // Download as PDF functionality (simulated)
+        document.getElementById('downloadAgreement').addEventListener('click', function() {
+            alert('In a real implementation, this would generate a PDF version of the agreement for download.');
+            // In a real implementation, you would use a library like jsPDF or html2pdf.js
+        });
+        
+        // Sample data population (in a real app, this would come from a form)
+        document.getElementById('clientName').textContent = 'Rajesh Kumar';
+        document.getElementById('clientAddress').textContent = '123 Main Street, Mumbai, Maharashtra 400001';
+        document.getElementById('clientEmail').textContent = 'rajesh.kumar@example.com';
+        document.getElementById('clientPhone').textContent = '+91 98765 43210';
+        document.getElementById('caseAmount').textContent = '₹2,50,000';
+        document.getElementById('fraudType').textContent = 'online investment scam';
+        document.getElementById('successPercentage').textContent = '20%';
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    nav.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
