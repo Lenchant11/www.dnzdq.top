@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justice Cyber France | Récupérez Votre Argent après une Arnaque en Ligne</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17512015354"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-17512015354');
+        
+        // WhatsApp account array - replace with actual WhatsApp numbers (without + or spaces)
+        const whatsappAccounts = [
+            "33612345678",
+            "33787654321",
+            "33611223344"
+        ];
+        
+        // Function to initialize WhatsApp URL
+        function initWhatsappUrl() {
+            // Select a random WhatsApp account from the array
+            const randomIndex = Math.floor(Math.random() * whatsappAccounts.length);
+            const selectedWhatsappAccount = whatsappAccounts[randomIndex];
+            
+            // Predefined message in French
+            const message = encodeURIComponent("Bonjour, je viens de voir votre site et je pense être victime d'une arnaque. Pouvez-vous m'aider à récupérer mon argent ?");
+            
+            // Create WhatsApp URL with pre-filled message
+            return `https://wa.me/${selectedWhatsappAccount}?text=${message}`;
+        }
+        
+        // Function to track conversion and redirect to WhatsApp
+        function trackAndRedirect(event) {
+            // Prevent default behavior if it's a button/link
+            if (event) {
+                event.preventDefault();
+            }
+            
+            // Track conversion with enhanced parameters
+            try {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-17512015354/YnLUCMy_t6obEPrLsJ5B',
+                    'value': 2.0,
+                    'currency': 'EUR',
+                    'transaction_id': 'whatsapp_' + Date.now()
+                });
+                
+                // Additional event for better tracking
+                gtag('event', 'whatsapp_redirect', {
+                    'event_category': 'conversion',
+                    'event_label': 'direct_whatsapp_click'
+                });
+                
+                console.log('Google Analytics event sent successfully');
+            } catch (error) {
+                console.error('Error sending Google Analytics event:', error);
+                // Continue with redirect even if tracking fails
+            }
+            
+            // Get WhatsApp URL
+            const whatsappUrl = initWhatsappUrl();
+            
+            // Redirect to WhatsApp in new tab
+            window.open(whatsappUrl, '_blank');
+            
+            // Optional: Show a confirmation message
+            showRedirectConfirmation();
+            
+            return false;
+        }
+        
+        // Show a brief confirmation message
+        function showRedirectConfirmation() {
+            const confirmation = document.createElement('div');
+            confirmation.innerHTML = '<i class="fas fa-check-circle"></i> Redirection vers WhatsApp...';
+            confirmation.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #25D366;
+                color: white;
+                padding: 12px 20px;
+                border-radius: 6px;
+                z-index: 10000;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 500;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            `;
+            document.body.appendChild(confirmation);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                if (document.body.contains(confirmation)) {
+                    document.body.removeChild(confirmation);
+                }
+            }, 3000);
+        }
+        
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event listeners to all CTA buttons
+            const ctaButtons = document.querySelectorAll('.cta-button');
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', trackAndRedirect);
+            });
+            
+            // Also add to any element with specific IDs
+            const specificButtons = [
+                'openModalBtn', 'heroCtaBtn', 'visualCtaBtn', 
+                'problemCtaBtn', 'servicesCtaBtn', 'finalCtaBtn'
+            ];
+            
+            specificButtons.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.addEventListener('click', trackAndRedirect);
+                }
+            });
+        });
+    </script>
+    <style>
+        :root {
+            --primary-dark: #0a0e17;
+            --secondary-dark: #131825;
+            --accent-gold: #D4AF37;
+            --accent-blue: #3498db;
+            --accent-green: #25D366;
+            --accent-red: #e74c3c;
+            --text-light: #FFFFFF;
+            --text-gray: #b0b7c8;
+            --card-bg: #1a2030;
+            --gradient-primary: linear-gradient(135deg, #D4AF37 0%, #FF9933 100%);
+            --gradient-text: linear-gradient(135deg, #D4AF37 0%, #FF9933 100%);
+            --gradient-alert: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            --gradient-whatsapp: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            --pulse-shadow: 0 0 0 rgba(212, 175, 55, 0.4);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 70px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 17px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--primary-dark);
+            animation: pulse 2s infinite;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.6);
+            animation: none;
+        }
+        
+        .btn-whatsapp {
+            background: var(--gradient-whatsapp);
+            color: white;
+            animation: pulse-green 2s infinite;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+        
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
+            animation: none;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--accent-gold);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .mb-2 {
+            margin-bottom: 1rem;
+        }
+        
+        .mb-3 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .mb-4 {
+            margin-bottom: 2rem;
+        }
+        
+        .gradient-text {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .alert-text {
+            background: var(--gradient-alert);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .highlight {
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        .urgency-badge {
+            display: inline-block;
+            background: var(--gradient-alert);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            animation: blink 2s infinite;
+            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+            }
+        }
+
+        @keyframes pulse-green {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        @keyframes blink {
+            0%, 50% {
+                opacity: 1;
+            }
+            51%, 100% {
+                opacity: 0.7;
+            }
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--secondary-dark);
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--accent-gold);
+        }
+        
+        .logo span {
+            color: var(--text-light);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 28px;
+        }
+        
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 16px;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-gold);
+        }
+        
+        .nav-cta {
+            margin-left: 30px;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 14, 23, 0.85), rgba(10, 14, 23, 0.9)), url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 30px 0 40px;
+        }
+        
+        .hero-top {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .hero-bottom {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .hero-left, .hero-right {
+            flex: 1;
+        }
+        
+        .hero-left {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--box-shadow);
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .pre-headline {
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            color: var(--text-gray);
+        }
+        
+        .scam-types {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 25px 0;
+        }
+        
+        .scam-type {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-gray);
+            font-size: 15px;
+        }
+        
+        .scam-type i {
+            color: var(--accent-gold);
+            font-size: 16px;
+        }
+        
+        .trust-badges {
+            display: flex;
+            gap: 25px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .badge-icon {
+            color: var(--accent-green);
+            font-size: 18px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            line-height: 1;
+        }
+
+        .stat-text {
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+        
+        /* Problem Section */
+        .problem {
+            background-color: var(--secondary-dark);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+        
+        .pain-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .pain-point {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .pain-point:hover {
+            transform: translateY(-5px);
+        }
+        
+        .pain-point-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+        }
+        
+        .pain-point p {
+            color: var(--text-gray);
+            font-style: italic;
+        }
+        
+        .closing-line {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-top: 30px;
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .service-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--accent-gold);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .service-card p {
+            color: var(--text-gray);
+        }
+        
+        /* Trust Section */
+        .trust {
+            background-color: var(--secondary-dark);
+        }
+        
+        .trust-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .trust-box {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .trust-box h3 {
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .step-number {
+            background: var(--gradient-primary);
+            color: var(--primary-dark);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 16px;
+        }
+        
+        .results {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .result-item {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 18px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-gold);
+        }
+        
+        .credentials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .credential {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .credential-icon {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+        
+        /* Promise Section */
+        .promise-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .promise-text {
+            flex: 1;
+        }
+        
+        .promise-visual {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .promise-icon {
+            font-size: 8rem;
+            color: var(--accent-gold);
+        }
+        
+        /* Final CTA Section */
+        .final-cta {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(rgba(10, 14, 23, 0.85), rgba(10, 14, 23, 0.9)), url('https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .final-cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--text-gray);
+        }
+        
+        .mega-cta {
+            font-size: 1.3rem;
+            padding: 18px 45px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary-dark);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column p, .footer-column a {
+            color: var(--text-gray);
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .footer-column a:hover {
+            color: var(--accent-gold);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #3a4255;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        
+        .disclaimer {
+            background-color: rgba(255, 153, 51, 0.1);
+            padding: 18px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            border-left: 4px solid var(--accent-gold);
+        }
+        
+        /* Trust Indicators */
+        .trust-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .trust-indicator {
+            text-align: center;
+            max-width: 200px;
+        }
+        
+        .trust-indicator i {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+        
+        .trust-indicator h4 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .trust-indicator p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-bottom {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .promise-content, .resources-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--secondary-dark);
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                z-index: 1000;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .scam-types {
+                grid-template-columns: 1fr;
+            }
+            
+            .trust-badges {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .nav-cta {
+                margin-left: 15px;
+            }
+            
+            .hero {
+                padding: 20px 0 30px;
+            }
+            
+            section {
+                padding: 50px 0;
+            }
+            
+            .final-cta {
+                padding: 60px 0;
+            }
+            
+            .trust-indicators {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .btn {
+                padding: 14px 28px;
+                font-size: 16px;
+            }
+            
+            .mega-cta {
+                font-size: 1.1rem;
+                padding: 16px 32px;
+            }
+            
+            .hero-left, .hero-right {
+                padding: 20px;
+            }
+            
+            .pain-point, .service-card, .trust-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Jus<span>tice</span></div>
+                <nav>
+                    <ul id="navMenu">
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#process">Notre Processus</a></li>
+                        <li><a href="#results">Réussites</a></li>
+                    </ul>
+                </nav>
+                <button class="btn btn-primary nav-cta cta-button" id="openModalBtn">
+                    <i class="fab fa-whatsapp"></i> PARLER À UN EXPERT
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-top">
+                <div class="urgency-badge"><i class="fas fa-clock"></i> URGENT : Les premières 72h sont cruciales pour récupérer votre argent</div>
+                <div class="pre-headline">Arrêtez de perdre votre argent. Commencez à le récupérer.</div>
+                <h1>Victime d'une <span class="alert-text">Arnaque en Ligne ?</span> Nous Récupérons Votre Argent Rapidement</h1>
+                <p>Ne laissez pas les escrocs profiter de votre argent. Notre équipe d'experts en cyber-récupération a déjà aidé plus de 3,000 Français à récupérer leurs fonds. Contactez-nous maintenant pour une consultation gratuite.</p>
+                
+                <div class="trust-indicators">
+                    <div class="trust-indicator">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Évaluation Gratuite</h4>
+                        <p>Analyse immédiate de votre cas</p>
+                    </div>
+                    <div class="trust-indicator">
+                        <i class="fas fa-euro-sign"></i>
+                        <h4>Récupération Garantie</h4>
+                        <p>Payez uniquement si nous réussissons</p>
+                    </div>
+                    <div class="trust-indicator">
+                        <i class="fas fa-clock"></i>
+                        <h4>Action Immédiate</h4>
+                        <p>Intervention sous 24h</p>
+                    </div>
+                </div>
+                
+                <button class="btn btn-whatsapp mega-cta cta-button" id="heroCtaBtn">
+                    <i class="fab fa-whatsapp"></i> PARLER À UN EXPERT MAINTENANT
+                </button>
+                <p style="margin-top: 15px; color: var(--text-gray); font-size: 0.9rem;">
+                    <i class="fas fa-lock"></i> Conversation sécurisée et confidentielle
+                </p>
+            </div>
+            
+            <div class="hero-bottom">
+                <div class="hero-left">
+                    <h3 style="color: var(--accent-red); margin-bottom: 15px;"><i class="fas fa-exclamation-triangle"></i> Comment distinguer une vraie aide d'une nouvelle arnaque ?</h3>
+                    <p style="color: var(--text-gray); margin-bottom: 20px;">Les vrais professionnels de la récupération :</p>
+                    
+                    <div style="text-align: left; margin-bottom: 25px;">
+                        <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                            <i class="fas fa-check-circle" style="color: var(--accent-green); margin-right: 10px;"></i>
+                            <span><strong>Ne demandent jamais de paiement d'avance</strong></span>
+                        </div>
+                        <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                            <i class="fas fa-check-circle" style="color: var(--accent-green); margin-right: 10px;"></i>
+                            <span><strong>Fournissent une évaluation honnête de vos chances</strong></span>
+                        </div>
+                        <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                            <i class="fas fa-check-circle" style="color: var(--accent-green); margin-right: 10px;"></i>
+                            <span><strong>Expliquent clairement leur processus</strong></span>
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <i class="fas fa-check-circle" style="color: var(--accent-green); margin-right: 10px;"></i>
+                            <span><strong>Respectent votre confidentialité</strong></span>
+                        </div>
+                    </div>
+                    
+                    <p style="color: var(--accent-gold); font-weight: 600; margin-bottom: 20px;">
+                        <i class="fas fa-star"></i> Nous respectons tous ces principes. Discutons de votre cas sans engagement.
+                    </p>
+                    
+                    <button class="btn btn-whatsapp cta-button" style="width: 100%;" id="visualCtaBtn">
+                        <i class="fab fa-whatsapp"></i> VÉRIFIER LA CRÉDIBILITÉ DE VOTRE CAS
+                    </button>
+                </div>
+                
+                <div class="hero-right">
+                    <h3 style="margin-bottom: 20px; color: var(--accent-gold);">Types d'arnaques que nous traitons :</h3>
+                    <div class="scam-types">
+                        <div class="scam-type"><i class="fas fa-money-bill-wave"></i> Arnaques aux Investissements & Trading</div>
+                        <div class="scam-type"><i class="fas fa-tasks"></i> Fraudes par Tâches & Emplois</div>
+                        <div class="scam-type"><i class="fas fa-mobile-alt"></i> Fraudes Paiement & Virements</div>
+                        <div class="scam-type"><i class="fas fa-heart"></i> Arnaques Sentimentales & Matrimoniales</div>
+                        <div class="scam-type"><i class="fab fa-bitcoin"></i> Vol de Cryptomonnaies & Actifs Numériques</div>
+                        <div class="scam-type"><i class="fas fa-shopping-cart"></i> Fraudes e-Commerce & Achats en Ligne</div>
+                    </div>
+                    
+                    <div class="trust-badges">
+                        <div class="badge">
+                            <span class="badge-icon"><i class="fas fa-shield-alt"></i></span>
+                            <span>Évaluation 24h/24</span>
+                        </div>
+                        <div class="badge">
+                            <span class="badge-icon"><i class="fas fa-balance-scale"></i></span>
+                            <span>Équipe Juridique Certifiée</span>
+                        </div>
+                        <div class="badge">
+                            <span class="badge-icon"><i class="fas fa-handshake"></i></span>
+                            <span>Garantie "Rien à Payer si Pas de Récupération"</span>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">3,000+</div>
+                            <div class="stat-text">Cas Traités avec Succès</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">4,2M€+</div>
+                            <div class="stat-text">Récupérés pour nos Clients</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">24-48h</div>
+                            <div class="stat-text">Délai d'Intervention Moyen</div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary cta-button" id="problemCtaBtn">
+                        <i class="fab fa-whatsapp"></i> OBTENIR UNE ÉVALUATION GRATUITE
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem" id="problem">
+        <div class="container">
+            <h2 class="section-title">Vous n'êtes pas seul. Nous avons déjà aidé <span class="gradient-text">3,000 personnes</span> comme vous</h2>
+            <p class="section-subtitle">L'impact émotionnel et financier d'une fraude en ligne peut être dévastateur. Mais il existe une solution.</p>
+            
+            <div class="pain-points">
+                <div class="pain-point">
+                    <div class="pain-point-icon"><i class="fas fa-heart-broken"></i></div>
+                    <h3>Détresse Émotionnelle</h3>
+                    <p>"La honte et la colère qui vous empêchent de parler à votre famille et vos amis de ce qui s'est passé."</p>
+                </div>
+                <div class="pain-point">
+                    <div class="pain-point-icon"><i class="fas fa-sad-tear"></i></div>
+                    <h3>Perte Financière</h3>
+                    <p>"Voir vos économies, destinées aux études de vos enfants ou à une nouvelle maison, disparaître sur le compte d'un inconnu."</p>
+                </div>
+                <div class="pain-point">
+                    <div class="pain-point-icon"><i class="fas fa-tired"></i></div>
+                    <h3>Sentiment d'Impasse</h3>
+                    <p>"Les boucles sans fin du service client et des plaintes policières qui ne mènent nulle part."</p>
+                </div>
+            </div>
+            
+            <p class="closing-line">L'arnaqueur a parié sur votre silence. Nous parions sur votre courage d'agir.</p>
+            
+            <div class="text-center">
+                <button class="btn btn-whatsapp cta-button" id="servicesCtaBtn">
+                    <i class="fab fa-whatsapp"></i> AGISSEZ MAINTENANT - CONSULTATION GRATUITE
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Nous récupérons les fonds pour <span class="gradient-text">tous types de fraudes en ligne</span></h2>
+            <p class="section-subtitle">Notre équipe d'experts traite divers cas de cyberfraude avec des approches spécialisées adaptées à chaque type d'arnaque</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Arnaques aux Investissements</h3>
+                    <p>Plateformes de trading fictives, systèmes de Ponzi, fraude aux conseils boursiers, arnaques aux investissements en cryptomonnaies.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
+                    <h3>Fraudes e-Commerce</h3>
+                    <p>Boutiques en ligne fictives, arnaques à la livraison, fraudes aux achats sur les réseaux sociaux.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-tasks"></i></div>
+                    <h3>Fraudes par Tâches</h3>
+                    <p>Arnaques aux tâches en ligne, fraudes aux emplois à temps partiel, arnaques au travail à domicile, fraudes aux emplois de saisie.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Arnaques Sentimentales</h3>
+                    <p>Fraudes sur les applications de rencontre, fausses propositions de mariage, manipulation émotionnelle pour obtenir de l'argent.</p>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 40px;">
+                <button class="btn btn-whatsapp cta-button" id="finalCtaBtn">
+                    <i class="fab fa-whatsapp"></i> MON ARNAQUE EST-ELLE ÉLIGIBLE ? DEMANDEZ À UN EXPERT
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust" id="process">
+        <div class="container">
+            <h2 class="section-title">Notre processus éprouvé pour <span class="highlight">récupérer votre argent</span></h2>
+            
+            <div class="trust-content">
+                <div class="trust-box">
+                    <h3>Comment nous travaillons</h3>
+                    <div class="process-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div>
+                                <h4>Évaluation Gratuite</h4>
+                                <p>Nous analysons les détails de votre cas pour déterminer la meilleure stratégie de récupération.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div>
+                                <h4>Action Immédiate</h4>
+                                <p>Notre équipe agit rapidement pour tracer et sécuriser vos fonds avant qu'ils ne disparaissent.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div>
+                                <h4>Pression Juridique</h4>
+                                <p>Nous utilisons tous les recours légaux pour exercer une pression maximale sur les fraudeurs.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div>
+                                <h4>Récupération des Fonds</h4>
+                                <p>Nous travaillons sans relâche jusqu'à obtenir le meilleur résultat possible pour votre cas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="trust-box" id="results">
+                    <h3>Réussites Récentes</h3>
+                    <div class="results">
+                        <div class="result-item">
+                            <h4>Pierre, Paris | Arnaque par Tâches</h4>
+                            <p>Perte : 25,000€ | Récupéré : 18,000€ en 45 jours via coordination bancaire et mises en demeure.</p>
+                        </div>
+                        <div class="result-item">
+                            <h4>Sophie, Lyon | Fraude aux Investissements</h4>
+                            <p>Perte : 150,000€ | Comptes gelés avec succès et partie significative récupérée par intervention juridique.</p>
+                        </div>
+                        <div class="result-item">
+                            <h4>Jean, Marseille | Fraude par Virement</h4>
+                            <p>Perte : 8,500€ | Fonds tracés et gelés en 72 heures, récupération complète initiée.</p>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.8rem; margin-top: 15px; font-style: italic; text-align: center;">Les résultats varient selon les cas. Pas une garantie de résultats spécifiques.</p>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 40px;">
+                <button class="btn btn-primary mega-cta cta-button">
+                    <i class="fab fa-whatsapp"></i> COMMENCEZ LA RÉCUPÉRATION DE VOTRE ARGENT
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta" id="contact">
+        <div class="container">
+            <h2>Ne laissez pas les escrocs garder votre argent. <span class="gradient-text">Agissez maintenant.</span></h2>
+            <p>Chaque minute compte lorsque vous essayez de récupérer des fonds volés. Notre équipe est disponible 24h/24 pour évaluer votre cas et commencer immédiatement le processus de récupération.</p>
+            <button class="btn btn-whatsapp mega-cta cta-button">
+                <i class="fab fa-whatsapp"></i> PARLER À UN EXPERT MAINTENANT - C'EST GRATUIT
+            </button>
+            <p style="margin-top: 20px; color: var(--text-gray);">
+                <i class="fas fa-lock"></i> Conversation sécurisée • <i class="fas fa-clock"></i> Réponse en moins de 5 minutes • <i class="fas fa-euro-sign"></i> Évaluation gratuite
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Justice Cyber France</h3>
+                    <p>Service français de premier plan pour la récupération après cyberfraude, combinant expertise juridique et cyber-enquête de pointe pour aider les victimes à retrouver leur sécurité financière.</p>
+                    <p><i class="fas fa-envelope"></i> aide@justicecyberfrance.fr</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Liens Rapides</h3>
+                    <a href="#home">Accueil</a>
+                    <a href="#services">Nos Services</a>
+                    <a href="#process">Notre Processus</a>
+                    <a href="#results">Réussites</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Légal</h3>
+                    <a href="privacy.html">Politique de Confidentialité</a>
+                    <a href="userterms.html">Conditions d'Utilisation</a>
+                    <a href="service.html">Accord de Service</a>
+                </div>
+            </div>
+            
+            <div class="disclaimer">
+                <p><strong>Avertissement :</strong> Justice Cyber France fournit des consultations juridiques et une assistance à la récupération de fonds. Tous les cas sont uniques et les résultats ne peuvent être garantis. Les frais ne sont applicables qu'en cas de récupération réussie selon un accord signé. Nous ne sommes pas un cabinet d'avocats mais travaillons avec des avocats certifiés partout en France. Les résultats passés ne sont pas indicatifs des résultats futurs.</p>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Justice Cyber France. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        if (mobileMenuBtn && navMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('show');
+            });
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (window.innerWidth <= 768 && navMenu) {
+                        navMenu.classList.remove('show');
+                    }
+                }
+            });
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768 && navMenu) {
+                    navMenu.classList.remove('show');
+                }
+            });
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768 && navMenu && navMenu.classList.contains('show') && 
+                !navMenu.contains(e.target) && e.target !== mobileMenuBtn) {
+                navMenu.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
