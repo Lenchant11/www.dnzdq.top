@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Justice Cyber France | Récupérez Votre Argent après une Arnaque en Ligne</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <!-- Google Tag -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17512015354"></script>
     <script>
@@ -13,119 +12,10 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'AW-17512015354');
-        
-        // WhatsApp account array - replace with actual WhatsApp numbers (without + or spaces)
-        const whatsappAccounts = [
-            "33695658685",
-        "33769917789",
-        "33765635736"
-        ];
-        
-        // Function to initialize WhatsApp URL
-        function initWhatsappUrl() {
-            // Select a random WhatsApp account from the array
-            const randomIndex = Math.floor(Math.random() * whatsappAccounts.length);
-            const selectedWhatsappAccount = whatsappAccounts[randomIndex];
-            
-            // Predefined message in French
-            const message = encodeURIComponent("Bonjour, je viens de voir votre site et je pense être victime d'une arnaque. Pouvez-vous m'aider à récupérer mon argent ?");
-            
-            // Create WhatsApp URL with pre-filled message
-            return `https://wa.me/${selectedWhatsappAccount}?text=${message}`;
-        }
-        
-        // Function to track conversion and redirect to WhatsApp
-        function trackAndRedirect(event) {
-            // Prevent default behavior if it's a button/link
-            if (event) {
-                event.preventDefault();
-            }
-            
-            // Track conversion with enhanced parameters
-            try {
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-17512015354/FEGnCLrrzLEbEPrLsJ5B',
-                    'value': 8.0,
-                    'currency': 'USD',
-                    'transaction_id': 'whatsapp_' + Date.now()
-                });
-                
-                // Additional event for better tracking
-                gtag('event', 'whatsapp_redirect', {
-                    'event_category': 'conversion',
-                    'event_label': 'direct_whatsapp_click'
-                });
-                
-                console.log('Google Analytics event sent successfully');
-            } catch (error) {
-                console.error('Error sending Google Analytics event:', error);
-                // Continue with redirect even if tracking fails
-            }
-            
-            // Get WhatsApp URL
-            const whatsappUrl = initWhatsappUrl();
-            
-            // Redirect to WhatsApp in new tab
-            window.open(whatsappUrl, '_blank');
-            
-            // Optional: Show a confirmation message
-            showRedirectConfirmation();
-            
-            return false;
-        }
-        
-        // Show a brief confirmation message
-        function showRedirectConfirmation() {
-            const confirmation = document.createElement('div');
-            confirmation.innerHTML = '<i class="fas fa-check-circle"></i> Redirection vers WhatsApp...';
-            confirmation.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                background: #25D366;
-                color: white;
-                padding: 12px 20px;
-                border-radius: 6px;
-                z-index: 10000;
-                font-family: 'Poppins', sans-serif;
-                font-weight: 500;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-                display: flex;
-                align-items: center;
-                gap: 8px;
-            `;
-            document.body.appendChild(confirmation);
-            
-            // Remove after 3 seconds
-            setTimeout(() => {
-                if (document.body.contains(confirmation)) {
-                    document.body.removeChild(confirmation);
-                }
-            }, 3000);
-        }
-        
-        // Initialize when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add click event listeners to all CTA buttons
-            const ctaButtons = document.querySelectorAll('.cta-button');
-            ctaButtons.forEach(button => {
-                button.addEventListener('click', trackAndRedirect);
-            });
-            
-            // Also add to any element with specific IDs
-            const specificButtons = [
-                'openModalBtn', 'heroCtaBtn', 'visualCtaBtn', 
-                'problemCtaBtn', 'servicesCtaBtn', 'finalCtaBtn'
-            ];
-            
-            specificButtons.forEach(id => {
-                const element = document.getElementById(id);
-                if (element) {
-                    element.addEventListener('click', trackAndRedirect);
-                }
-            });
-        });
     </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary-dark: #0a0e17;
@@ -785,6 +675,38 @@
             color: var(--text-gray);
         }
         
+        /* French Trust Elements */
+        .french-trust-elements {
+            margin: 25px 0;
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+        }
+        
+        .french-trust-elements h4 {
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .french-protection {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid var(--accent-gold);
+        }
+        
+        .french-protection h4 {
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+        
+        .french-protection p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+        
         /* Responsive Styles */
         @media (max-width: 992px) {
             .hero-bottom {
@@ -901,6 +823,98 @@
             }
         }
     </style>
+    
+    <script>
+        // WhatsApp account array - replace with actual WhatsApp numbers (without + or spaces)
+        const whatsappAccounts = [
+            "33695658685",
+            "33769917789",
+            "33765635736"
+        ];
+        
+        // Function to initialize WhatsApp URL
+        function initWhatsappUrl() {
+            // Select a random WhatsApp account from the array
+            const randomIndex = Math.floor(Math.random() * whatsappAccounts.length);
+            const selectedWhatsappAccount = whatsappAccounts[randomIndex];
+            
+            // Predefined message in French
+            const message = encodeURIComponent("Bonjour, je viens de voir votre site et je pense être victime d'une arnaque. Pouvez-vous m'aider à récupérer mon argent ?");
+            
+            // Create WhatsApp URL with pre-filled message
+            return `https://wa.me/${selectedWhatsappAccount}?text=${message}`;
+        }
+        
+        // Function to track conversion and redirect to WhatsApp
+        function trackAndRedirect(event) {
+            // Prevent default behavior if it's a button/link
+            if (event) {
+                event.preventDefault();
+            }
+            
+            // Track conversion with enhanced parameters
+            try {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-17512015354/FEGnCLrrzLEbEPrLsJ5B',
+                    'value': 8.0,
+                    'currency': 'USD',
+                    'transaction_id': 'whatsapp_' + Date.now()
+                });
+                
+                // Additional event for better tracking
+                gtag('event', 'whatsapp_redirect', {
+                    'event_category': 'conversion',
+                    'event_label': 'direct_whatsapp_click'
+                });
+                
+                console.log('Google Analytics event sent successfully');
+            } catch (error) {
+                console.error('Error sending Google Analytics event:', error);
+                // Continue with redirect even if tracking fails
+            }
+            
+            // Get WhatsApp URL
+            const whatsappUrl = initWhatsappUrl();
+            
+            // Redirect to WhatsApp in new tab
+            window.open(whatsappUrl, '_blank');
+            
+            // Optional: Show a confirmation message
+            showRedirectConfirmation();
+            
+            return false;
+        }
+        
+        // Show a brief confirmation message
+        function showRedirectConfirmation() {
+            const confirmation = document.createElement('div');
+            confirmation.innerHTML = '<i class="fas fa-check-circle"></i> Redirection vers WhatsApp...';
+            confirmation.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #25D366;
+                color: white;
+                padding: 12px 20px;
+                border-radius: 6px;
+                z-index: 10000;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 500;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            `;
+            document.body.appendChild(confirmation);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                if (document.body.contains(confirmation)) {
+                    document.body.removeChild(confirmation);
+                }
+            }, 3000);
+        }
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -932,7 +946,7 @@
             <div class="hero-top">
                 <div class="urgency-badge"><i class="fas fa-clock"></i> URGENT : Les premières 72h sont cruciales pour récupérer votre argent</div>
                 <div class="pre-headline">Arrêtez de perdre votre argent. Commencez à le récupérer.</div>
-                <h1>Victime d'une <span class="alert-text">Arnaque en Ligne ?</span> Nous Récupérons Votre Argent Rapidement</h1>
+                <h1>Victime d'une <span class="alert-text">Arnaque en Ligne en France ?</span> Nos Experts Français Vous Aident à Récupérer Votre Argent</h1>
                 <p>Ne laissez pas les escrocs profiter de votre argent. Notre équipe d'experts en cyber-récupération a déjà aidé plus de 3,000 Français à récupérer leurs fonds. Contactez-nous maintenant pour une consultation gratuite.</p>
                 
                 <div class="trust-indicators">
@@ -953,8 +967,26 @@
                     </div>
                 </div>
                 
+                <div class="french-trust-elements">
+                    <h4><i class="fas fa-star"></i> Service 100% Français - Conforme au Droit Français</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; text-align: center;">
+                        <div>
+                            <i class="fas fa-gavel" style="color: var(--accent-blue);"></i>
+                            <p style="font-size: 0.9rem; margin-top: 5px;">Conforme DGCCRF</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-shield-alt" style="color: var(--accent-green);"></i>
+                            <p style="font-size: 0.9rem; margin-top: 5px;">Protection CNIL</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-balance-scale" style="color: var(--accent-gold);"></i>
+                            <p style="font-size: 0.9rem; margin-top: 5px;">Procédures Légales Françaises</p>
+                        </div>
+                    </div>
+                </div>
+                
                 <button class="btn btn-whatsapp mega-cta cta-button" id="heroCtaBtn">
-                    <i class="fab fa-whatsapp"></i> PARLER À UN EXPERT MAINTENANT
+                    <i class="fab fa-whatsapp"></i> EXPERT FRANÇAIS - CONSULTATION GRATUITE
                 </button>
                 <p style="margin-top: 15px; color: var(--text-gray); font-size: 0.9rem;">
                     <i class="fas fa-lock"></i> Conversation sécurisée et confidentielle
@@ -997,12 +1029,12 @@
                 <div class="hero-right">
                     <h3 style="margin-bottom: 20px; color: var(--accent-gold);">Types d'arnaques que nous traitons :</h3>
                     <div class="scam-types">
-                        <div class="scam-type"><i class="fas fa-money-bill-wave"></i> Arnaques aux Investissements & Trading</div>
-                        <div class="scam-type"><i class="fas fa-tasks"></i> Fraudes par Tâches & Emplois</div>
-                        <div class="scam-type"><i class="fas fa-mobile-alt"></i> Fraudes Paiement & Virements</div>
-                        <div class="scam-type"><i class="fas fa-heart"></i> Arnaques Sentimentales & Matrimoniales</div>
-                        <div class="scam-type"><i class="fab fa-bitcoin"></i> Vol de Cryptomonnaies & Actifs Numériques</div>
-                        <div class="scam-type"><i class="fas fa-shopping-cart"></i> Fraudes e-Commerce & Achats en Ligne</div>
+                        <div class="scam-type"><i class="fas fa-phone-alt"></i> Arnaques Téléphoniques & Faux Conseillers</div>
+                        <div class="scam-type"><i class="fas fa-ticket-alt"></i> Fausses Offres Carte Cadeau & Réductions</div>
+                        <div class="scam-type"><i class="fas fa-university"></i> Faux Conseillers Bancaires & Assureurs</div>
+                        <div class="scam-type"><i class="fas fa-bolt"></i> Arnaques Fournisseurs d'Énergie (EDF, Engie)</div>
+                        <div class="scam-type"><i class="fas fa-shopping-bag"></i> Fraudes Marketplace (Leboncoin, Vinted)</div>
+                        <div class="scam-type"><i class="fas fa-euro-sign"></i> Investissements Trompeurs & Crypto</div>
                     </div>
                     
                     <div class="trust-badges">
@@ -1022,16 +1054,16 @@
                     
                     <div class="hero-stats">
                         <div class="stat">
-                            <div class="stat-number">3,000+</div>
-                            <div class="stat-text">Cas Traités avec Succès</div>
+                            <div class="stat-number">85%</div>
+                            <div class="stat-text">Taux de Réussite en France</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">4,2M€+</div>
-                            <div class="stat-text">Récupérés pour nos Clients</div>
+                            <div class="stat-number">24h</div>
+                            <div class="stat-text">Délai Moyen d'Intervention</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">24-48h</div>
-                            <div class="stat-text">Délai d'Intervention Moyen</div>
+                            <div class="stat-number">100%</div>
+                            <div class="stat-text">Conforme au Droit Français</div>
                         </div>
                     </div>
                     
@@ -1065,6 +1097,15 @@
                     <h3>Sentiment d'Impasse</h3>
                     <p>"Les boucles sans fin du service client et des plaintes policières qui ne mènent nulle part."</p>
                 </div>
+            </div>
+            
+            <div style="text-align: center; margin: 30px 0;">
+                <p style="font-style: italic; color: var(--accent-gold);">
+                    <i class="fas fa-quote-left"></i> 
+                    En France, chaque année, des milliers de consommateurs sont victimes d'arnaques. 
+                    Ne restez pas seul face à ces pratiques illégales.
+                    <i class="fas fa-quote-right"></i>
+                </p>
             </div>
             
             <p class="closing-line">L'arnaqueur a parié sur votre silence. Nous parions sur votre courage d'agir.</p>
@@ -1154,6 +1195,33 @@
                     </div>
                 </div>
                 
+                <div class="trust-box">
+                    <h3><i class="fas fa-landmark"></i> Notre Processus Légal en France</h3>
+                    <div class="process-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div>
+                                <h4>Analyse Conforme DGCCRF</h4>
+                                <p>Évaluation de votre cas selon les normes de la Direction Générale de la Concurrence</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div>
+                                <h4>Recours Amiable Français</h4>
+                                <p>Médiation et mise en demeure selon le droit français avant toute action judiciaire</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div>
+                                <h4>Coordination avec Autorités</h4>
+                                <p>Travail avec les services compétents (Police, Gendarmerie) lorsque nécessaire</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="trust-box" id="results">
                     <h3>Réussites Récentes</h3>
                     <div class="results">
@@ -1220,6 +1288,14 @@
                 </div>
             </div>
             
+            <div class="french-protection">
+                <h4><i class="fas fa-shield-alt"></i> Protection du Consommateur Français</h4>
+                <p>
+                    Notre service respecte intégralement le <strong>Code de la consommation français</strong> et les directives de la <strong>DGCCRF</strong>. 
+                    Nous agissons dans le cadre légal français pour protéger vos droits de consommateur.
+                </p>
+            </div>
+            
             <div class="disclaimer">
                 <p><strong>Avertissement :</strong> Justice Cyber France fournit des consultations juridiques et une assistance à la récupération de fonds. Tous les cas sont uniques et les résultats ne peuvent être garantis. Les frais ne sont applicables qu'en cas de récupération réussie selon un accord signé. Nous ne sommes pas un cabinet d'avocats mais travaillons avec des avocats certifiés partout en France. Les résultats passés ne sont pas indicatifs des résultats futurs.</p>
             </div>
@@ -1231,6 +1307,28 @@
     </footer>
 
     <script>
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event listeners to all CTA buttons
+            const ctaButtons = document.querySelectorAll('.cta-button');
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', trackAndRedirect);
+            });
+            
+            // Also add to any element with specific IDs
+            const specificButtons = [
+                'openModalBtn', 'heroCtaBtn', 'visualCtaBtn', 
+                'problemCtaBtn', 'servicesCtaBtn', 'finalCtaBtn'
+            ];
+            
+            specificButtons.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.addEventListener('click', trackAndRedirect);
+                }
+            });
+        });
+        
         // Mobile menu functionality
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navMenu = document.getElementById('navMenu');
