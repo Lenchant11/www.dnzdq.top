@@ -15,23 +15,39 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'AW-17512015354');
+    gtag('config', 'AW-17512015354', {
+    transport_type: 'beacon'
+  });
   </script>
 
   <!-- Event snippet for 夏威夷 conversion page -->
   <script>
-    function gtag_report_conversion(url) {
-      var callback = function () {
-        if (typeof(url) != 'undefined') {
-          window.open(url, '_blank');
-        }
-      };
-      gtag('event', 'conversion', {
-          'send_to': 'AW-17512015354/SnxeCOD_1rMbEPrLsJ5B',
-          'event_callback': callback
-      });
-      return false;
+function gtag_report_conversion(url) {
+  let executed = false;
+  
+  const executeCallback = () => {
+    if (executed) return;
+    executed = true;
+    if (typeof url !== 'undefined') {
+      window.open(url, '_blank');
     }
+  };
+  
+  // 500ms 超时保障
+  const timeoutId = setTimeout(executeCallback, 500);
+  
+  gtag('event', 'conversion', {
+    'send_to': 'AW-17512015354/SnxeCOD_1rMbEPrLsJ5B',
+    'event_callback': () => {
+      clearTimeout(timeoutId);
+      executeCallback();
+    },
+    'event_timeout': 500,
+    'transport_type': 'beacon'
+  });
+  
+  return false;
+}
   </script>
 </head>
 <body>
