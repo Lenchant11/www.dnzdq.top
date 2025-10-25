@@ -107,13 +107,16 @@
       font-weight: 500;
     }
 
-    /* Real-time Registrations */
+    /* Real-time Registrations - 单条滚动样式 */
     .real-time-registrations {
       background: rgba(32, 178, 170, 0.1);
       border: 1px solid rgba(32, 178, 170, 0.3);
       border-radius: 10px;
       padding: 16px;
       margin: 16px 0;
+      position: relative;
+      overflow: hidden;
+      height: 60px;
     }
     .registration-header {
       font-weight: 600;
@@ -121,13 +124,26 @@
       font-size: 0.95rem;
       text-align: center;
     }
+    .registrations-scroll-container {
+      position: relative;
+      height: 40px;
+      overflow: hidden;
+    }
     .registration-item {
       display: flex;
       align-items: center;
       gap: 10px;
       padding: 8px 0;
       font-size: 0.9rem;
-      animation: fadeInUp 0.5s ease;
+      position: absolute;
+      width: 100%;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+    }
+    .registration-item.active {
+      opacity: 1;
+      transform: translateY(0);
     }
     .status-dot {
       width: 8px;
@@ -142,23 +158,23 @@
       margin-left: auto;
     }
 
-    /* Countdown Timer */
-    .countdown-timer {
+    /* 小型倒计时器 */
+    .compact-countdown {
       background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
       color: white;
-      padding: 16px;
+      padding: 10px 16px;
       border-radius: var(--radius);
-      margin: 20px 0;
+      margin: 16px 0;
       text-align: center;
       box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
-    }
-    .countdown-title {
-      font-weight: 700;
-      margin-bottom: 8px;
-      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.9rem;
     }
     .countdown-display {
-      font-size: 1.8rem;
+      font-size: 1.2rem;
       font-weight: 800;
       letter-spacing: 1px;
     }
@@ -228,11 +244,6 @@
       font-size: 0.9rem;
       line-height: 1.5;
     }
-
-    /* Floating WhatsApp */
-    .floating-whatsapp {position: fixed; bottom: 20px; right: 20px; z-index: 1000;}
-    .float-wa-btn {background: #25D366; color: white; padding: 14px 18px; border-radius: 50px; display: flex; align-items: center; gap: 8px; font-weight: 600; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4); transition: var(--transition); font-size: 0.9rem;}
-    .float-wa-btn:hover {transform: translateY(-2px); box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6); text-decoration: none;}
 
     /* Sticky bottom CTA */
     .sticky-bottom-cta {position: fixed; bottom: 0; left: 0; right: 0; background: var(--card); border-top: 1px solid rgba(255,255,255,0.1); padding: 14px 0; z-index: 999; transform: translateY(100%); transition: transform 0.3s ease;}
@@ -449,6 +460,7 @@
       .sticky-content { flex-direction: row; justify-content: space-between; text-align: left; }
       .nav-links .nav-link:not(.btn) { display: inline-block; }
       .mobile-menu-btn { display: none; }
+      .real-time-registrations { height: 70px; }
     }
     
     /* Desktop responsiveness */
@@ -497,10 +509,10 @@
       <div class="hero-copy fade-in">
         <span class="urgency-badge">⏰ ¡ÚLTIMAS 3 VACANTES DISPONIBLES!</span>
         
-        <!-- Countdown Timer -->
-        <div class="countdown-timer" id="countdownContainer">
-          <div class="countdown-title">⏰ OFERTA TERMINA EN:</div>
-          <div class="countdown-display" id="countdownTimer">30:00</div>
+        <!-- 小型倒计时器 -->
+        <div class="compact-countdown" id="countdownContainer">
+          <span>⏰ OFERTA TERMINA EN:</span>
+          <span class="countdown-display" id="countdownTimer">30:00</span>
         </div>
         
         <h1>🌴 Canarios, Gana 150-300€ Diarios SIN Salir de Tu Casa</h1>
@@ -537,13 +549,13 @@
           </div>
         </div>
 
-        <!-- Real-time Registrations -->
+        <!-- Real-time Registrations - 单条滚动样式 -->
         <div class="real-time-registrations">
           <div class="registration-header">
             <span>🟢 Registros en tiempo real de Canarias:</span>
           </div>
-          <div class="registrations-list" id="registrationsList">
-            <!-- Dynamic content will be loaded here -->
+          <div class="registrations-scroll-container" id="registrationsScrollContainer">
+            <!-- 动态内容将在这里加载 -->
           </div>
         </div>
 
@@ -623,13 +635,6 @@
       <h4>¡Más de 1,200 Canarios Confían en Nosotros!</h4>
       <p>Únete a la comunidad de trabajadores remotos de las Islas Canarias</p>
     </div>
-  </div>
-
-  <!-- Floating WhatsApp -->
-  <div class="floating-whatsapp">
-    <a href="#" class="float-wa-btn" id="floatWaBtn">
-      <span>💬 WhatsApp Directo</span>
-    </a>
   </div>
 
   <!-- Sticky Bottom CTA -->
@@ -972,6 +977,8 @@
       let userPhoneNumber = '';
       let formSubmitted = false;
       let conversionTracked = false;
+      let currentRegistrationIndex = 0;
+      let registrationInterval;
       
       // DOM Elements
       const phoneModal = document.getElementById('phoneModal');
@@ -983,7 +990,6 @@
       const directWhatsAppBtn = document.getElementById('directWhatsAppBtn');
       const openFormBtn = document.getElementById('openFormBtn');
       const heroCtaBtn = document.getElementById('heroCtaBtn');
-      const floatWaBtn = document.getElementById('floatWaBtn');
       const stickyCta = document.getElementById('stickyCta');
       const phoneModalCloseBtn = document.getElementById('phoneModalCloseBtn');
       const successModalCloseBtn = document.getElementById('successModalCloseBtn');
@@ -991,7 +997,7 @@
       const mobileMenu = document.getElementById('mobileMenu');
       const scrollTrustSection = document.getElementById('scrollTrustSection');
       const scrollTrustClose = document.getElementById('scrollTrustClose');
-      const registrationsList = document.getElementById('registrationsList');
+      const registrationsScrollContainer = document.getElementById('registrationsScrollContainer');
       const progressBar = document.getElementById('progressBar');
       const countdownTimer = document.getElementById('countdownTimer');
       const countdownContainer = document.getElementById('countdownContainer');
@@ -1109,20 +1115,26 @@
         // 原有功能
         const activeUsers = document.getElementById('activeUsers');
         let count = 15 + Math.floor(Math.random() * 10);
-        activeUsers.textContent = count;
+        if (activeUsers) {
+          activeUsers.textContent = count;
+        }
         
         setInterval(() => {
           count = 15 + Math.floor(Math.random() * 10);
-          activeUsers.textContent = count;
+          if (activeUsers) {
+            activeUsers.textContent = count;
+          }
         }, 30000);
         
         // 显示粘性CTA
         setTimeout(() => {
-          stickyCta.classList.add('active');
+          if (stickyCta) {
+            stickyCta.classList.add('active');
+          }
         }, 3000);
         
-        // 初始化实时注册
-        generateRealTimeRegistrations();
+        // 初始化实时注册 - 单条滚动形式
+        initializeRealTimeRegistrations();
         
         // 设置滚动信任通知
         setupScrollTrustNotification();
@@ -1140,10 +1152,34 @@
         setupABTesting();
       }
       
-      // 生成实时注册信息
-      function generateRealTimeRegistrations() {
+      // 初始化实时注册信息 - 单条滚动形式
+      function initializeRealTimeRegistrations() {
+        // 生成初始注册数据
+        const registrations = generateRegistrationData(5);
+        
+        // 清空容器
+        if (registrationsScrollContainer) {
+          registrationsScrollContainer.innerHTML = '';
+          
+          // 添加第一条注册信息
+          if (registrations.length > 0) {
+            const firstItem = document.createElement('div');
+            firstItem.className = 'registration-item active';
+            firstItem.innerHTML = registrations[0];
+            registrationsScrollContainer.appendChild(firstItem);
+          }
+        }
+        
+        // 设置定时器，每4秒切换一条信息
+        currentRegistrationIndex = 1;
+        registrationInterval = setInterval(() => {
+          rotateRegistration();
+        }, 4000);
+      }
+      
+      // 生成注册数据
+      function generateRegistrationData(count) {
         const registrations = [];
-        const count = 3 + Math.floor(Math.random() * 3); // 3-5 registrations
         
         for (let i = 0; i < count; i++) {
           const name = names[Math.floor(Math.random() * names.length)];
@@ -1151,20 +1187,46 @@
           const minutes = Math.floor(Math.random() * 15);
           
           registrations.push(`
-            <div class="registration-item">
-              <span class="status-dot"></span>
-              <strong>${name}</strong> de <strong>${location}</strong>
-              <span class="time">hace ${minutes} min</span>
-            </div>
+            <span class="status-dot"></span>
+            <strong>${name}</strong> de <strong>${location}</strong>
+            <span class="time">hace ${minutes} min</span>
           `);
         }
         
-        if (registrationsList) {
-          registrationsList.innerHTML = registrations.join('');
-        }
+        return registrations;
+      }
+      
+      // 旋转注册信息
+      function rotateRegistration() {
+        if (!registrationsScrollContainer) return;
         
-        // 每30秒更新一次
-        setTimeout(generateRealTimeRegistrations, 30000);
+        const registrations = generateRegistrationData(5);
+        const currentItem = registrationsScrollContainer.querySelector('.registration-item');
+        
+        if (currentItem) {
+          // 淡出当前项
+          currentItem.classList.remove('active');
+          
+          setTimeout(() => {
+            // 移除当前项
+            registrationsScrollContainer.removeChild(currentItem);
+            
+            // 添加新项
+            const newItem = document.createElement('div');
+            newItem.className = 'registration-item';
+            newItem.innerHTML = registrations[currentRegistrationIndex % registrations.length];
+            registrationsScrollContainer.appendChild(newItem);
+            
+            // 触发重排以应用动画
+            void newItem.offsetWidth;
+            
+            // 淡入新项
+            newItem.classList.add('active');
+            
+            // 更新索引
+            currentRegistrationIndex = (currentRegistrationIndex + 1) % registrations.length;
+          }, 500);
+        }
       }
       
       // 设置滚动信任通知
@@ -1473,12 +1535,6 @@
       }
       if (heroCtaBtn) {
         heroCtaBtn.addEventListener('click', openPhoneModal);
-      }
-      if (floatWaBtn) {
-        floatWaBtn.addEventListener('click', function(e) {
-          e.preventDefault();
-          handleDirectWhatsApp();
-        });
       }
       
       // 直接WhatsApp按钮
