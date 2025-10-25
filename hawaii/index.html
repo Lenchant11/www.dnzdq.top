@@ -14,7 +14,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'AW-17512015354', {
     transport_type: 'beacon'
   });
@@ -32,20 +31,18 @@ function gtag_report_conversion(url) {
       window.open(url, '_blank');
     }
   };
-  
-  // 500ms 超时保障
-  const timeoutId = setTimeout(executeCallback, 500);
-  
+
+  const timeoutId = setTimeout(executeCallback, 300);
+
   gtag('event', 'conversion', {
     'send_to': 'AW-17512015354/SnxeCOD_1rMbEPrLsJ5B',
     'event_callback': () => {
       clearTimeout(timeoutId);
       executeCallback();
     },
-    'event_timeout': 500,
+    'event_timeout': 300,
     'transport_type': 'beacon'
   });
-  
   return false;
 }
   </script>
