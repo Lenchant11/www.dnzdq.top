@@ -22,7 +22,25 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+
     gtag('config', 'AW-17512015354');
+  </script>
+
+  <!-- Event snippet for 夏威夷 conversion page -->
+  <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          // 使用_blank方式在新标签页打开WhatsApp，确保不影响主页面
+          window.open(url, '_blank');
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17512015354/C5XdCNf096UbEPrLsJ5B',
+          'event_callback': callback
+      });
+      return false;
+    }
   </script>
 
   <style>
@@ -1197,37 +1215,6 @@
       color: var(--hawaii-yellow);
     }
   </style>
-
-  <script>
-    function gtag_report_conversion(url) {
-      var callback = function () {
-        if (typeof(url) != 'undefined') {
-          // 确保无论GA事件是否上报成功，都能打开WhatsApp
-          setTimeout(function() {
-            window.open(url, '_blank');
-          }, 100);
-        }
-      };
-      
-      // 使用Google官方推荐的事件上报方式
-      gtag('event', 'conversion', {
-        'send_to': 'AW-17512015354/C5XdCNf096UbEPrLsJ5B',
-        'value': 1.0,
-        'currency': 'USD',
-        'event_callback': callback
-      });
-      
-      // 备用方案：确保WhatsApp一定能打开
-      setTimeout(function() {
-        if (!window.popupOpened) {
-          window.open(url, '_blank');
-          window.popupOpened = true;
-        }
-      }, 500);
-      
-      return false;
-    }
-  </script>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -1715,7 +1702,6 @@
       const randomAccount = whatsappAccounts[Math.floor(Math.random() * whatsappAccounts.length)];
       const assignedWhatsAppLink = `https://wa.me/${randomAccount}?text=${encodeURIComponent("Aloha! I just applied for Hawaii Remote Jobs and I'm ready to start earning $300+ daily!")}`;
       let formSubmitted = false;
-      window.popupOpened = false;
       
       // DOM Elements
       const form = document.getElementById('applicationForm');
@@ -1889,9 +1875,9 @@
       document.getElementById('modalCloseBtn').addEventListener('click', closeSuccessModal);
       document.getElementById('formModalCloseBtn').addEventListener('click', closeFormModal);
       
-      // Continue按钮事件 - 使用优化后的GA事件上报
+      // Continue按钮事件 - 使用Google官方示例代码
       document.getElementById('modalOkBtn').addEventListener('click', function() {
-        // 上报GA事件并打开WhatsApp
+        // 调用Google官方示例的转化上报函数
         gtag_report_conversion(assignedWhatsAppLink);
         closeSuccessModal();
       });
