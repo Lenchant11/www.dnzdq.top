@@ -23,7 +23,6 @@
     function gtag_report_conversion(url) {
       var callback = function () {
         if (typeof(url) != 'undefined') {
-          // 使用_blank方式在新标签页打开WhatsApp，确保不影响主页面
           window.open(url, '_blank');
         }
       };
