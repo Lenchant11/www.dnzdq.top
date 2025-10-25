@@ -1,4 +1,4 @@
-/*style.css*/
+/* style.css */
     * {
       margin: 0;
       padding: 0;
@@ -20,13 +20,13 @@
       --medium-gray: #cbd5e1;
       --success: #10b981;
       --error: #ef4444;
-      --shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-      --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.15);
+      --shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      --shadow-light: 0 3px 8px rgba(0, 0, 0, 0.12);
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      line-height: 1.5;
+      line-height: 1.4;
       color: var(--white);
       background: var(--deep-navy);
       font-weight: 400;
@@ -35,24 +35,14 @@
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 16px;
     }
 
-    img[data-src] {
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    img.lazyloaded {
-      opacity: 1;
-    }
-
-    /* Typography */
     h1 {
-      font-size: 2.75rem;
+      font-size: 2.5rem;
       font-weight: 800;
       line-height: 1.1;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
       background: linear-gradient(135deg, var(--white) 0%, var(--bright-blue) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -60,47 +50,46 @@
     }
 
     h2 {
-      font-size: 2rem;
+      font-size: 1.75rem;
       font-weight: 700;
       line-height: 1.2;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
 
     h3 {
-      font-size: 1.5rem;
+      font-size: 1.375rem;
       font-weight: 600;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
     }
 
     h4 {
       font-size: 1.125rem;
       font-weight: 600;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.375rem;
     }
 
     .muted {
       color: var(--medium-gray);
-      font-size: 1rem;
-      line-height: 1.6;
+      font-size: 0.95rem;
+      line-height: 1.5;
     }
 
     .small {
-      font-size: 0.875rem;
+      font-size: 0.85rem;
     }
 
-    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 14px 28px;
+      padding: 12px 24px;
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
       font-weight: 600;
       text-decoration: none;
       cursor: pointer;
       transition: all 0.3s ease;
-      font-size: 1rem;
+      font-size: 0.95rem;
       position: relative;
       overflow: hidden;
     }
@@ -113,7 +102,7 @@
 
     .btn-orange:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 25px rgba(245, 158, 11, 0.3);
+      box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
     }
 
     .btn-block {
@@ -121,11 +110,10 @@
     }
 
     .btn-lg {
-      padding: 16px 32px;
-      font-size: 1.1rem;
+      padding: 14px 28px;
+      font-size: 1.05rem;
     }
 
-    /* Navigation */
     .nav {
       background: rgba(15, 23, 42, 0.98);
       backdrop-filter: blur(20px);
@@ -134,34 +122,35 @@
       width: 100%;
       z-index: 1000;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.5rem 0;
     }
 
     .nav-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.875rem 20px;
+      padding: 0 16px;
     }
 
     .brand {
-      font-size: 1.375rem;
+      font-size: 1.25rem;
       font-weight: 700;
       color: var(--white);
       text-decoration: none;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.375rem;
     }
 
     .brand::before {
       content: "🌺";
-      font-size: 1.25rem;
+      font-size: 1.125rem;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
     .nav-link {
@@ -169,7 +158,7 @@
       text-decoration: none;
       font-weight: 500;
       transition: all 0.3s ease;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
 
     .nav-link:hover {
@@ -180,14 +169,13 @@
       display: none;
       background: none;
       border: none;
-      font-size: 1.375rem;
+      font-size: 1.25rem;
       cursor: pointer;
       color: var(--white);
     }
 
-    /* Hero Section */
     .hero {
-      padding: 100px 0 60px;
+      padding: 40px 0 40px;
       background: linear-gradient(135deg, var(--deep-navy) 0%, var(--dark-blue) 50%, var(--medium-blue) 100%);
       position: relative;
       overflow: hidden;
@@ -202,22 +190,21 @@
       bottom: 0;
       background: 
         radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(213, 0, 50, 0.05) 0%, transparent 50%);
+        radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.08) 0%, transparent 50%);
     }
 
     .hero-header {
       text-align: center;
-      margin-bottom: 3rem;
-      max-width: 900px;
+      margin-bottom: 2rem;
+      max-width: 800px;
       margin-left: auto;
       margin-right: auto;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 450px 1fr;
-      gap: 3rem;
+      grid-template-columns: 420px 1fr;
+      gap: 2rem;
       align-items: start;
     }
 
@@ -231,133 +218,142 @@
       align-items: center;
       background: linear-gradient(135deg, var(--hawaii-red) 0%, var(--accent-orange) 100%);
       color: var(--white);
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 0.85rem;
+      padding: 6px 12px;
+      border-radius: 16px;
+      font-size: 0.8rem;
       font-weight: 600;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       box-shadow: var(--shadow-light);
     }
 
-    .urgency-badge::before {
-      content: "⏰";
-      margin-right: 6px;
-    }
-
     .subtitle {
-      font-size: 1.25rem;
+      font-size: 1.125rem;
       color: var(--medium-gray);
-      margin-bottom: 2rem;
-      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
       font-weight: 400;
     }
 
-    /* Trust Logos */
+    /* 实时计数器 */
+    .live-counter {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin: 1.5rem 0;
+    }
+
+    .counter-item {
+      text-align: center;
+    }
+
+    .counter-number {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-orange);
+    }
+
+    .counter-label {
+      font-size: 0.8rem;
+      color: var(--medium-gray);
+    }
+
+    /* Trust Logos - 更紧凑 */
     .logos {
       display: flex;
-      gap: 1rem;
-      margin: 2rem 0;
+      gap: 0.75rem;
+      margin: 1.5rem 0;
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
     }
 
     .logo {
-      padding: 10px 16px;
+      padding: 8px 12px;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
+      border-radius: 6px;
       font-weight: 500;
       color: var(--medium-gray);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       transition: all 0.3s ease;
     }
 
-    .logo:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: var(--white);
-    }
-
-    /* Features Grid */
+    /* 紧凑的Features Grid */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin: 2rem 0;
+      gap: 1rem;
+      margin: 1.5rem 0;
     }
 
     .feature-item {
       display: flex;
       align-items: flex-start;
-      gap: 0.75rem;
-      padding: 1rem;
+      gap: 0.5rem;
+      padding: 0.875rem;
       background: rgba(255, 255, 255, 0.03);
-      border-radius: 10px;
+      border-radius: 8px;
       border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .feature-icon {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       flex-shrink: 0;
       margin-top: 0.125rem;
     }
 
     .feature-text h4 {
       margin-bottom: 0.25rem;
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
 
     .feature-text p {
       color: var(--medium-gray);
-      font-size: 0.875rem;
-      line-height: 1.4;
+      font-size: 0.85rem;
+      line-height: 1.3;
     }
 
-    /* Form Card */
+    /* 紧凑的Form Card */
     .form-card {
       background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(20px);
-      padding: 2rem;
-      border-radius: 16px;
+      padding: 1.5rem;
+      border-radius: 12px;
       border: 1px solid rgba(255, 255, 255, 0.1);
       box-shadow: var(--shadow);
       position: sticky;
-      top: 100px;
-      order: -1; /* 移动端时表单排在最前面 */
+      top: 90px;
     }
 
     .form-title {
       text-align: center;
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.375rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
-    }
-
-    .form-title::before {
-      content: "🚀";
+      gap: 0.375rem;
     }
 
     .form-note {
       text-align: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
       color: var(--medium-gray);
-      line-height: 1.5;
-      font-size: 0.9rem;
+      line-height: 1.4;
+      font-size: 0.85rem;
     }
 
-    /* Progress Bar */
+    /* 紧凑的Progress Bar */
     .progress-bar {
       display: flex;
-      gap: 4px;
-      margin-bottom: 2rem;
+      gap: 3px;
+      margin-bottom: 1.5rem;
     }
 
     .progress-step {
       flex: 1;
-      height: 4px;
+      height: 3px;
       background: rgba(255, 255, 255, 0.1);
       border-radius: 2px;
     }
@@ -366,26 +362,26 @@
       background: linear-gradient(135deg, var(--accent-orange) 0%, var(--light-orange) 100%);
     }
 
-    /* Form Fields */
+    /* 紧凑的Form Fields */
     .field {
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }
 
     .field label {
       display: block;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.375rem;
       font-weight: 500;
       color: var(--white);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
     .field input {
       width: 100%;
-      padding: 14px;
+      padding: 12px;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
-      font-size: 0.95rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
       transition: all 0.3s ease;
       color: var(--white);
     }
@@ -406,8 +402,8 @@
 
     .error-text {
       color: var(--error);
-      font-size: 0.8rem;
-      margin-top: 0.375rem;
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
       display: none;
     }
 
@@ -419,41 +415,41 @@
       color: var(--error);
     }
 
-    /* Phone Input */
+    /* 紧凑的Phone Input */
     .phone-input-group {
       display: flex;
       align-items: center;
     }
 
     .country-code {
-      padding: 14px 12px;
+      padding: 12px 10px;
       background: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-right: none;
-      border-radius: 8px 0 0 8px;
+      border-radius: 6px 0 0 6px;
       font-weight: 500;
       color: var(--white);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.375rem;
     }
 
     .phone-input {
-      border-radius: 0 8px 8px 0 !important;
+      border-radius: 0 6px 6px 0 !important;
     }
 
-    /* Checkbox Field - 优化布局 */
+    /* 紧凑的Checkbox Field */
     .field.check {
       display: flex;
       align-items: flex-start;
-      gap: 0.5rem;
-      margin-bottom: 1.25rem;
+      gap: 0.375rem;
+      margin-bottom: 1rem;
     }
 
     .field.check input[type="checkbox"] {
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
       margin-top: 0.125rem;
       flex-shrink: 0;
     }
@@ -462,37 +458,33 @@
       margin-bottom: 0;
       font-weight: normal;
       color: var(--medium-gray);
-      line-height: 1.4;
-      font-size: 0.85rem;
+      line-height: 1.3;
+      font-size: 0.8rem;
       flex: 1;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
 
     .field.check a {
       color: var(--accent-blue);
       text-decoration: none;
-      white-space: nowrap;
     }
 
-    /* Security Badge */
+    /* 紧凑的Security Badge */
     .security-badge {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      margin-top: 1.25rem;
-      padding: 1rem;
+      gap: 0.375rem;
+      margin-top: 1rem;
+      padding: 0.875rem;
       background: rgba(255, 255, 255, 0.03);
-      border-radius: 8px;
-      font-size: 0.8rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
       color: var(--medium-gray);
       border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    /* Sections */
+    /* 紧凑的Sections */
     .section {
-      padding: 70px 0;
+      padding: 50px 0;
     }
 
     .section.alt {
@@ -501,141 +493,111 @@
 
     .section-header {
       text-align: center;
-      max-width: 800px;
-      margin: 0 auto 3rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
     }
 
-    /* Micro Tasks Section */
+    /* 紧凑的Micro Tasks */
     .micro-tasks {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
     }
 
     .micro-task {
       text-align: center;
-      padding: 2rem 1.5rem;
+      padding: 1.5rem 1rem;
       background: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
+      border-radius: 10px;
       border: 1px solid rgba(255, 255, 255, 0.1);
       transition: all 0.3s ease;
     }
 
     .micro-task:hover {
-      transform: translateY(-5px);
+      transform: translateY(-3px);
       background: rgba(255, 255, 255, 0.08);
       border-color: var(--accent-blue);
     }
 
     .micro-task-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
     }
 
-    /* Cards */
+    /* 紧凑的Cards */
     .cards {
       display: grid;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
     .cards.two-col {
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     }
 
     .cards.three-col {
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 
     .card {
       background: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
+      border-radius: 10px;
       overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.1);
       transition: all 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
       border-color: var(--accent-blue);
     }
 
     .card-media img {
       width: 100%;
-      height: 200px;
+      height: 180px;
       object-fit: cover;
     }
 
     .card-body {
-      padding: 2rem;
+      padding: 1.5rem;
     }
 
     .earnings-badge {
       display: inline-block;
       background: linear-gradient(135deg, var(--accent-blue) 0%, var(--bright-blue) 100%);
       color: var(--white);
-      padding: 6px 12px;
-      border-radius: 16px;
-      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 14px;
+      font-size: 0.75rem;
       font-weight: 600;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
 
     .list {
       list-style: none;
-      margin: 1.5rem 0;
+      margin: 1rem 0;
     }
 
     .list li {
-      padding: 0.5rem 0;
+      padding: 0.375rem 0;
       display: flex;
       align-items: flex-start;
-      gap: 0.5rem;
-      line-height: 1.4;
-      font-size: 0.9rem;
+      gap: 0.375rem;
+      line-height: 1.3;
+      font-size: 0.85rem;
     }
 
-    /* Requirements */
-    .requirements {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .req-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 1.5rem;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-    }
-
-    .req-item:hover {
-      transform: translateY(-3px);
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    .req-icon {
-      font-size: 2rem;
-      flex-shrink: 0;
-    }
-
-    /* Benefits Section */
+    /* 紧凑的Benefits Section */
     .benefits-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      gap: 2rem;
       align-items: center;
     }
 
     .benefits-media {
-      height: 400px;
+      height: 320px;
       background: linear-gradient(135deg, var(--accent-blue) 0%, var(--bright-blue) 100%);
-      border-radius: 16px;
+      border-radius: 12px;
       position: relative;
       overflow: hidden;
       display: flex;
@@ -645,22 +607,22 @@
 
     .benefits-media::before {
       content: "🏝️";
-      font-size: 8rem;
+      font-size: 6rem;
       opacity: 0.3;
     }
 
     .stats {
       list-style: none;
-      margin: 2rem 0;
+      margin: 1.5rem 0;
     }
 
     .stats li {
-      padding: 1rem 0;
-      font-size: 1.125rem;
+      padding: 0.75rem 0;
+      font-size: 1rem;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.375rem;
     }
 
     .stats li::before {
@@ -672,36 +634,36 @@
       font-weight: 700;
     }
 
-    /* Testimonials */
+    /* 紧凑的Testimonials */
     .testimonial {
       background: rgba(255, 255, 255, 0.05);
-      padding: 2rem;
-      border-radius: 12px;
+      padding: 1.5rem;
+      border-radius: 10px;
       border: 1px solid rgba(255, 255, 255, 0.1);
       transition: all 0.3s ease;
     }
 
     .testimonial:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
       border-color: var(--accent-orange);
     }
 
     .testimonial p {
       font-style: italic;
-      margin-bottom: 1rem;
-      line-height: 1.5;
-      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+      font-size: 0.9rem;
     }
 
     .testimonial footer {
       color: var(--medium-gray);
       font-weight: 500;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
     .avatar {
-      width: 40px;
-      height: 40px;
+      width: 35px;
+      height: 35px;
       background: linear-gradient(135deg, var(--accent-blue) 0%, var(--bright-blue) 100%);
       color: var(--white);
       border-radius: 50%;
@@ -709,21 +671,22 @@
       align-items: center;
       justify-content: center;
       font-weight: 600;
-      margin-bottom: 1rem;
-      font-size: 1rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
     }
 
-    /* CTA Section */
+    /* 紧凑的CTA Section */
     .cta {
       background: linear-gradient(135deg, var(--hawaii-red) 0%, var(--accent-orange) 100%);
       color: var(--white);
+      padding: 40px 0;
     }
 
     .cta-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
     .cta h2 {
@@ -734,11 +697,11 @@
       color: rgba(255, 255, 255, 0.9);
     }
 
-    /* FAQ */
+    /* 紧凑的FAQ */
     .faq {
       background: rgba(255, 255, 255, 0.05);
-      border-radius: 10px;
-      margin-bottom: 1rem;
+      border-radius: 8px;
+      margin-bottom: 0.75rem;
       border: 1px solid rgba(255, 255, 255, 0.1);
       transition: all 0.3s ease;
     }
@@ -748,19 +711,19 @@
     }
 
     .faq summary {
-      padding: 1.5rem;
+      padding: 1.25rem;
       font-weight: 600;
       cursor: pointer;
       list-style: none;
       position: relative;
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
 
     .faq summary::after {
       content: '+';
       position: absolute;
-      right: 1.5rem;
-      font-size: 1.25rem;
+      right: 1.25rem;
+      font-size: 1.125rem;
       transition: transform 0.3s ease;
     }
 
@@ -769,27 +732,27 @@
     }
 
     .faq div {
-      padding: 0 1.5rem 1.5rem;
+      padding: 0 1.25rem 1.25rem;
       color: var(--medium-gray);
-      line-height: 1.5;
-      font-size: 0.9rem;
+      line-height: 1.4;
+      font-size: 0.85rem;
     }
 
-    /* Disclaimer */
+    /* 紧凑的Disclaimer */
     .disclaimer {
       background: rgba(245, 158, 11, 0.1);
-      padding: 1.5rem;
-      border-radius: 10px;
-      margin-top: 2rem;
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin-top: 1.5rem;
       border-left: 4px solid var(--accent-orange);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
-    /* Footer */
+    /* 紧凑的Footer */
     .footer {
       background: var(--dark-blue);
       color: var(--white);
-      padding: 3rem 0 1.5rem;
+      padding: 2rem 0 1rem;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
@@ -797,24 +760,24 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
 
     .footer .brand {
       color: var(--white);
-      font-size: 1.25rem;
+      font-size: 1.125rem;
     }
 
     .footer-links {
       display: flex;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
     .footer-links a {
       color: var(--medium-gray);
       text-decoration: none;
       transition: color 0.3s ease;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
     .footer-links a:hover {
@@ -825,14 +788,14 @@
       color: var(--medium-gray);
     }
 
-    /* Earnings Disclaimer */
+    /* 紧凑的Earnings Disclaimer */
     .earnings-disclaimer {
       background: rgba(245, 158, 11, 0.1);
-      padding: 1.25rem;
-      border-radius: 10px;
-      margin: 1.25rem 0;
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 1rem 0;
       border-left: 4px solid var(--accent-orange);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
     }
 
     .earnings-disclaimer strong {
@@ -840,14 +803,14 @@
     }
 
     .task-disclaimer {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--medium-gray);
       text-align: center;
-      margin-top: 1.5rem;
-      line-height: 1.5;
+      margin-top: 1rem;
+      line-height: 1.4;
     }
 
-    /* Mobile Menu */
+    /* 紧凑的Mobile Menu */
     .mobile-menu {
       display: none;
       position: absolute;
@@ -857,7 +820,7 @@
       background: var(--dark-blue);
       backdrop-filter: blur(20px);
       flex-direction: column;
-      padding: 1rem;
+      padding: 0.875rem;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
@@ -866,13 +829,13 @@
     }
 
     .mobile-menu a {
-      padding: 1rem;
+      padding: 0.875rem;
       text-decoration: none;
       color: var(--medium-gray);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       font-weight: 500;
       transition: color 0.3s ease;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
 
     .mobile-menu a:hover {
@@ -886,7 +849,7 @@
     /* Mobile CTA Button */
     .mobile-cta {
       display: none;
-      margin-top: 1rem;
+      margin-top: 0.875rem;
     }
 
     .mobile-cta .btn {
@@ -894,7 +857,7 @@
       justify-content: center;
     }
 
-    /* Modal Styles */
+    /* 紧凑的Modal Styles */
     .modal {
       display: none;
       position: fixed;
@@ -914,9 +877,9 @@
 
     .modal-content {
       background: var(--dark-blue);
-      border-radius: 16px;
-      padding: 2rem;
-      max-width: 450px;
+      border-radius: 12px;
+      padding: 1.5rem;
+      max-width: 420px;
       width: 90%;
       position: relative;
       border: 1px solid rgba(255, 255, 255, 0.1);
@@ -925,101 +888,114 @@
 
     .modal-close {
       position: absolute;
-      top: 1rem;
-      right: 1rem;
+      top: 0.875rem;
+      right: 0.875rem;
       background: none;
       border: none;
-      font-size: 1.5rem;
+      font-size: 1.375rem;
       cursor: pointer;
       color: var(--medium-gray);
     }
 
     .success-animation {
       text-align: center;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }
 
     .checkmark {
-      width: 50px;
-      height: 50px;
+      width: 45px;
+      height: 45px;
       background: var(--success);
       color: var(--white);
       border-radius: 50%;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
+      font-size: 1.375rem;
       font-weight: bold;
     }
 
     .modal-title {
       text-align: center;
-      margin-bottom: 0.75rem;
-      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.375rem;
     }
 
     .modal-message {
       text-align: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
       color: var(--medium-gray);
-      font-size: 0.95rem;
-      line-height: 1.5;
+      font-size: 0.9rem;
+      line-height: 1.4;
     }
 
     .modal-btn {
       width: 100%;
-      padding: 14px;
+      padding: 12px;
       background: linear-gradient(135deg, var(--accent-orange) 0%, var(--light-orange) 100%);
       color: var(--deep-navy);
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
 
     .modal-btn:hover {
       transform: translateY(-2px);
     }
 
-    /* Responsive Design */
+    /* 品牌展示区域 */
+    .brand-showcase {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .brand-showcase h4 {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    /* Responsive Design - 更紧凑的断点 */
     @media (max-width: 1024px) {
       .hero-grid {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 2rem;
       }
       
       .form-card {
         position: static;
-        max-width: 500px;
+        max-width: 450px;
         margin: 0 auto;
-        order: -1; /* 移动端时表单排在最前面 */
       }
       
       .benefits-grid {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 2rem;
       }
       
       .cta-inner {
         flex-direction: column;
         text-align: center;
-        gap: 1.5rem;
+        gap: 1.25rem;
       }
       
       h1 {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
       }
       
       h2 {
-        font-size: 1.75rem;
+        font-size: 1.625rem;
       }
     }
 
     @media (max-width: 768px) {
       .container {
-        padding: 0 16px;
+        padding: 0 12px;
       }
       
       h1 {
@@ -1035,19 +1011,11 @@
       }
       
       .nav-links .nav-link {
-        display: none; /* 隐藏所有导航链接 */
-      }
-	  
-	  .nav-links .btn {
-        display: inline-flex; /* 只显示Start Earning按钮 */
+        display: none;
       }
       
       .mobile-menu-btn {
         display: block;
-      }
-	  
-	  .mobile-menu a:not(.mobile-cta *) {
-        display: none;
       }
       
       .mobile-cta {
@@ -1056,7 +1024,7 @@
       
       .features-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 0.875rem;
       }
       
       .cards.two-col {
@@ -1064,39 +1032,41 @@
       }
       
       .section {
-        padding: 50px 0;
+        padding: 40px 0;
       }
       
       .hero {
-        padding: 90px 0 50px;
+        padding: 30px 0 30px;
       }
       
       .footer-grid {
         flex-direction: column;
-        gap: 1.25rem;
+        gap: 1rem;
         text-align: center;
       }
       
       .footer-links {
         justify-content: center;
         flex-wrap: wrap;
-        gap: 1.5rem;
+        gap: 1.25rem;
       }
 
       .hero-header {
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
       }
 
-      /* 移动端优化复选框布局 */
-      .field.check label {
-        white-space: normal;
-        line-height: 1.3;
+      .live-counter {
+        gap: 1.5rem;
+      }
+
+      .counter-number {
+        font-size: 1.375rem;
       }
     }
 
     @media (max-width: 480px) {
       .container {
-        padding: 0 12px;
+        padding: 0 10px;
       }
       
       h1 {
@@ -1108,15 +1078,15 @@
       }
       
       .hero {
-        padding: 80px 0 40px;
+        padding: 60px 0 20px;
       }
       
       .section {
-        padding: 40px 0;
+        padding: 30px 0;
       }
       
       .form-card {
-        padding: 1.5rem;
+        padding: 1.25rem;
       }
       
       .micro-tasks {
@@ -1128,19 +1098,24 @@
       }
       
       .benefits-media {
-        height: 250px;
+        height: 200px;
       }
 
       .benefits-media::before {
-        font-size: 5rem;
+        font-size: 4rem;
+      }
+
+      .live-counter {
+        flex-direction: column;
+        gap: 1rem;
       }
     }
 
     /* Animations */
     .fade-in {
       opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease;
+      transform: translateY(15px);
+      transition: all 0.5s ease;
     }
 
     .fade-in.visible {
@@ -1149,11 +1124,11 @@
     }
 
     .delay-1 {
-      transition-delay: 0.2s;
+      transition-delay: 0.15s;
     }
 
     .delay-2 {
-      transition-delay: 0.4s;
+      transition-delay: 0.3s;
     }
 
     .pulse {
@@ -1162,7 +1137,7 @@
 
     @keyframes pulse {
       0% { transform: scale(1); }
-      50% { transform: scale(1.03); }
+      50% { transform: scale(1.02); }
       100% { transform: scale(1); }
     }
 
@@ -1176,14 +1151,14 @@
     .usa-flag {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 4px 8px;
+      gap: 0.375rem;
+      padding: 3px 6px;
       background: linear-gradient(135deg, #3c3b6e 0%, #b22234 50%, #ffffff 100%);
-      border-radius: 4px;
-      font-size: 0.8rem;
+      border-radius: 3px;
+      font-size: 0.75rem;
       font-weight: 600;
       color: white;
-      margin-left: 0.5rem;
+      margin-left: 0.375rem;
     }
 
     .hawaii-theme {
