@@ -22,35 +22,32 @@
       --red:#ff6b6b;
       --yellow:#ffd700;
       --ring: 0 0 0 3px rgba(30,144,255,.25);
-      --radius:10px;
+      --radius:12px;
       --transition: all 0.3s ease;
     }
 
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:#091623;color:var(--text);font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;line-height:1.4; font-size: 15px;}
+    *{box-sizing:border-box; margin:0; padding:0;}
+    html,body{background:#091623;color:var(--text);font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;line-height:1.5; font-size: 16px; overflow-x: hidden;}
     img{max-width:100%;display:block}
     a{color:var(--text);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{width:min(1120px,92%);margin-inline:auto}
+    a:hover{text-decoration:none}
+    .container{width:min(100%, 92%);margin-inline:auto; padding:0 4%}
 
-    .nav{position:sticky;top:0;z-index:50;background:rgba(9,22,35,.95);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:8px 0}
+    .nav{position:sticky;top:0;z-index:50;background:rgba(9,22,35,.95);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08); padding:12px 0;}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;}
     .brand{font-weight:800;letter-spacing:.3px;font-size:1.2rem; display: flex; align-items: center; gap: 8px;}
     .brand:before {content: "🇮🇨";}
     .nav-links{display:flex;gap:14px;align-items:center}
-    .nav-link{opacity:.85; transition: var(--transition); font-size: 0.95rem;}
-    .nav-link:hover{opacity:1; color: var(--primary);}
+    .nav-link{opacity:.85; transition: var(--transition); font-size: 0.9rem;}
 
     /* Mobile menu styles */
     .mobile-menu-btn {display: none; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; padding: 5px;}
-    .mobile-menu {display: none; position: absolute; top: 100%; right: 0; background: var(--card); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius); padding: 8px; min-width: 140px; z-index: 100;}
+    .mobile-menu {display: none; position: absolute; top: 100%; right: 4%; background: var(--card); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius); padding: 8px; min-width: 140px; z-index: 100;}
     .mobile-menu.active {display: block;}
-    .mobile-menu a {display: block; padding: 8px 10px; border-radius: 6px;}
-    .mobile-menu a:hover {background: rgba(30,144,255,0.1);}
+    .mobile-menu a {display: block; padding: 10px 12px; border-radius: 6px; font-size: 0.9rem;}
 
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;border-radius:8px;border:0;font-weight:600;cursor:pointer;transition:var(--transition); font-size: 0.95rem;}
-    .btn-lg{padding:12px 24px;font-size:1.05rem;}
-    .btn-block{width:100%}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:10px;border:0;font-weight:600;cursor:pointer;transition:var(--transition); font-size: 1rem; width: 100%;}
+    .btn-lg{padding:16px 24px;font-size:1.1rem;}
     .btn-primary{background:var(--primary);color:white; box-shadow: 0 4px 10px rgba(30, 144, 255, 0.25);}
     .btn-primary:hover{background:var(--primary-600); transform: translateY(-2px); box-shadow: 0 6px 14px rgba(30, 144, 255, 0.35);}
     .btn-whatsapp {background: #25D366; color: white;}
@@ -58,52 +55,52 @@
     .btn:focus{outline:none;box-shadow:var(--ring)}
     .btn:disabled {opacity: 0.7; cursor: not-allowed;}
     
-    .hero{position:relative;padding:30px 0 50px; overflow: hidden;}
-    .hero-grid{display:grid;grid-template-columns:1fr;gap:24px;align-items:center; text-align: center; max-width: 800px; margin: 0 auto;}
+    .hero{position:relative;padding:20px 0 40px; overflow: hidden;}
+    .hero-grid{display:grid;grid-template-columns:1fr;gap:20px;align-items:center; text-align: center;}
     
-    .urgency-badge {display: inline-block; background: var(--red); color: white; padding: 6px 14px; border-radius: 18px; font-size: 0.85rem; font-weight: 600; margin-bottom: 12px; animation: pulse 2s infinite;}
+    .urgency-badge {display: inline-block; background: var(--red); color: white; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; margin-bottom: 16px; animation: pulse 2s infinite;}
     
-    .hero-copy h1{font-size:42px;margin:0 0 12px; line-height: 1.2; font-weight: 800; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
-    .subtitle{color:var(--muted);max-width:60ch;margin:0 auto 20px; font-size: 1.1rem; line-height: 1.5;}
+    .hero-copy h1{font-size:28px;margin:0 0 16px; line-height: 1.3; font-weight: 800; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+    .subtitle{color:var(--muted);margin:0 auto 20px; font-size: 1rem; line-height: 1.5;}
     
-    .hero-stats {display: flex; justify-content: center; gap: 24px; margin: 24px 0;}
-    .stat-item {text-align: center;}
-    .stat-number {font-size: 2.2rem; font-weight: 800; color: var(--primary); display: block; text-shadow: 0 2px 4px rgba(0,0,0,0.3);}
-    .stat-label {font-size: 0.85rem; color: var(--muted);}
+    .hero-stats {display: flex; justify-content: space-between; gap: 8px; margin: 20px 0;}
+    .stat-item {text-align: center; flex: 1;}
+    .stat-number {font-size: 1.8rem; font-weight: 800; color: var(--primary); display: block; text-shadow: 0 2px 4px rgba(0,0,0,0.3);}
+    .stat-label {font-size: 0.8rem; color: var(--muted);}
 
-    .hero-points{list-style:none;padding:0;margin:24px 0;display:grid;grid-template-columns: repeat(2, 1fr);gap:10px;color:#cfd5dd; font-weight: 500; max-width: 580px; margin-left: auto; margin-right: auto;}
-    .hero-points li {display: flex; align-items: center; gap: 8px; font-size: 0.95rem; text-align: left;}
-    .hero-points li:before {content: "✅"; font-size: 1rem;}
+    .hero-points{list-style:none;padding:0;margin:20px 0;display:grid;grid-template-columns: 1fr;gap:12px;color:#cfd5dd; font-weight: 500;}
+    .hero-points li {display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; text-align: left; line-height: 1.4;}
+    .hero-points li:before {content: "✅"; font-size: 1rem; flex-shrink: 0; margin-top: 2px;}
     
-    .cta-main {margin: 24px 0;}
+    .cta-main {margin: 20px 0;}
     
     .hero-bg{position:absolute;inset:0;z-index:-1;background:
         linear-gradient(180deg,rgba(9,22,35,.85),rgba(9,22,35,.92)),
         url('https://images.unsplash.com/photo-1542744095-291d1f67b221?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;}
 
     /* Live counter */
-    .live-counter {display: flex; justify-content: center; gap: 20px; margin: 16px 0;}
-    .counter-item {text-align: center; background: rgba(30,144,255,0.1); padding: 8px 16px; border-radius: var(--radius); border: 1px solid rgba(30,144,255,0.3);}
-    .count {font-size: 1.3rem; font-weight: 800; color: var(--primary); display: block;}
+    .live-counter {display: flex; flex-direction: column; gap: 12px; margin: 16px 0;}
+    .counter-item {text-align: center; background: rgba(30,144,255,0.1); padding: 12px 16px; border-radius: var(--radius); border: 1px solid rgba(30,144,255,0.3);}
+    .count {font-size: 1.4rem; font-weight: 800; color: var(--primary); display: block;}
     
     /* Recent registrations */
-    .recent-registrations {max-width: 380px; margin: 16px auto;}
-    .registration-alert {background: rgba(32,178,170,0.1); border: 1px solid rgba(32,178,170,0.3); padding: 6px 10px; border-radius: 6px; margin: 4px 0; font-size: 0.85rem; animation: fadeIn 1s ease;}
+    .recent-registrations {margin: 16px 0;}
+    .registration-alert {background: rgba(32,178,170,0.1); border: 1px solid rgba(32,178,170,0.3); padding: 8px 12px; border-radius: 6px; margin: 6px 0; font-size: 0.85rem; animation: fadeIn 1s ease;}
     
     /* Local Trust Badges */
     .local-trust-badges {
       display: flex;
-      justify-content: center;
-      gap: 15px;
+      flex-direction: column;
+      gap: 10px;
       margin: 20px 0;
-      flex-wrap: wrap;
     }
     .trust-badge {
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
+      gap: 10px;
       background: rgba(30, 144, 255, 0.1);
-      padding: 8px 16px;
+      padding: 12px 16px;
       border-radius: 20px;
       border: 1px solid rgba(30, 144, 255, 0.3);
       font-size: 0.9rem;
@@ -115,24 +112,21 @@
       background: rgba(32, 178, 170, 0.1);
       border: 1px solid rgba(32, 178, 170, 0.3);
       border-radius: 10px;
-      padding: 12px;
+      padding: 16px;
       margin: 16px 0;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
     }
     .registration-header {
       font-weight: 600;
-      margin-bottom: 8px;
-      font-size: 0.9rem;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
       text-align: center;
     }
     .registration-item {
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 4px 0;
-      font-size: 0.85rem;
+      gap: 10px;
+      padding: 8px 0;
+      font-size: 0.9rem;
       animation: fadeInUp 0.5s ease;
     }
     .status-dot {
@@ -148,25 +142,45 @@
       margin-left: auto;
     }
 
+    /* Countdown Timer */
+    .countdown-timer {
+      background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+      color: white;
+      padding: 16px;
+      border-radius: var(--radius);
+      margin: 20px 0;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+    }
+    .countdown-title {
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+    .countdown-display {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
     /* Scroll-triggered Trust Section */
     .scroll-trust-section {
       position: fixed;
       bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%) translateY(100px);
+      left: 5%;
+      right: 5%;
+      transform: translateY(100px);
       background: var(--card);
       border: 1px solid rgba(255,255,255,0.1);
       border-radius: var(--radius);
       padding: 16px;
-      max-width: 400px;
-      width: 90%;
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
       z-index: 999;
       transition: transform 0.5s ease;
       opacity: 0;
     }
     .scroll-trust-section.active {
-      transform: translateX(-50%) translateY(0);
+      transform: translateY(0);
       opacity: 1;
     }
     .scroll-trust-content {
@@ -187,18 +201,18 @@
     .trust-certification {
       background: linear-gradient(135deg, var(--card), #0d1e32);
       border-radius: var(--radius);
-      padding: 24px;
+      padding: 20px;
       margin: 30px 0;
       border: 1px solid rgba(255,255,255,0.1);
     }
     .trust-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr;
       gap: 20px;
     }
     .trust-item {
       text-align: center;
-      padding: 20px;
+      padding: 20px 0;
     }
     .trust-icon {
       font-size: 2.5rem;
@@ -212,78 +226,122 @@
       margin: 0;
       color: var(--muted);
       font-size: 0.9rem;
+      line-height: 1.5;
     }
 
     /* Floating WhatsApp */
     .floating-whatsapp {position: fixed; bottom: 20px; right: 20px; z-index: 1000;}
-    .float-wa-btn {background: #25D366; color: white; padding: 12px 18px; border-radius: 50px; display: flex; align-items: center; gap: 6px; font-weight: 600; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4); transition: var(--transition);}
+    .float-wa-btn {background: #25D366; color: white; padding: 14px 18px; border-radius: 50px; display: flex; align-items: center; gap: 8px; font-weight: 600; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4); transition: var(--transition); font-size: 0.9rem;}
     .float-wa-btn:hover {transform: translateY(-2px); box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6); text-decoration: none;}
 
     /* Sticky bottom CTA */
-    .sticky-bottom-cta {position: fixed; bottom: 0; left: 0; right: 0; background: var(--card); border-top: 1px solid rgba(255,255,255,0.1); padding: 10px 0; z-index: 999; transform: translateY(100%); transition: transform 0.3s ease;}
+    .sticky-bottom-cta {position: fixed; bottom: 0; left: 0; right: 0; background: var(--card); border-top: 1px solid rgba(255,255,255,0.1); padding: 14px 0; z-index: 999; transform: translateY(100%); transition: transform 0.3s ease;}
     .sticky-bottom-cta.active {transform: translateY(0);}
-    .sticky-content {display: flex; justify-content: space-between; align-items: center; max-width: 1120px; margin: 0 auto; padding: 0 16px;}
+    .sticky-content {display: flex; flex-direction: column; gap: 12px; align-items: center; padding: 0 4%;}
     
     /* Modal styles */
-    .modal {position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; visibility: hidden; transition: all 0.3s ease;}
+    .modal {position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; visibility: hidden; transition: all 0.3s ease; padding: 20px;}
     .modal.active {opacity: 1; visibility: visible;}
-    .modal-content {background: var(--card); border-radius: var(--radius); padding: 24px; max-width: 420px; width: 90%; text-align: center; position: relative; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 40px rgba(0,0,0,0.3);}
+    .modal-content {background: var(--card); border-radius: var(--radius); padding: 24px; width: 100%; max-width: 400px; text-align: center; position: relative; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 40px rgba(0,0,0,0.3); max-height: 90vh; overflow-y: auto;}
     
     .modal-header {margin-bottom: 16px;}
     .modal-icon {font-size: 2.5rem; margin-bottom: 8px;}
     .modal-title {font-size: 1.4rem; margin-bottom: 8px; color: var(--primary); font-weight: 700;}
-    .modal-subtitle {color: var(--muted); margin-bottom: 16px; font-size: 0.95rem;}
+    .modal-subtitle {color: var(--muted); margin-bottom: 16px; font-size: 0.95rem; line-height: 1.5;}
+    
+    /* Progress indicator */
+    .progress-indicator {
+      background: var(--card);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+    .progress-bar {
+      background: rgba(255,255,255,0.1);
+      height: 6px;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      background: var(--primary);
+      height: 100%;
+      width: 50%;
+      transition: width 0.3s ease;
+    }
+    .progress-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+      font-size: 0.8rem;
+    }
     
     .phone-form {margin: 16px 0;}
-    .phone-input-group {display: flex; margin-bottom: 12px;}
-    .country-code {flex: 0 0 auto; background: rgba(255,255,255,0.05); padding: 10px 12px; border: 1px solid rgba(255,255,255,.15); border-right: none; border-radius: 8px 0 0 8px; display: flex; align-items: center;}
-    .phone-input {border-radius: 0 8px 8px 0; flex: 1; background: #0c1a2b; color: var(--text); border: 1px solid rgba(255,255,255,.15); padding: 10px 12px; outline: none; font-family: inherit; font-size: 0.95rem;}
+    .phone-input-group {display: flex; margin-bottom: 16px;}
+    .country-code {flex: 0 0 auto; background: rgba(255,255,255,0.05); padding: 14px 12px; border: 1px solid rgba(255,255,255,.15); border-right: none; border-radius: 8px 0 0 8px; display: flex; align-items: center; font-size: 0.95rem;}
+    .phone-input {border-radius: 0 8px 8px 0; flex: 1; background: #0c1a2b; color: var(--text); border: 1px solid rgba(255,255,255,.15); padding: 14px 12px; outline: none; font-family: inherit; font-size: 0.95rem;}
     .phone-input:focus {box-shadow: var(--ring); border-color: var(--primary);}
     .phone-input.error {border-color: var(--red);}
     
     .error-text {color: var(--red); font-size: 0.8rem; margin-top: 4px; display: none;}
     .error-text.show {display: block;}
     
-    .security-badge {display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 12px; padding: 8px; background: rgba(32,178,170,0.1); border-radius: 6px; font-size: 0.8rem;}
+    /* Direct WhatsApp option */
+    .direct-whatsapp-option {
+      text-align: center;
+      margin: 20px 0;
+      padding: 16px;
+      background: rgba(37, 211, 102, 0.1);
+      border-radius: 8px;
+      border: 1px solid rgba(37, 211, 102, 0.3);
+    }
+    
+    .security-badge {display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 16px; padding: 12px; background: rgba(32,178,170,0.1); border-radius: 6px; font-size: 0.85rem;}
     
     .modal-close { position: absolute; top: 12px; right: 12px; background: transparent; border: none; font-size: 20px; color: var(--muted); cursor: pointer; }
     .modal-close:hover { color: var(--text); }
 
-    .section{padding:50px 0}
+    .section{padding:40px 0}
     .section.alt{background:#0d1e32}
-    h2{margin:0 0 12px;font-size:30px; font-weight: 800;}
+    h2{margin:0 0 16px;font-size:24px; font-weight: 800; line-height: 1.3;}
     .muted{color:var(--muted); line-height: 1.5;}
     .small{font-size:0.85rem}
     
-    .section-header {text-align: center; max-width: 680px; margin: 0 auto 32px;}
+    .section-header {text-align: center; margin: 0 auto 32px;}
     
     .cards{display:grid;gap:16px}
-    .two-col{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .three-col{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px; transition: var(--transition);}
+    .two-col{grid-template-columns:1fr}
+    .three-col{grid-template-columns:1fr}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:20px; transition: var(--transition);}
     .card:hover {transform: translateY(-3px); border-color: rgba(255,255,255,0.15); box-shadow: 0 8px 24px rgba(0,0,0,0.15);}
-    .card-media{height:140px;border-radius:8px;background:linear-gradient(135deg,#1a2f4a,#1d2a44); position: relative; overflow: hidden; background-size: cover; background-position: center;}
+    .card-media{height:160px;border-radius:8px;background:linear-gradient(135deg,#1a2f4a,#1d2a44); position: relative; overflow: hidden; background-size: cover; background-position: center;}
     .card-media.remote-work-1 {background-image: url('https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80');}
     .card-media.remote-work-2 {background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');}
-    .card-body h3{margin:12px 0 8px; font-size: 1.25rem;}
+    .card-body h3{margin:16px 0 12px; font-size: 1.25rem;}
     
-    .earnings-badge {background: var(--green); color: white; padding: 4px 12px; border-radius: 16px; font-weight: 700; font-size: 0.85rem; display: inline-block; margin-bottom: 8px;}
+    .earnings-badge {background: var(--green); color: white; padding: 6px 14px; border-radius: 16px; font-weight: 700; font-size: 0.9rem; display: inline-block; margin-bottom: 12px;}
     
-    .list{padding-left:0;margin:0;display:grid;gap:6px}
-    .list li{margin-left:0; display: flex; align-items: flex-start; gap: 6px; font-size: 0.9rem;}
-    .list li:before {content: "•"; color: var(--primary); font-weight: bold;}
+    .list{padding-left:0;margin:0;display:grid;gap:10px}
+    .list li{margin-left:0; display: flex; align-items: flex-start; gap: 8px; font-size: 0.9rem; line-height: 1.4;}
+    .list li:before {content: "•"; color: var(--primary); font-weight: bold; flex-shrink: 0; margin-top: 2px;}
     
     .bonus{text-align:center; position: relative;}
     .bonus-icon{font-size:28px;margin-bottom:8px; display: inline-flex; width: 50px; height: 50px; background: rgba(30,144,255,0.1); border-radius: 50%; align-items: center; justify-content: center;}
     .bonus:hover .bonus-icon {transform: scale(1.05); transition: var(--transition);}
     
-    .requirements{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
-    .req-item{display:flex;gap:8px;background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:12px; transition: var(--transition);}
+    .requirements{display:grid;grid-template-columns:1fr;gap:12px}
+    .req-item{display:flex;gap:12px;background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:16px; transition: var(--transition);}
     .req-item:hover {border-color: rgba(30,144,255,0.3); transform: translateY(-2px);}
-    .req-icon{font-size:20px; color: var(--primary);}
+    .req-icon{font-size:20px; color: var(--primary); flex-shrink: 0;}
     
-    .benefits-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center}
-    .benefits-media{height:220px;border-radius:10px;background:
+    .benefits-grid{display:grid;grid-template-columns:1fr;gap:20px;align-items:center}
+    .benefits-media{height:200px;border-radius:10px;background:
         radial-gradient(120px 120px at 30% 40%, #213250 0%, transparent 60%),
         linear-gradient(135deg,#1a2442,#122039); position: relative; overflow: hidden;}
     .benefits-media:after {
@@ -294,12 +352,12 @@
         opacity: 0.4;
         mix-blend-mode: overlay;
     }
-    .stats{list-style:none;padding:0;margin:0 0 12px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-    .stats li{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:12px;text-align:center; transition: var(--transition);}
+    .stats{list-style:none;padding:0;margin:0 0 16px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .stats li{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:16px;text-align:center; transition: var(--transition);}
     .stats li:hover {transform: translateY(-2px); border-color: rgba(30,144,255,0.3);}
     .stats strong {display: block; font-size: 1.5rem; color: var(--primary); margin-bottom: 4px;}
     
-    .testimonial{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px;margin:0; position: relative; transition: var(--transition);}
+    .testimonial{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:20px;margin:0; position: relative; transition: var(--transition);}
     .testimonial:hover {transform: translateY(-2px); border-color: rgba(255,255,255,0.15);}
     .testimonial:before {
         content: """;
@@ -310,25 +368,37 @@
         color: rgba(30,144,255,0.2);
         font-family: Georgia, serif;
     }
-    .testimonial p{margin:0 0 12px; font-style: italic; position: relative; z-index: 1; font-size: 0.9rem;}
+    .testimonial p{margin:0 0 12px; font-style: italic; position: relative; z-index: 1; font-size: 0.9rem; line-height: 1.5;}
     .testimonial footer {color: var(--primary); font-weight: 600; font-size: 0.88rem;}
     
     .avatar {width: 40px; height: 40px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 700; margin-bottom: 8px; font-size: 1rem;}
     
-    .cta{background:linear-gradient(180deg,#0d1e32,#091623); padding: 50px 0; text-align: center;}
-    .cta-inner{max-width: 680px; margin: 0 auto;}
-    .cta h2 {margin-bottom: 12px;}
+    .cta{background:linear-gradient(180deg,#0d1e32,#091623); padding: 40px 0; text-align: center;}
+    .cta-inner{margin: 0 auto;}
+    .cta h2 {margin-bottom: 16px;}
     
-    .faq{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:14px;margin-bottom:12px; transition: var(--transition);}
+    .faq{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:16px;margin-bottom:12px; transition: var(--transition);}
     .faq:hover {border-color: rgba(255,255,255,0.15);}
-    .faq summary{cursor:pointer; font-weight: 600; padding: 4px 0; font-size: 0.9rem;}
-    .faq div {padding: 8px 0; color: var(--muted); font-size: 0.88rem;}
+    .faq summary{cursor:pointer; font-weight: 600; padding: 4px 0; font-size: 0.95rem;}
+    .faq div {padding: 12px 0; color: var(--muted); font-size: 0.9rem; line-height: 1.5;}
     
     .footer{border-top:1px solid rgba(255,255,255,.08);padding:28px 0 16px;background:#08121e}
-    .footer-grid{display:flex;justify-content:space-between;gap:16px;align-items:flex-start; margin-bottom: 16px;}
+    .footer-grid{display:flex;flex-direction: column;gap:16px;align-items:flex-start; margin-bottom: 16px;}
     .footer-links{display:flex;gap:14px;flex-wrap:wrap}
     
-    .disclaimer {background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 10px; margin-top: 16px; font-size: 0.82rem;}
+    .disclaimer {background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 12px; margin-top: 16px; font-size: 0.82rem; line-height: 1.5;}
+    
+    /* Loading spinner */
+    .loading-spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      border-top-color: transparent;
+      animation: spin 1s ease-in-out infinite;
+      margin-right: 8px;
+    }
     
     /* Animation */
     @keyframes fadeIn {
@@ -339,6 +409,10 @@
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
     
     .fade-in {
@@ -360,60 +434,30 @@
       animation: pulse 2s infinite;
     }
     
-    /* Mobile responsiveness */
-    @media (max-width: 980px){
-      .two-col{grid-template-columns:1fr; gap: 16px;}
-      .three-col{grid-template-columns:1fr; gap: 16px;}
-      .requirements{grid-template-columns:repeat(2,minmax(0,1fr)); gap: 10px;}
-      .benefits-grid{grid-template-columns:1fr; gap: 16px;}
-      .hero-points {grid-template-columns: 1fr;}
-      .hero-copy h1 {font-size: 32px;}
-      h2 {font-size: 26px;}
-      .section {padding: 40px 0;}
-      .section-header {margin-bottom: 28px;}
-      .sticky-content {flex-direction: column; gap: 8px; text-align: center;}
-      .trust-grid {grid-template-columns: 1fr;}
+    /* Tablet responsiveness */
+    @media (min-width: 768px) {
+      .container { width: min(100%, 92%); padding: 0 4%; }
+      .hero-copy h1 { font-size: 32px; }
+      h2 { font-size: 28px; }
+      .hero-points { grid-template-columns: 1fr 1fr; }
+      .trust-grid { grid-template-columns: 1fr 1fr 1fr; }
+      .two-col { grid-template-columns: 1fr 1fr; }
+      .three-col { grid-template-columns: 1fr 1fr; }
+      .requirements { grid-template-columns: 1fr 1fr; }
+      .local-trust-badges { flex-direction: row; }
+      .footer-grid { flex-direction: row; justify-content: space-between; }
+      .sticky-content { flex-direction: row; justify-content: space-between; text-align: left; }
+      .nav-links .nav-link:not(.btn) { display: inline-block; }
+      .mobile-menu-btn { display: none; }
     }
     
-    @media (max-width: 768px) {
-      .nav-links .nav-link:not(.btn) {display: none;}
-      .mobile-menu-btn {display: block;}
-      .hero-stats {flex-direction: column; gap: 12px;}
-      .live-counter {flex-direction: column; gap: 8px;}
-      .local-trust-badges {flex-direction: column; align-items: center;}
-    }
-    
-    @media (max-width: 640px) {
-      .nav-links {gap: 8px;}
-      .btn {padding: 8px 14px; font-size: 0.9rem;}
-      .btn-lg {padding: 10px 20px;}
-      .footer-grid {flex-direction: column; gap: 16px;}
-      .footer-links {flex-direction: column; gap: 8px;}
-      .requirements {grid-template-columns: 1fr; gap: 8px;}
-      .hero {padding: 24px 0 40px;}
-      .hero-copy h1 {font-size: 28px;}
-      h2 {font-size: 24px;}
-      .section {padding: 32px 0;}
-      .cta {padding: 40px 0;}
-      .card {padding: 16px;}
-      .testimonial {padding: 16px;}
-      .stats li {padding: 10px;}
-      .benefits-media {height: 180px;}
-      .modal-content {padding: 18px;}
-      .trust-grid {grid-template-columns: 1fr;}
-    }
-    
-    @media (max-width: 480px) {
-      .hero-copy h1 {font-size: 24px;}
-      h2 {font-size: 22px;}
-      .brand {font-size: 1.1rem;}
-      .nav-link {font-size: 0.85rem;}
-      .btn {font-size: 0.85rem;}
-      .hero-points li {font-size: 0.85rem;}
-      .subtitle {font-size: 0.95rem;}
-      .float-wa-btn span {display: none;}
-      .float-wa-btn:after {content: "💬"; font-size: 1.1rem;}
-      .stat-number {font-size: 1.8rem;}
+    /* Desktop responsiveness */
+    @media (min-width: 1024px) {
+      .container { width: min(1120px, 92%); }
+      .hero-copy h1 { font-size: 38px; }
+      .three-col { grid-template-columns: 1fr 1fr 1fr; }
+      .requirements { grid-template-columns: repeat(3, 1fr); }
+      .benefits-grid { grid-template-columns: 1.1fr .9fr; }
     }
   </style>
   <!-- Google tag (gtag.js) -->
@@ -447,11 +491,18 @@
     </div>
   </header>
 
-  <!-- Hero Section - No Form -->
+  <!-- Hero Section -->
   <section id="top" class="hero">
     <div class="container hero-grid">
       <div class="hero-copy fade-in">
         <span class="urgency-badge">⏰ ¡ÚLTIMAS 3 VACANTES DISPONIBLES!</span>
+        
+        <!-- Countdown Timer -->
+        <div class="countdown-timer" id="countdownContainer">
+          <div class="countdown-title">⏰ OFERTA TERMINA EN:</div>
+          <div class="countdown-display" id="countdownTimer">30:00</div>
+        </div>
+        
         <h1>🌴 Canarios, Gana 150-300€ Diarios SIN Salir de Tu Casa</h1>
         <p class="subtitle">
           💼 Trabajos 100% online verificados para residentes de Tenerife, Gran Canaria, Lanzarote... 
@@ -525,7 +576,7 @@
           <button class="btn btn-primary btn-lg pulse" id="heroCtaBtn">
             🚀 Quiero Mi Plaza - Comenzar en 24h
           </button>
-          <p class="muted small" style="margin-top: 8px;">
+          <p class="muted small" style="margin-top: 12px;">
             ⚡ Solo 2 minutos para registrar tu interés
           </p>
         </div>
@@ -602,6 +653,21 @@
         <p class="modal-subtitle">Hemos reservado una de las últimas plazas disponibles. Completa tu registro para comenzar a ganar hoy mismo.</p>
       </div>
 
+      <!-- Progress Indicator -->
+      <div class="progress-indicator">
+        <div class="progress-header">
+          <span style="color: var(--muted);">Progreso de tu solicitud</span>
+          <span style="font-weight: 600; color: var(--primary);">Paso 1 de 2</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressBar"></div>
+        </div>
+        <div class="progress-labels">
+          <span>📝 Información</span>
+          <span>💬 WhatsApp</span>
+        </div>
+      </div>
+
       <div class="phone-form">
         <div class="phone-input-group">
           <div class="country-code">
@@ -614,6 +680,14 @@
         
         <button class="btn btn-primary btn-block pulse" id="startEarningBtn">
           💰 Comenzar a Ganar Ahora
+        </button>
+      </div>
+      
+      <!-- Direct WhatsApp Option -->
+      <div class="direct-whatsapp-option">
+        <p style="margin: 0 0 12px 0; font-size: 0.9rem;">¿Prefieres contactar directamente?</p>
+        <button class="btn btn-whatsapp" id="directWhatsAppBtn">
+          💬 Contactar por WhatsApp sin formulario
         </button>
       </div>
       
@@ -639,6 +713,7 @@
       </div>
 
       <button class="btn btn-whatsapp btn-block pulse" id="goToWhatsAppBtn">
+        <span class="loading-spinner" id="whatsappSpinner"></span>
         💬 Abrir WhatsApp Ahora
       </button>
       
@@ -648,7 +723,6 @@
     </div>
   </div>
 
-  <!-- 其余部分保持不变（Hiring Section, Benefits, Testimonials, FAQ, Footer） -->
   <!-- Hiring (Part-time & Full-time) -->
   <section id="roles" class="section">
     <div class="container">
@@ -671,7 +745,7 @@
               <li><strong>🏠 Estilo de trabajo:</strong> Flexible, remoto</li>
               <li><strong>🌊 Ideal para:</strong> Estudiantes, complementar ingresos</li>
             </ul>
-            <button class="btn btn-primary open-form-btn" style="margin-top: 12px;">Solicitar Tiempo Parcial</button>
+            <button class="btn btn-primary open-form-btn" style="margin-top: 16px;">Solicitar Tiempo Parcial</button>
           </div>
         </article>
 
@@ -688,7 +762,7 @@
               <li><strong>🏠 Estilo de trabajo:</strong> Flexible, remoto</li>
               <li><strong>🌊 Ideal para:</strong> Ingresos principales, profesionales</li>
             </ul>
-            <button class="btn btn-primary open-form-btn" style="margin-top: 12px;">Solicitar Tiempo Completo</button>
+            <button class="btn btn-primary open-form-btn" style="margin-top: 16px;">Solicitar Tiempo Completo</button>
           </div>
         </article>
       </div>
@@ -897,6 +971,7 @@
       const randomAccount = whatsappAccounts[Math.floor(Math.random() * whatsappAccounts.length)];
       let userPhoneNumber = '';
       let formSubmitted = false;
+      let conversionTracked = false;
       
       // DOM Elements
       const phoneModal = document.getElementById('phoneModal');
@@ -905,6 +980,7 @@
       const phoneError = document.getElementById('phoneError');
       const startEarningBtn = document.getElementById('startEarningBtn');
       const goToWhatsAppBtn = document.getElementById('goToWhatsAppBtn');
+      const directWhatsAppBtn = document.getElementById('directWhatsAppBtn');
       const openFormBtn = document.getElementById('openFormBtn');
       const heroCtaBtn = document.getElementById('heroCtaBtn');
       const floatWaBtn = document.getElementById('floatWaBtn');
@@ -916,10 +992,121 @@
       const scrollTrustSection = document.getElementById('scrollTrustSection');
       const scrollTrustClose = document.getElementById('scrollTrustClose');
       const registrationsList = document.getElementById('registrationsList');
+      const progressBar = document.getElementById('progressBar');
+      const countdownTimer = document.getElementById('countdownTimer');
+      const countdownContainer = document.getElementById('countdownContainer');
+      const whatsappSpinner = document.getElementById('whatsappSpinner');
       
-      // Initialize counters and real-time features
+      // 优化的事件上报函数 - 使用Google官方推荐方式
+      function trackConversion() {
+        return new Promise((resolve, reject) => {
+          if (conversionTracked) {
+            resolve();
+            return;
+          }
+          
+          console.log('Iniciando seguimiento de conversión...');
+          
+          // 方法1: 使用gtag事件
+          try {
+            gtag('event', 'conversion', {
+              'send_to': 'AW-17524155246/zKo5CK6w5q4bEO7GlaRB',
+              'value': 1.0,
+              'currency': 'EUR',
+              'transaction_id': 'canarias_' + Date.now()
+            });
+            console.log('Evento de conversión enviado via gtag');
+          } catch (error) {
+            console.error('Error con gtag:', error);
+          }
+          
+          // 方法2: 使用dataLayer push (备用方法)
+          try {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+              'event': 'conversion',
+              'send_to': 'AW-17524155246/zKo5CK6w5q4bEO7GlaRB',
+              'value': 1.0,
+              'currency': 'EUR',
+              'transaction_id': 'canarias_' + Date.now()
+            });
+            console.log('Evento de conversión enviado via dataLayer');
+          } catch (error) {
+            console.error('Error con dataLayer:', error);
+          }
+          
+          // 方法3: 使用图片像素作为最终备用方案
+          setTimeout(() => {
+            try {
+              const pixel = new Image();
+              pixel.src = `https://www.googleads.g.doubleclick.net/dcm/flcm?gcid=${Date.now()}&gclsrc=aw.ds`;
+              console.log('Pixel de conversión enviado');
+            } catch (error) {
+              console.error('Error con pixel:', error);
+            }
+          }, 100);
+          
+          conversionTracked = true;
+          
+          // 给Google Ads时间处理事件 (推荐至少300-500ms)
+          setTimeout(() => {
+            console.log('Seguimiento de conversión completado');
+            resolve();
+          }, 500);
+        });
+      }
+      
+      // 带重试机制的事件上报
+      function trackConversionWithRetry(maxRetries = 3) {
+        return new Promise(async (resolve) => {
+          for (let attempt = 1; attempt <= maxRetries; attempt++) {
+            try {
+              await trackConversion();
+              console.log(`Conversión rastreada exitosamente en el intento ${attempt}`);
+              resolve(true);
+              return;
+            } catch (error) {
+              console.warn(`Intento ${attempt} fallido:`, error);
+              if (attempt < maxRetries) {
+                await new Promise(r => setTimeout(r, 1000 * attempt));
+              }
+            }
+          }
+          console.error('Todos los intentos de seguimiento fallaron');
+          resolve(false); // 即使失败也继续流程
+        });
+      }
+      
+      // 安全跳转到WhatsApp
+      async function safeRedirectToWhatsApp(whatsappUrl) {
+        // 显示加载状态
+        if (whatsappSpinner) {
+          whatsappSpinner.style.display = 'inline-block';
+          goToWhatsAppBtn.disabled = true;
+          goToWhatsAppBtn.innerHTML = '<span class="loading-spinner"></span> Redirigiendo...';
+        }
+        
+        try {
+          // 先跟踪转化事件
+          await trackConversionWithRetry();
+          
+          // 给Google Ads足够时间处理
+          await new Promise(resolve => setTimeout(resolve, 800));
+          
+          // 然后跳转
+          console.log('Redirigiendo a WhatsApp:', whatsappUrl);
+          window.location.href = whatsappUrl;
+          
+        } catch (error) {
+          console.error('Error en redirección:', error);
+          // 即使出错也尝试跳转
+          window.location.href = whatsappUrl;
+        }
+      }
+      
+      // 初始化功能
       function initializeFeatures() {
-        // Active users counter
+        // 原有功能
         const activeUsers = document.getElementById('activeUsers');
         let count = 15 + Math.floor(Math.random() * 10);
         activeUsers.textContent = count;
@@ -929,19 +1116,31 @@
           activeUsers.textContent = count;
         }, 30000);
         
-        // Show sticky CTA after 3 seconds
+        // 显示粘性CTA
         setTimeout(() => {
           stickyCta.classList.add('active');
         }, 3000);
         
-        // Initialize real-time registrations
+        // 初始化实时注册
         generateRealTimeRegistrations();
         
-        // Set up scroll-triggered trust notification
+        // 设置滚动信任通知
         setupScrollTrustNotification();
+        
+        // 新功能：初始化倒计时
+        initializeCountdown();
+        
+        // 新功能：设置智能弹窗
+        setupSmartPopups();
+        
+        // 新功能：个性化内容
+        updatePersonalizedContent();
+        
+        // 新功能：A/B测试
+        setupABTesting();
       }
       
-      // Generate realistic real-time registration data
+      // 生成实时注册信息
       function generateRealTimeRegistrations() {
         const registrations = [];
         const count = 3 + Math.floor(Math.random() * 3); // 3-5 registrations
@@ -960,184 +1159,395 @@
           `);
         }
         
-        registrationsList.innerHTML = registrations.join('');
+        if (registrationsList) {
+          registrationsList.innerHTML = registrations.join('');
+        }
         
-        // Update every 30 seconds with new random data
+        // 每30秒更新一次
         setTimeout(generateRealTimeRegistrations, 30000);
       }
       
-      // Scroll-triggered trust notification
+      // 设置滚动信任通知
       function setupScrollTrustNotification() {
         let trustShown = false;
         
         window.addEventListener('scroll', function() {
           const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
           
-          if (scrollPercent > 40 && !trustShown) {
+          if (scrollPercent > 40 && !trustShown && scrollTrustSection) {
             trustShown = true;
             showScrollTrustNotification();
           }
         });
         
-        scrollTrustClose.addEventListener('click', function() {
-          scrollTrustSection.classList.remove('active');
-        });
+        if (scrollTrustClose) {
+          scrollTrustClose.addEventListener('click', function() {
+            scrollTrustSection.classList.remove('active');
+          });
+        }
       }
       
       function showScrollTrustNotification() {
         setTimeout(() => {
-          scrollTrustSection.classList.add('active');
-          
-          // Auto-hide after 8 seconds
-          setTimeout(() => {
-            scrollTrustSection.classList.remove('active');
-          }, 8000);
+          if (scrollTrustSection) {
+            scrollTrustSection.classList.add('active');
+            
+            // 8秒后自动隐藏
+            setTimeout(() => {
+              scrollTrustSection.classList.remove('active');
+            }, 8000);
+          }
         }, 1000);
       }
       
-      // Open phone modal
-      function openPhoneModal() {
-        phoneModal.classList.add('active');
-        phoneInput.focus();
+      // 初始化倒计时
+      function initializeCountdown() {
+        let timeLeft = 30 * 60; // 30分钟
+        
+        const countdown = setInterval(() => {
+          timeLeft--;
+          const minutes = Math.floor(timeLeft / 60);
+          const seconds = timeLeft % 60;
+          if (countdownTimer) {
+            countdownTimer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+          }
+          
+          // 最后5分钟警告
+          if (timeLeft === 5 * 60 && countdownContainer) {
+            countdownContainer.style.background = 'linear-gradient(135deg, #ff4757, #ff6b6b)';
+            countdownContainer.style.animation = 'pulse 1s infinite';
+          }
+          
+          if (timeLeft <= 0) {
+            clearInterval(countdown);
+            if (countdownTimer) {
+              countdownTimer.textContent = "¡OFERTA TERMINADA!";
+            }
+            if (countdownContainer) {
+              countdownContainer.style.background = '#666';
+            }
+            // 禁用所有CTA按钮
+            document.querySelectorAll('.btn-primary, .open-form-btn').forEach(btn => {
+              btn.disabled = true;
+              btn.textContent = 'Oferta Finalizada';
+              btn.style.opacity = '0.6';
+            });
+          }
+        }, 1000);
       }
       
-      // Close phone modal
+      // 智能弹窗系统
+      function setupSmartPopups() {
+        let scrollDepth = 0;
+        let timeOnPage = 0;
+        let exitIntentDetected = false;
+        
+        // 跟踪滚动深度
+        window.addEventListener('scroll', function() {
+          scrollDepth = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+          
+          // 60%滚动深度触发
+          if (scrollDepth > 60 && !formSubmitted) {
+            showScrollCTA();
+          }
+        });
+        
+        // 跟踪页面停留时间
+        setInterval(() => {
+          timeOnPage++;
+          
+          // 25秒后显示弹窗
+          if (timeOnPage === 25 && scrollDepth > 20 && !formSubmitted) {
+            showTimeBasedCTA();
+          }
+        }, 1000);
+        
+        // 退出意图检测
+        document.addEventListener('mouseout', function(e) {
+          if (e.clientY < 50 && !exitIntentDetected && !formSubmitted && scrollDepth > 10) {
+            exitIntentDetected = true;
+            showExitIntentModal();
+          }
+        });
+      }
+      
+      // 显示退出意图弹窗
+      function showExitIntentModal() {
+        if (document.getElementById('exitModal')) return;
+        
+        const exitModalHtml = `
+          <div class="modal active exit-modal" id="exitModal">
+            <div class="modal-content">
+              <button class="modal-close" onclick="closeExitModal()" aria-label="Cerrar">&times;</button>
+              <div class="modal-header">
+                <div class="modal-icon">🚨</div>
+                <h3 class="modal-title">¡Espera! No te vayas aún</h3>
+                <p class="modal-subtitle">Última oportunidad para asegurar tu plaza con ingresos de 150-300€ diarios</p>
+              </div>
+              <button class="btn btn-primary btn-block" onclick="openPhoneModal(); closeExitModal();">
+                🚀 Quiero Mi Plaza
+              </button>
+              <button class="btn" onclick="closeExitModal()" style="margin-top: 8px; background: transparent; border: 1px solid var(--muted);">
+                Continuar navegando
+              </button>
+            </div>
+          </div>
+        `;
+        
+        document.body.insertAdjacentHTML('beforeend', exitModalHtml);
+      }
+      
+      // 关闭退出弹窗
+      function closeExitModal() {
+        const exitModal = document.getElementById('exitModal');
+        if (exitModal) {
+          exitModal.remove();
+        }
+      }
+      
+      // 个性化内容
+      function updatePersonalizedContent() {
+        const hour = new Date().getHours();
+        let greeting = '';
+        
+        if (hour < 12) greeting = '¡Buenos días!';
+        else if (hour < 18) greeting = '¡Buenas tardes!';
+        else greeting = '¡Buenas noches!';
+        
+        // 更新标题
+        const heroTitle = document.querySelector('.hero-copy h1');
+        if (heroTitle) {
+          heroTitle.innerHTML = `${greeting} Canarios, Gana 150-300€ Diarios SIN Salir de Tu Casa`;
+        }
+      }
+      
+      // A/B测试
+      function setupABTesting() {
+        const testVariations = {
+          ctaText: [
+            "🚀 Quiero Mi Plaza - Comenzar en 24h",
+            "💰 Comenzar a Ganar Dinero Hoy", 
+            "🎯 Obtener Mi Trabajo Remoto",
+            "🌴 Trabajar Desde Canarias Ahora"
+          ]
+        };
+        
+        const ctaVariant = Math.floor(Math.random() * testVariations.ctaText.length);
+        
+        // 更新主要CTA按钮
+        const mainCtas = document.querySelectorAll('#heroCtaBtn, .sticky-content .btn');
+        mainCtas.forEach(btn => {
+          if (btn.id !== 'goToWhatsAppBtn') {
+            btn.textContent = testVariations.ctaText[ctaVariant];
+          }
+        });
+      }
+      
+      // 更新进度条
+      function updateProgress(step) {
+        if (progressBar) {
+          if (step === 2) {
+            progressBar.style.width = '100%';
+            const progressHeader = document.querySelector('.progress-header span:last-child');
+            if (progressHeader) {
+              progressHeader.textContent = 'Paso 2 de 2';
+            }
+          }
+        }
+      }
+      
+      // 打开电话模态框
+      function openPhoneModal() {
+        if (phoneModal) {
+          phoneModal.classList.add('active');
+        }
+        if (phoneInput) {
+          phoneInput.focus();
+        }
+        // 重置进度条
+        if (progressBar) {
+          progressBar.style.width = '50%';
+          const progressHeader = document.querySelector('.progress-header span:last-child');
+          if (progressHeader) {
+            progressHeader.textContent = 'Paso 1 de 2';
+          }
+        }
+      }
+      
+      // 关闭电话模态框
       function closePhoneModal() {
-        phoneModal.classList.remove('active');
+        if (phoneModal) {
+          phoneModal.classList.remove('active');
+        }
         clearPhoneError();
       }
       
-      // Open success modal
+      // 打开成功模态框
       function openSuccessModal() {
-        successModal.classList.add('active');
+        if (successModal) {
+          successModal.classList.add('active');
+        }
       }
       
-      // Close success modal
+      // 关闭成功模态框
       function closeSuccessModal() {
-        successModal.classList.remove('active');
+        if (successModal) {
+          successModal.classList.remove('active');
+        }
       }
       
-      // Clear phone error
+      // 清除电话错误
       function clearPhoneError() {
-        phoneInput.classList.remove('error');
-        phoneError.classList.remove('show');
+        if (phoneInput) {
+          phoneInput.classList.remove('error');
+        }
+        if (phoneError) {
+          phoneError.classList.remove('show');
+        }
       }
       
-      // Validate phone number
+      // 验证电话号码
       function validatePhoneNumber(phone) {
         const cleaned = phone.replace(/\D/g, '');
         return cleaned.length >= 8;
       }
       
-      // Generate WhatsApp link
+      // 生成WhatsApp链接
       function generateWhatsAppLink(phone) {
         const message = encodeURIComponent(`Hola, me interesan los trabajos remotos en Canarias. Mi número es: ${phone}`);
         return `https://wa.me/${randomAccount}?text=${message}`;
       }
       
-      // Track conversion and redirect
-      function trackAndRedirect(whatsappUrl) {
-        // Track conversion event
-        gtag('event', 'conversion', {
-          'send_to': 'AW-17524155246/zKo5CK6w5q4bEO7GlaRB',
-          'value': 1.0,
-          'currency': 'EUR'
-        });
-        
-        // Redirect to WhatsApp
-        setTimeout(() => {
-          window.location.href = whatsappUrl;
-        }, 300);
-      }
-      
-      // Handle phone form submission
+      // 处理电话表单提交
       function handlePhoneSubmit() {
-        const phone = phoneInput.value.trim();
+        const phone = phoneInput ? phoneInput.value.trim() : '';
         
         if (!validatePhoneNumber(phone)) {
-          phoneInput.classList.add('error');
-          phoneError.classList.add('show');
-          phoneInput.focus();
+          if (phoneInput) {
+            phoneInput.classList.add('error');
+          }
+          if (phoneError) {
+            phoneError.classList.add('show');
+          }
+          if (phoneInput) {
+            phoneInput.focus();
+          }
           return;
         }
         
         userPhoneNumber = phone;
         formSubmitted = true;
         
-        // Close phone modal and open success modal
+        // 更新进度条
+        updateProgress(2);
+        
+        // 关闭电话模态框并打开成功模态框
         closePhoneModal();
         openSuccessModal();
         
-        // Prepare WhatsApp URL
+        // 准备WhatsApp URL
         const whatsappUrl = generateWhatsAppLink(phone);
         
-        // Update WhatsApp button URL
-        goToWhatsAppBtn.onclick = function() {
-          trackAndRedirect(whatsappUrl);
-        };
+        // 更新WhatsApp按钮事件
+        if (goToWhatsAppBtn) {
+          goToWhatsAppBtn.onclick = function() {
+            safeRedirectToWhatsApp(whatsappUrl);
+          };
+        }
         
-        // Auto-redirect after 3 seconds
+        // 3秒后自动跳转
         setTimeout(() => {
-          trackAndRedirect(whatsappUrl);
+          safeRedirectToWhatsApp(whatsappUrl);
         }, 3000);
       }
       
-      // Mobile menu toggle
-      mobileMenuBtn.addEventListener('click', function() {
-        mobileMenu.classList.toggle('active');
-      });
+      // 直接WhatsApp跳转（无表单）
+      function handleDirectWhatsApp() {
+        const whatsappUrl = `https://wa.me/${randomAccount}?text=${encodeURIComponent("Hola, estoy interesado en los trabajos remotos en Canarias")}`;
+        safeRedirectToWhatsApp(whatsappUrl);
+      }
       
-      // Close mobile menu when clicking outside
+      // 事件监听器
+      if (openFormBtn) {
+        openFormBtn.addEventListener('click', openPhoneModal);
+      }
+      if (heroCtaBtn) {
+        heroCtaBtn.addEventListener('click', openPhoneModal);
+      }
+      if (floatWaBtn) {
+        floatWaBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          handleDirectWhatsApp();
+        });
+      }
+      
+      // 直接WhatsApp按钮
+      if (directWhatsAppBtn) {
+        directWhatsAppBtn.addEventListener('click', handleDirectWhatsApp);
+      }
+      
+      // 电话表单提交
+      if (startEarningBtn) {
+        startEarningBtn.addEventListener('click', handlePhoneSubmit);
+      }
+      
+      // 移动菜单切换
+      if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', function() {
+          if (mobileMenu) {
+            mobileMenu.classList.toggle('active');
+          }
+        });
+      }
+      
+      // 关闭移动菜单当点击外部
       document.addEventListener('click', function(e) {
-        if (!mobileMenu.contains(e.target) && e.target !== mobileMenuBtn) {
+        if (mobileMenu && mobileMenuBtn && !mobileMenu.contains(e.target) && e.target !== mobileMenuBtn) {
           mobileMenu.classList.remove('active');
         }
       });
       
-      // Event listeners for modal buttons
-      openFormBtn.addEventListener('click', openPhoneModal);
-      heroCtaBtn.addEventListener('click', openPhoneModal);
+      // 电话输入事件
+      if (phoneInput) {
+        phoneInput.addEventListener('input', function() {
+          // 只允许数字
+          this.value = this.value.replace(/\D/g, '');
+          clearPhoneError();
+        });
+        
+        phoneInput.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') {
+            handlePhoneSubmit();
+          }
+        });
+      }
       
-      // Float WhatsApp button - direct to WhatsApp without phone collection
-      floatWaBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        const whatsappUrl = `https://wa.me/${randomAccount}?text=${encodeURIComponent("Hola, estoy interesado en los trabajos remotos en Canarias")}`;
-        trackAndRedirect(whatsappUrl);
-      });
+      // 模态框关闭按钮
+      if (phoneModalCloseBtn) {
+        phoneModalCloseBtn.addEventListener('click', closePhoneModal);
+      }
+      if (successModalCloseBtn) {
+        successModalCloseBtn.addEventListener('click', closeSuccessModal);
+      }
       
-      // Phone input events
-      phoneInput.addEventListener('input', function() {
-        // Only allow numbers
-        this.value = this.value.replace(/\D/g, '');
-        clearPhoneError();
-      });
+      // 通过点击外部关闭模态框
+      if (phoneModal) {
+        phoneModal.addEventListener('click', function(e) {
+          if (e.target === phoneModal) {
+            closePhoneModal();
+          }
+        });
+      }
       
-      phoneInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-          handlePhoneSubmit();
-        }
-      });
+      if (successModal) {
+        successModal.addEventListener('click', function(e) {
+          if (e.target === successModal) {
+            closeSuccessModal();
+          }
+        });
+      }
       
-      startEarningBtn.addEventListener('click', handlePhoneSubmit);
-      
-      // Modal close buttons
-      phoneModalCloseBtn.addEventListener('click', closePhoneModal);
-      successModalCloseBtn.addEventListener('click', closeSuccessModal);
-      
-      // Close modals by clicking outside
-      phoneModal.addEventListener('click', function(e) {
-        if (e.target === phoneModal) {
-          closePhoneModal();
-        }
-      });
-      
-      successModal.addEventListener('click', function(e) {
-        if (e.target === successModal) {
-          closeSuccessModal();
-        }
-      });
-      
-      // Add smooth scrolling for navigation
+      // 为导航添加平滑滚动
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (anchor.getAttribute('href') !== '#' && 
             !anchor.classList.contains('open-form-btn')) {
@@ -1158,9 +1568,9 @@
         }
       });
       
-      // Update all CTA buttons on the page to open phone modal
+      // 更新页面上的所有CTA按钮以打开电话模态框
       document.querySelectorAll('.open-form-btn, .btn-primary').forEach(btn => {
-        if (!btn.id && !btn.onclick) { // Avoid duplicating events on buttons with specific IDs
+        if (!btn.id && !btn.onclick) { // 避免在具有特定ID的按钮上重复事件
           btn.addEventListener('click', function(e) {
             e.preventDefault();
             openPhoneModal();
@@ -1168,8 +1578,12 @@
         }
       });
       
-      // Initialize all features
+      // 初始化所有功能
       initializeFeatures();
+      
+      // 将全局函数暴露给DOM
+      window.openPhoneModal = openPhoneModal;
+      window.closeExitModal = closeExitModal;
     });
   </script>
 </body>
