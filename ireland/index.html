@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WorkRemote.ie | Ireland's #1 Remote Work Platform</title>
+  <meta name="description" content="Join thousands of Irish professionals earning €300+ daily from home. Flexible hours, daily payments, no experience needed. Apply now!" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17524155246"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17524155246');
+    
+    // Função melhorada para relatar conversão
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          // Adicionar timeout para garantir que o evento seja enviar
+          setTimeout(function() {
+            window.location = url;
+          }, 300);
+        }
+      };
+      
+      // Enviar evento de conversão
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17524155246/cu5hCN3u7rgbEO7GlaRB',
+        'event_callback': callback,
+        'value': 8,
+        'currency': 'USD'
+      });
+      
+      // Enviar evento adicional de lead para melhor rastreamento
+      gtag('event', 'generate_lead', {
+        'currency': 'USD',
+        'value': 8
+      });
+      
+      return false;
+    }
+  </script>
+  
+  <style>
+    :root {
+      --emerald: #169873;
+      --emerald-dark: #0d7a5a;
+      --emerald-light: #1fb989;
+      --white: #ffffff;
+      --off-white: #f8fafc;
+      --gray-light: #e2e8f0;
+      --gray: #94a3b8;
+      --gray-dark: #475569;
+      --dark: #1e293b;
+      --darker: #0f172a;
+      --orange: #f97316;
+      --orange-dark: #ea580c;
+      --orange-light: #fb923c;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --radius: 6px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      background: var(--off-white);
+      color: var(--dark);
+      font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+      line-height: 1.5;
+      font-size: 15px;
+      scroll-behavior: smooth;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(1120px, 94%);
+      margin-inline: auto;
+    }
+
+    /* Navigation */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--gray-light);
+      padding: 12px 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--emerald);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-flag {
+      display: flex;
+      gap: 2px;
+    }
+
+    .flag-stripe {
+      width: 6px;
+      height: 16px;
+    }
+
+    .flag-green {
+      background: var(--emerald);
+    }
+
+    .flag-white {
+      background: var(--white);
+    }
+
+    .flag-orange {
+      background: var(--orange);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .nav-link:hover {
+      color: var(--emerald);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background: var(--emerald);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      background: var(--emerald-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-block {
+      width: 100%;
+    }
+
+    .btn-lg {
+      padding: 12px 24px;
+      font-size: 1.05rem;
+    }
+
+    .btn-cta {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--emerald), var(--emerald-light));
+      box-shadow: 0 4px 15px rgba(22, 152, 115, 0.4);
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(22, 152, 115, 0.6);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      padding: 40px 0;
+      background: linear-gradient(135deg, var(--emerald) 0%, var(--emerald-dark) 100%);
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .hero-main {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .hero-badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: inline-block;
+      width: fit-content;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 20px;
+    }
+
+    .hero-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 15px 0;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 500;
+    }
+
+    .feature-icon {
+      color: var(--orange);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--orange);
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Form Card */
+    .form-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 25px;
+      box-shadow: var(--shadow-lg);
+      color: var(--dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .form-card:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--emerald), var(--orange));
+    }
+
+    .form-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--emerald);
+    }
+
+    .form-subtitle {
+      color: var(--gray-dark);
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    .form-progress {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 20px;
+    }
+
+    .progress-step {
+      flex: 1;
+      height: 4px;
+      background: var(--gray-light);
+      border-radius: 2px;
+    }
+
+    .progress-step.active {
+      background: var(--emerald);
+    }
+
+    .field {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--gray-light);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--emerald);
+      box-shadow: 0 0 0 3px rgba(22, 152, 115, 0.2);
+    }
+
+    .phone-input-group {
+      display: flex;
+    }
+
+    .country-code {
+      flex: 0 0 auto;
+      background: var(--gray-light);
+      padding: 12px;
+      border: 1px solid var(--gray-light);
+      border-right: none;
+      border-radius: var(--radius) 0 0 var(--radius);
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+    }
+
+    .phone-input {
+      border-radius: 0 var(--radius) var(--radius) 0;
+      flex: 1;
+    }
+
+    .checkbox-field {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .checkbox-field input {
+      width: auto;
+      margin-top: 3px;
+    }
+
+    .checkbox-field label {
+      margin-bottom: 0;
+      font-weight: normal;
+    }
+
+    .form-note {
+      font-size: 0.85rem;
+      color: var(--gray);
+      margin-top: 4px;
+    }
+
+    .security-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 15px;
+      padding: 10px;
+      background: rgba(22, 152, 115, 0.1);
+      border-radius: var(--radius);
+      font-size: 0.85rem;
+    }
+
+    .security-badge svg {
+      flex-shrink: 0;
+    }
+
+    .form-status {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+    }
+
+    .form-status.success {
+      background: rgba(22, 152, 115, 0.1);
+      color: var(--emerald);
+      border: 1px solid rgba(22, 152, 115, 0.2);
+    }
+
+    .form-status.error {
+      background: rgba(239, 68, 68, 0.1);
+      color: #ef4444;
+      border: 1px solid rgba(239, 68, 68, 0.2);
+    }
+
+    /* Job Carousel */
+    .job-carousel {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius);
+      padding: 15px;
+      margin: 20px 0;
+      overflow: hidden;
+      position: relative;
+      height: 70px;
+      backdrop-filter: blur(10px);
+    }
+
+    .job-carousel-track {
+      position: absolute;
+      width: 100%;
+      transition: transform 0.8s ease;
+    }
+
+    .job-listing {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      height: 70px;
+    }
+
+    .job-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .job-company {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--orange);
+    }
+
+    .job-title {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    .job-salary {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--white);
+      background: rgba(249, 115, 22, 0.3);
+      padding: 6px 12px;
+      border-radius: var(--radius);
+    }
+
+    .job-separator {
+      opacity: 0.7;
+      margin: 0 8px;
+    }
+
+    /* Sections */
+    .section {
+      padding: 50px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+      color: var(--emerald);
+    }
+
+    .section-subtitle {
+      color: var(--gray-dark);
+      font-size: 1.1rem;
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      gap: 20px;
+    }
+
+    .two-col {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .three-col {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 25px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border: 1px solid var(--gray-light);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    .card-icon.green {
+      background: rgba(22, 152, 115, 0.1);
+      color: var(--emerald);
+    }
+
+    .card-icon.orange {
+      background: rgba(249, 115, 22, 0.1);
+      color: var(--orange);
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--emerald);
+    }
+
+    .card-badge {
+      background: var(--emerald);
+      color: var(--white);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    .card-list {
+      list-style: none;
+      padding: 0;
+      margin: 15px 0;
+    }
+
+    .card-list li {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .card-list li:before {
+      content: "✓";
+      color: var(--emerald);
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    /* Testimonials */
+    .testimonial {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 25px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .testimonial:before {
+      content: """;
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      font-size: 60px;
+      color: rgba(22, 152, 115, 0.1);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    .testimonial-content {
+      position: relative;
+      z-index: 1;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .testimonial-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--emerald);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .testimonial-info h4 {
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .testimonial-info p {
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+
+    /* FAQ */
+    .faq {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 15px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--gray-light);
+    }
+
+    .faq summary {
+      cursor: pointer;
+      font-weight: 600;
+      padding: 5px 0;
+      font-size: 1rem;
+    }
+
+    .faq div {
+      padding: 10px 0;
+      color: var(--gray-dark);
+    }
+
+    /* CTA Section */
+    .cta {
+      background: linear-gradient(135deg, var(--emerald) 0%, var(--emerald-dark) 100%);
+      color: var(--white);
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .cta-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .cta-subtitle {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 25px;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--darker);
+      color: var(--white);
+      padding: 40px 0 20px;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 30px;
+    }
+
+    .footer-brand {
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--emerald);
+      margin-bottom: 10px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: var(--gray);
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 20px;
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    /* Modals */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-content {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 30px;
+      max-width: 450px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: transparent;
+      border: none;
+      font-size: 24px;
+      color: var(--gray);
+      cursor: pointer;
+    }
+
+    .modal-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--emerald);
+    }
+
+    .modal-message {
+      margin-bottom: 20px;
+      line-height: 1.6;
+      color: var(--gray-dark);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.6s; }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+      
+      .three-col {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-grid {
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .footer-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+      
+      .section-title {
+        font-size: 1.7rem;
+      }
+      
+      .cta-title {
+        font-size: 1.8rem;
+      }
+      
+      .nav-links .nav-link {
+        display: none;
+      }
+      
+      .hero-stats {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 1.7rem;
+      }
+      
+      .section {
+        padding: 40px 0;
+      }
+      
+      .card {
+        padding: 20px;
+      }
+      
+      .form-card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">
+        <span>WorkRemote.ie</span>
+        <div class="brand-flag">
+          <div class="flag-stripe flag-green"></div>
+          <div class="flag-stripe flag-white"></div>
+          <div class="flag-stripe flag-orange"></div>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#opportunities" class="nav-link">Opportunities</a>
+        <a href="#benefits" class="nav-link">Benefits</a>
+        <a href="#testimonials" class="nav-link">Success Stories</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#" class="btn btn-primary open-form-btn">Apply Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="top" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-main fade-in">
+          <div class="hero-badge">LIMITED TIME: 80% BONUS FOR TODAY'S APPLICANTS!</div>
+          <h1 class="hero-title">Earn €300+ Daily From Your Home in Ireland</h1>
+          <p class="hero-subtitle">Join 5,000+ Irish professionals who've transformed their lives with flexible remote work. No experience needed - start earning within 24 hours!</p>
+          
+          <div class="hero-features">
+            <div class="feature">
+              <span class="feature-icon">✓</span>
+              <span>Flexible hours that fit your life</span>
+            </div>
+            <div class="feature">
+              <span class="feature-icon">✓</span>
+              <span>Daily payments via WhatsApp</span>
+            </div>
+            <div class="feature">
+              <span class="feature-icon">✓</span>
+              <span>Zero application fees</span>
+            </div>
+          </div>
+          
+          <!-- Job Carousel -->
+          <div class="job-carousel fade-in">
+            <div class="job-carousel-track" id="jobCarousel">
+              <div class="job-listing">
+                <div class="job-info">
+                  <span class="job-company">Amazon</span>
+                  <span class="job-separator">-</span>
+                  <span class="job-title">Customer Support Specialist</span>
+                </div>
+                <span class="job-salary">€48/hour</span>
+              </div>
+              <div class="job-listing">
+                <div class="job-info">
+                  <span class="job-company">Google</span>
+                  <span class="job-separator">-</span>
+                  <span class="job-title">Data Entry Assistant</span>
+                </div>
+                <span class="job-salary">€45/hour</span>
+              </div>
+              <div class="job-listing">
+                <div class="job-info">
+                  <span class="job-company">Microsoft</span>
+                  <span class="job-separator">-</span>
+                  <span class="job-title">Virtual Assistant</span>
+                </div>
+                <span class="job-salary">€42/hour</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="hero-stats">
+            <div class="stat">
+              <div class="stat-number">5,000+</div>
+              <div class="stat-label">Irish Members</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">€300+</div>
+              <div class="stat-label">Average Daily Pay</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">24h</div>
+              <div class="stat-label">To First Payment</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Application Form -->
+        <div class="form-card fade-in delay-1">
+          <h2 class="form-title">Start Earning in 24 Hours</h2>
+          <p class="form-subtitle">Complete this quick application to receive your first tasks via WhatsApp</p>
+          
+          <div class="form-progress">
+            <div class="progress-step active"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+          </div>
+
+          <form id="applicationForm" novalidate>
+            <div class="field">
+              <label for="name">Full Name <span style="color: var(--emerald)">*</span></label>
+              <input id="name" name="name" type="text" placeholder="Your full name" required autocomplete="name" />
+            </div>
+
+            <div class="field">
+              <label for="whatsapp">WhatsApp Number <span style="color: var(--emerald)">*</span></label>
+              <div class="phone-input-group">
+                <div class="country-code">+353</div>
+                <input id="whatsapp" name="whatsapp" type="tel" placeholder="85 123 4567" required class="phone-input" />
+              </div>
+              <p class="form-note">All tasks and payments are managed through WhatsApp</p>
+            </div>
+
+            <div class="field">
+              <label for="age">Age <span style="color: var(--emerald)">*</span></label>
+              <input id="age" name="age" type="text" placeholder="e.g. 25" required inputmode="numeric" pattern="[0-9]*" />
+              <p class="form-note">Must be 18 years or older to apply</p>
+            </div>
+
+            <div class="field checkbox-field">
+              <input id="consent" name="consent" type="checkbox" required checked />
+              <label for="consent">I accept the <a href="#privacy">Privacy Policy</a> and <a href="#terms">Terms of Service</a></label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-cta pulse">Apply Now & Start Earning</button>
+            
+            <div class="security-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="var(--emerald)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9 12L11 14L15 10" stroke="var(--emerald)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>Your information is secure and never shared with third parties</span>
+            </div>
+            
+            <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Opportunities Section -->
+  <section id="opportunities" class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 class="section-title">Choose Your Flexible Work Style</h2>
+        <p class="section-subtitle">Earnings shown are typical ranges reported by our Irish members. Your results depend on time and availability.</p>
+      </div>
+
+      <div class="cards two-col">
+        <article class="card fade-in">
+          <div class="card-icon green">💼</div>
+          <div class="card-badge">€150 - €300 / day</div>
+          <h3 class="card-title">Part-time Flexibility</h3>
+          <ul class="card-list">
+            <li><strong>Flexible hours:</strong> 1–3 hours per day</li>
+            <li><strong>Daily payments</strong> via WhatsApp after task completion</li>
+            <li><strong>Smartphone only</strong> - no computer needed</li>
+            <li><strong>Perfect for students</strong> and those with other commitments</li>
+            <li><strong>Basic digital literacy</strong> is helpful</li>
+          </ul>
+          <a href="#" class="btn btn-primary btn-block open-form-btn" style="margin-top: 15px;">Apply for Part-time</a>
+        </article>
+
+        <article class="card fade-in delay-1">
+          <div class="card-icon orange">🚀</div>
+          <div class="card-badge">€300+ / day</div>
+          <h3 class="card-title">Full-time Earnings</h3>
+          <ul class="card-list">
+            <li><strong>Flexible hours:</strong> 3–6 hours per day</li>
+            <li><strong>Daily payments</strong> via WhatsApp after task completion</li>
+            <li><strong>Smartphone or computer</strong> - your choice</li>
+            <li><strong>Ideal for primary income</strong> seekers</li>
+            <li><strong>Strong digital skills</strong> preferred</li>
+          </ul>
+          <a href="#" class="btn btn-primary btn-block open-form-btn" style="margin-top: 15px;">Apply for Full-time</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section id="benefits" class="section" style="background: var(--off-white);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 class="section-title">Why Irish Professionals Choose Us</h2>
+        <p class="section-subtitle">Discover what makes WorkRemote.ie the preferred choice for flexible work across Ireland</p>
+      </div>
+      
+      <div class="cards three-col">
+        <div class="card fade-in">
+          <div class="card-icon green">💶</div>
+          <h3 class="card-title">Daily Payments</h3>
+          <p>Get paid every day directly to your account via WhatsApp. No waiting for weekly or monthly paychecks.</p>
+        </div>
+        <div class="card fade-in delay-1">
+          <div class="card-icon orange">🏠</div>
+          <h3 class="card-title">Work From Anywhere</h3>
+          <p>All you need is your smartphone and internet. Work from home, café, or anywhere in Ireland.</p>
+        </div>
+        <div class="card fade-in delay-2">
+          <div class="card-icon green">⏰</div>
+          <h3 class="card-title">Flexible Schedule</h3>
+          <p>Choose your own hours that fit your lifestyle. Perfect for parents, students, and anyone seeking balance.</p>
+        </div>
+        <div class="card fade-in">
+          <div class="card-icon orange">🚫</div>
+          <h3 class="card-title">No Fees Ever</h3>
+          <p>Zero application fees, zero hidden costs. We believe you should keep 100% of what you earn.</p>
+        </div>
+        <div class="card fade-in delay-1">
+          <div class="card-icon green">📱</div>
+          <h3 class="card-title">WhatsApp Managed</h3>
+          <p>All tasks, instructions, and payments are handled through WhatsApp for simplicity and convenience.</p>
+        </div>
+        <div class="card fade-in delay-2">
+          <div class="card-icon orange">🇮🇪</div>
+          <h3 class="card-title">Irish Focused</h3>
+          <p>Specifically designed for the Irish market with local support and opportunities tailored for you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 class="section-title">Success Stories From Across Ireland</h2>
+        <p class="section-subtitle">Hear from real Irish professionals who've transformed their lives with remote work</p>
+      </div>
+      
+      <div class="cards three-col">
+        <div class="testimonial fade-in">
+          <div class="testimonial-content">
+            "I was skeptical at first, but the daily payments via WhatsApp convinced me to try. Now I'm earning €280 daily working just 3 hours from my Dublin apartment. Life-changing!"
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">S</div>
+            <div class="testimonial-info">
+              <h4>Sarah, 28</h4>
+              <p>Dublin</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial fade-in delay-1">
+          <div class="testimonial-content">
+            "As a single parent in Cork, the flexibility is everything. I work during nap times and after bedtime. The extra €150-€200 daily has completely changed our financial situation."
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">J</div>
+            <div class="testimonial-info">
+              <h4>James, 34</h4>
+              <p>Cork</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial fade-in delay-2">
+          <div class="testimonial-content">
+            "I lost my retail job in Galway during the pandemic. WorkRemote.ie gave me a fresh start. Now I earn more in 3 hours than I did in 8 hours at my old job. Thank you!"
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">E</div>
+            <div class="testimonial-info">
+              <h4>Emma, 26</h4>
+              <p>Galway</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container cta-inner fade-in">
+      <div class="hero-badge" style="background: rgba(255, 255, 255, 0.2); margin: 0 auto 20px;">LIMITED POSITIONS AVAILABLE</div>
+      <h2 class="cta-title">Secure Your Spot Today</h2>
+      <p class="cta-subtitle">New tasks are added daily, but positions fill quickly. Apply now to lock in the 80% registration bonus!</p>
+      <a class="btn btn-primary btn-lg btn-cta pulse open-form-btn" href="#">Apply Now & Start Earning</a>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="section" style="background: var(--off-white);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Everything you need to know before starting your remote work journey</p>
+      </div>
+      
+      <div class="faq fade-in">
+        <summary>Is there any fee to apply or join?</summary>
+        <div>Absolutely not! We never charge application or registration fees. Our platform is completely free to join and use. We only make money when you do.</div>
+      </div>
+      <div class="faq fade-in">
+        <summary>How quickly will I receive my first payment?</summary>
+        <div>Most of our Irish members receive their first payment within 24 hours of completing their initial tasks. Payments are processed daily via WhatsApp after tasks pass our quality checks.</div>
+      </div>
+      <div class="faq fade-in">
+        <summary>What equipment do I need to get started?</summary>
+        <div>A smartphone and stable internet connection are sufficient for most tasks. Some roles may prefer a computer, but it's not necessary for the majority of our opportunities.</div>
+      </div>
+      <div class="faq fade-in">
+        <summary>How will you contact me with tasks?</summary>
+        <div>We communicate primarily through WhatsApp. After you apply, you'll receive step-by-step instructions via WhatsApp. All tasks, support, and payments are managed through this platform for convenience and security.</div>
+      </div>
+      <div class="faq fade-in">
+        <summary>Do I need previous experience?</summary>
+        <div>No previous experience is required for most positions. We provide clear instructions and support to help you succeed. Basic digital literacy is helpful but we'll guide you through everything.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">WorkRemote.ie</div>
+          <p style="color: var(--gray); margin-bottom: 10px;">Ireland's #1 platform for flexible remote work</p>
+          <p style="color: var(--gray); font-size: 0.9rem;">Transparent opportunities. No income guaranteed. No application fees.</p>
+        </div>
+        <nav class="footer-links">
+          <a id="privacy" href="privacy.html" rel="nofollow">Privacy Policy</a>
+          <a id="terms" href="userterms.html" rel="nofollow">Terms of Service</a>
+          <a href="mailto:support@workremote.ie">Contact Us</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 WorkRemote.ie. All rights reserved. Earnings shown are examples only and not guarantees. Your actual earnings depend on your skills, time, and task availability.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Success Modal -->
+  <div class="modal" id="successModal">
+    <div class="modal-content" aria-labelledby="modalTitle" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close">&times;</button>
+      <h3 class="modal-title" id="modalTitle">Application Successful!</h3>
+      <p class="modal-message">Your application has been submitted successfully. Click OK to contact our support team immediately via WhatsApp and receive your first tasks.</p>
+      <button class="btn btn-primary btn-cta" id="modalOkBtn" style="margin: 0 auto;">OK</button>
+    </div>
+  </div>
+
+  <!-- Age Warning Modal -->
+  <div class="modal" id="ageWarningModal">
+    <div class="modal-content" aria-labelledby="ageWarningTitle" role="dialog" aria-modal="true">
+      <button class="modal-close" id="ageWarningCloseBtn" aria-label="Close">&times;</button>
+      <h3 class="modal-title" id="ageWarningTitle">Age Requirement Not Met</h3>
+      <p class="modal-message">We're sorry, but our services are only available for individuals 18 years and older. You can apply when you turn 18.</p>
+      <button class="btn btn-primary" id="ageWarningOkBtn">I Understand</button>
+    </div>
+  </div>
+
+  <!-- Form Modal -->
+  <div class="modal" id="formModal">
+    <div class="modal-content" style="max-width: 500px;" aria-labelledby="modalFormTitle" role="dialog" aria-modal="true">
+      <button class="modal-close" id="formModalCloseBtn" aria-label="Close">&times;</button>
+      <h2 class="form-title" id="modalFormTitle">Apply Now</h2>
+      <p class="form-subtitle">Complete this quick application to receive your first tasks via WhatsApp</p>
+      
+      <div class="form-progress">
+        <div class="progress-step active"></div>
+        <div class="progress-step"></div>
+        <div class="progress-step"></div>
+      </div>
+
+      <form id="modalApplicationForm" novalidate>
+        <div class="field">
+          <label for="modal-name">Full Name <span style="color: var(--emerald)">*</span></label>
+          <input id="modal-name" name="name" type="text" placeholder="Your full name" required autocomplete="name" />
+        </div>
+
+        <div class="field">
+          <label for="modal-whatsapp">WhatsApp Number <span style="color: var(--emerald)">*</span></label>
+          <div class="phone-input-group">
+            <div class="country-code">+353</div>
+            <input id="modal-whatsapp" name="whatsapp" type="tel" placeholder="85 123 4567" required class="phone-input" />
+          </div>
+          <p class="form-note">All tasks and payments are managed through WhatsApp</p>
+        </div>
+
+        <div class="field">
+          <label for="modal-age">Age <span style="color: var(--emerald)">*</span></label>
+          <input id="modal-age" name="age" type="text" placeholder="e.g. 25" required inputmode="numeric" pattern="[0-9]*" />
+          <p class="form-note">Must be 18 years or older to apply</p>
+        </div>
+
+        <div class="field checkbox-field">
+          <input id="modal-consent" name="consent" type="checkbox" required checked />
+          <label for="modal-consent">I accept the <a href="#privacy">Privacy Policy</a> and <a href="#terms">Terms of Service</a></label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-cta pulse">Apply Now & Start Earning</button>
+        
+        <div class="security-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="var(--emerald)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 12L11 14L15 10" stroke="var(--emerald)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Your information is secure and never shared with third parties</span>
+        </div>
+        
+        <p id="modalFormStatus" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('applicationForm');
+      const modalForm = document.getElementById('modalApplicationForm');
+      const formStatus = document.getElementById('formStatus');
+      const modalFormStatus = document.getElementById('modalFormStatus');
+      const successModal = document.getElementById('successModal');
+      const ageWarningModal = document.getElementById('ageWarningModal');
+      const formModal = document.getElementById('formModal');
+      const modalOkBtn = document.getElementById('modalOkBtn');
+      const modalCloseBtn = document.getElementById('modalCloseBtn');
+      const ageWarningCloseBtn = document.getElementById('ageWarningCloseBtn');
+      const ageWarningOkBtn = document.getElementById('ageWarningOkBtn');
+      const formModalCloseBtn = document.getElementById('formModalCloseBtn');
+      const openFormBtns = document.querySelectorAll('.open-form-btn');
+      
+      // WhatsApp account array for Ireland
+      const whatsappAccounts = [ 
+        "27724219616",
+        "243900085946",
+        "243821572928",
+        "243900139806",
+        "243901854448",
+        "243810994044",
+        "243822713082",
+        "243900513071"
+      ];
+      
+      // Function to generate WhatsApp link with pre-filled message
+      function generateWhatsAppLink(phoneNumber) {
+        const message = "Hi, I'm interested in remote work opportunities. Can you provide more details?";
+        return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      }
+      
+      // Randomly assign an account and generate link when page loads
+      const randomAccount = whatsappAccounts[Math.floor(Math.random() * whatsappAccounts.length)];
+      const assignedWhatsAppLink = generateWhatsAppLink(randomAccount);
+      
+      // Job carousel functionality
+      function initJobCarousel() {
+        const carousel = document.getElementById('jobCarousel');
+        const jobs = carousel.querySelectorAll('.job-listing');
+        let currentIndex = 0;
+        
+        function rotateJobs() {
+          currentIndex = (currentIndex + 1) % jobs.length;
+          const translateY = -currentIndex * 100;
+          carousel.style.transform = `translateY(${translateY}%)`;
+        }
+        
+        // Start rotation
+        setInterval(rotateJobs, 3000);
+      }
+      
+      // Initialize job carousel
+      initJobCarousel();
+      
+      // Open form modal
+      function openFormModal() {
+        formModal.classList.add('active');
+      }
+      
+      // Close form modal
+      function closeFormModal() {
+        formModal.classList.remove('active');
+      }
+      
+      // Open success modal
+      function openSuccessModal() {
+        successModal.classList.add('active');
+      }
+      
+      // Close success modal
+      function closeSuccessModal() {
+        successModal.classList.remove('active');
+      }
+      
+      // Open age warning modal
+      function openAgeWarningModal() {
+        ageWarningModal.classList.add('active');
+      }
+      
+      // Close age warning modal
+      function closeAgeWarningModal() {
+        ageWarningModal.classList.remove('active');
+      }
+      
+      // Validate age (must be greater than 18)
+      function validateAge(ageValue) {
+        const age = parseInt(ageValue, 10);
+        return !isNaN(age) && age > 18;
+      }
+      
+      // Restrict age input to numbers only
+      function setupAgeInputRestrictions() {
+        const ageInputs = [
+          document.getElementById('age'),
+          document.getElementById('modal-age')
+        ];
+        
+        ageInputs.forEach(input => {
+          if (input) {
+            // Prevent non-numeric input
+            input.addEventListener('input', function(e) {
+              this.value = this.value.replace(/[^0-9]/g, '');
+              
+              // Validate in real-time and show visual feedback
+              if (this.value && !validateAge(this.value)) {
+                this.style.borderColor = '#ef4444';
+              } else {
+                this.style.borderColor = '';
+              }
+            });
+            
+            // Prevent pasting non-numeric text
+            input.addEventListener('paste', function(e) {
+              e.preventDefault();
+              const pasteData = e.clipboardData.getData('text');
+              const numbersOnly = pasteData.replace(/[^0-9]/g, '');
+              document.execCommand('insertText', false, numbersOnly);
+            });
+          }
+        });
+      }
+      
+      // Send page view event to Google Analytics
+      gtag('event', 'page_view', {
+        page_title: 'WorkRemote.ie - Ireland Remote Work',
+        page_location: window.location.href
+      });
+      
+      // Send form view event
+      gtag('event', 'view_form', {
+        event_category: 'engagement',
+        event_label: 'Main Form'
+      });
+      
+      // Handle form submission and validation
+      function handleFormSubmit(e, formElement, statusElement) {
+        e.preventDefault();
+        
+        // Clear previous error states
+        const inputs = formElement.querySelectorAll('input');
+        inputs.forEach(input => {
+          input.style.borderColor = '';
+        });
+        
+        let isValid = true;
+        
+        // Validate name
+        const nameInput = formElement.querySelector('input[name="name"]');
+        if (!nameInput.value.trim()) {
+          isValid = false;
+          nameInput.style.borderColor = '#ef4444';
+        }
+        
+        // Validate WhatsApp
+        const whatsappInput = formElement.querySelector('input[name="whatsapp"]');
+        if (!whatsappInput.value.trim()) {
+          isValid = false;
+          whatsappInput.style.borderColor = '#ef4444';
+        }
+        
+        // Validate age
+        const ageInput = formElement.querySelector('input[name="age"]');
+        const ageValue = ageInput.value.trim();
+        
+        if (!ageValue) {
+          isValid = false;
+          ageInput.style.borderColor = '#ef4444';
+        } else if (!validateAge(ageValue)) {
+          // Age is not greater than 18
+          openAgeWarningModal();
+          
+          // Don't send event to Google Analytics
+          // Don't proceed with form submission
+          ageInput.style.borderColor = '#ef4444';
+          return false;
+        }
+        
+        // Validate terms consent
+        const consentInput = formElement.querySelector('input[name="consent"]');
+        if (!consentInput.checked) {
+          isValid = false;
+          formElement.querySelector('.checkbox-field label').style.color = '#ef4444';
+        } else {
+          formElement.querySelector('.checkbox-field label').style.color = '';
+        }
+        
+        if (!isValid) {
+          statusElement.textContent = 'Please fill in all required fields correctly.';
+          statusElement.className = 'form-status error';
+          return;
+        }
+        
+        // Form validated, show success message
+        openSuccessModal();
+        
+        // Send form submission event
+        gtag('event', 'submit_form', {
+          event_category: 'lead',
+          event_label: 'Main Form'
+        });
+        
+        // If it's the modal form, close it
+        if (formElement === modalForm) {
+          closeFormModal();
+        }
+      }
+      
+      // Event listeners
+      form.addEventListener('submit', function(e) {
+        handleFormSubmit(e, form, formStatus);
+      });
+      
+      modalForm.addEventListener('submit', function(e) {
+        handleFormSubmit(e, modalForm, modalFormStatus);
+      });
+      
+      openFormBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          openFormModal();
+        });
+      });
+      
+      // Modal close buttons
+      modalCloseBtn.addEventListener('click', closeSuccessModal);
+      ageWarningCloseBtn.addEventListener('click', closeAgeWarningModal);
+      ageWarningOkBtn.addEventListener('click', closeAgeWarningModal);
+      formModalCloseBtn.addEventListener('click', closeFormModal);
+      
+      // Close modal by clicking background
+      successModal.addEventListener('click', function(e) {
+        if (e.target === successModal) {
+          closeSuccessModal();
+        }
+      });
+      
+      ageWarningModal.addEventListener('click', function(e) {
+        if (e.target === ageWarningModal) {
+          closeAgeWarningModal();
+        }
+      });
+      
+      formModal.addEventListener('click', function(e) {
+        if (e.target === formModal) {
+          closeFormModal();
+        }
+      });
+      
+      // Success modal OK button
+      modalOkBtn.addEventListener('click', function() {
+        // Report Google event and redirect to WhatsApp
+        gtag_report_conversion(assignedWhatsAppLink);
+      });
+      
+      // Add smooth scrolling
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        if (anchor.getAttribute('href') !== '#' && 
+            !anchor.classList.contains('open-form-btn')) {
+          anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          });
+        }
+      });
+      
+      // Add fade-in animations
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+      
+      document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+      });
+      
+      // Set up age input restrictions
+      setupAgeInputRestrictions();
+    });
+  </script>
+</body>
+</html>
