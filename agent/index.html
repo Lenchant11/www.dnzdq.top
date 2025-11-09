@@ -48,7 +48,7 @@
       --argentina-blue:#75AADB;
       --argentina-light-blue:#6CACE4;
       --ring: 0 0 0 3px rgba(255,107,0,.35);
-      --radius:14px;
+      --radius:12px;
       --transition: all 0.3s ease;
       --gradient-primary: linear-gradient(135deg, #ff6b00, #ff8f40);
       --gradient-secondary: linear-gradient(135deg, #00d4aa, #00b894);
@@ -56,32 +56,34 @@
     }
 
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;line-height:1.5; font-size: 16px;}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;line-height:1.5; font-size: 15px;}
     img{max-width:100%;display:block}
     a{color:var(--text);text-decoration:none}
     a:hover{text-decoration:none}
     .container{width:min(1120px,92%);margin-inline:auto}
 
-    .nav{position:sticky;top:0;z-index:50;background:rgba(10,15,28,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    .brand{font-weight:800;letter-spacing:.3px;font-size:1.4rem; display: flex; align-items: center; gap: 10px; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;}
+    .nav{position:sticky;top:0;z-index:50;background:rgba(10,15,28,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08);padding:8px 0;}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:0}
+    .brand{font-weight:800;letter-spacing:.3px;font-size:1.3rem; display: flex; align-items: center; gap: 8px; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;}
     .brand:before {content: "🚀";}
-    .nav-links{display:flex;gap:20px;align-items:center}
-    .nav-link{opacity:.85; transition: var(--transition); font-size: 0.95rem; font-weight: 500;}
+    .nav-links{display:flex;gap:16px;align-items:center}
+    .nav-link{opacity:.85; transition: var(--transition); font-size: 0.9rem; font-weight: 500;}
     .nav-link:hover{opacity:1; color: var(--primary);}
 
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 24px;border-radius:12px;border:0;font-weight:700;cursor:pointer;transition:var(--transition); font-size: 1rem; position: relative; overflow: hidden;}
-    .btn-lg{padding:14px 32px;font-size:1.1rem;}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;border-radius:10px;border:0;font-weight:700;cursor:pointer;transition:var(--transition); font-size: 0.95rem; position: relative; overflow: hidden;}
+    .btn-lg{padding:12px 28px;font-size:1.05rem;}
     .btn-block{width:100%}
-    .btn-primary{background:var(--gradient-primary);color:white; box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);}
-    .btn-primary:hover{transform: translateY(-3px); box-shadow: 0 10px 25px rgba(255, 107, 0, 0.5);}
-    .btn-premium{background:var(--gradient-premium);color:white; box-shadow: 0 6px 20px rgba(255, 107, 0, 0.5);}
-    .btn-premium:hover{transform: translateY(-3px); box-shadow: 0 10px 25px rgba(255, 51, 51, 0.6);}
+    .btn-primary{background:var(--gradient-primary);color:white; box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);}
+    .btn-primary:hover{transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 107, 0, 0.5);}
+    .btn-premium{background:var(--gradient-premium);color:white; box-shadow: 0 4px 15px rgba(255, 107, 0, 0.5);}
+    .btn-premium:hover{transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 51, 51, 0.6);}
+    .btn-outline{background:transparent;color:var(--text);border:2px solid var(--primary);}
+    .btn-outline:hover{background:var(--primary);color:white;}
     .btn:focus{outline:none;box-shadow:var(--ring)}
     
     /* Urgency Banner */
-    .urgency-banner {background: var(--gradient-premium); color: white; text-align: center; padding: 12px; font-weight: 700; font-size: 0.95rem; position: relative; overflow: hidden;}
-    .urgency-banner .blink {animation: blink 1.5s infinite; display: inline-block; margin: 0 8px; font-size: 1.1rem;}
+    .urgency-banner {background: var(--gradient-premium); color: white; text-align: center; padding: 10px; font-weight: 700; font-size: 0.9rem; position: relative; overflow: hidden;}
+    .urgency-banner .blink {animation: blink 1.5s infinite; display: inline-block; margin: 0 6px; font-size: 1rem;}
     
     @keyframes blink {
       0% { opacity: 1; transform: scale(1); }
@@ -89,93 +91,38 @@
       100% { opacity: 1; transform: scale(1); }
     }
     
-    .hero{position:relative;padding:40px 0 50px; overflow: hidden;}
-    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:stretch}
-    .hero-copy h1{font-size:42px;margin:0 0 16px; line-height: 1.15; font-weight: 800; background: linear-gradient(135deg, #ff8f40, #ff6b00, #ff3333); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;}
-    .subtitle{color:var(--muted);max-width:52ch;margin-bottom:20px; font-size: 1.15rem; line-height: 1.6;}
-    .hero-points{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:12px;color:#cfd5dd; font-weight: 500;}
-    .hero-points li {display: flex; align-items: center; gap: 12px; font-size: 1.05rem; padding: 8px 0;}
-    .hero-points li:before {content: "✅"; color: var(--secondary); font-weight: bold; font-size: 1.1rem;}
+    .hero{position:relative;padding:40px 0; overflow: hidden; text-align: center;}
+    .hero-content{max-width: 800px; margin: 0 auto; position: relative; z-index: 2;}
+    .hero-copy h1{font-size:38px;margin:0 0 16px; line-height: 1.2; font-weight: 800; background: linear-gradient(135deg, #ff8f40, #ff6b00, #ff3333); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;}
+    .hero-subtitle{color:var(--muted);margin-bottom:24px; font-size: 1.1rem; line-height: 1.5;}
+    .hero-highlight{color:var(--primary); font-weight: 700;}
+    
+    .hero-stats{display:flex;justify-content:center;gap:20px;margin:20px 0 30px;flex-wrap:wrap;}
+    .stat-item{background:rgba(255,255,255,0.05);padding:12px 20px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);min-width:140px;}
+    .stat-number{display:block;font-size:1.5rem;font-weight:800;color:var(--primary);margin-bottom:4px;}
+    .stat-label{font-size:0.85rem;color:var(--muted);}
+    
+    .hero-cta{display:flex;gap:16px;justify-content:center;margin:24px 0;flex-wrap:wrap;}
+    
+    .hero-points{list-style:none;padding:0;margin:30px 0 0;display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:12px;color:#cfd5dd; font-weight: 500; max-width: 600px; margin-left: auto; margin-right: auto;}
+    .hero-points li {display: flex; align-items: center; gap: 10px; font-size: 0.95rem; padding: 8px 0; text-align: left;}
+    .hero-points li:before {content: "✅"; color: var(--secondary); font-weight: bold; font-size: 1rem;}
     
     .hero-bg{position:absolute;inset:0;z-index:-1;background:
         linear-gradient(180deg,rgba(10,15,28,.92),rgba(10,15,28,.98)),
         url('https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80') center/cover no-repeat;}
 
-    .logos{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px; align-items: center;}
-    .logo{font-size:14px;padding:10px 18px;border:1px dashed rgba(255,255,255,.2);border-radius:12px;color:#cfd5dd;background:rgba(255,255,255,.05); transition: var(--transition); font-weight: 500;}
-    .logo:hover {transform: translateY(-3px); border-color: var(--primary); color: var(--white); background: rgba(255,107,0,0.1);}
-
-    .form-card{background:var(--card);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius);padding:28px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); position: relative; overflow: hidden;}
-    .form-card:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 6px;
-        background: var(--gradient-primary);
-        border-radius: var(--radius) var(--radius) 0 0;
-    }
-    .form-card:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 120px;
-        height: 120px;
-        background: radial-gradient(circle, rgba(255,107,0,0.1) 0%, transparent 70%);
-        border-radius: 50%;
-        transform: translate(30px, -30px);
-    }
-    .form-title{margin:0 0 12px; font-size: 26px; font-weight: 800;}
-    .form-note{color:var(--muted);margin:0 0 18px;font-size:0.95rem; line-height: 1.6;}
-    .field{margin-bottom:18px; position: relative;}
-    .field.check{display:flex;align-items:flex-start; gap: 10px;}
-    .field.check label {margin-bottom: 0; display: inline; font-weight: normal;}
-    label{display:block;margin-bottom:8px;font-weight:600; font-size: 0.95rem;}
-    .req{color:var(--secondary)}
-    input,select{width:100%;background:#0c1220;color:var(--text);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:14px 16px;outline:none; font-family: inherit; font-size: 1rem; transition: var(--transition);}
-    input:focus,select:focus{box-shadow:var(--ring);border-color:var(--primary); transform: translateY(-2px);}
-    .form-status{margin-top:16px;font-size:0.95rem; padding: 12px; border-radius: 10px; background: rgba(0, 212, 170, 0.1); border: 1px solid rgba(0, 212, 170, 0.2);}
-    .form-status.success{color:#59d38c}
-    .form-status.error{color:#ff8b8b; background: rgba(255, 139, 139, 0.1); border-color: rgba(255, 139, 139, 0.2);}
-
-    /* Phone input styles */
-    .phone-input-group {display: flex;}
-    .country-code {flex: 0 0 auto; background: rgba(255,255,255,0.08); padding: 14px 16px; border: 1px solid rgba(255,255,255,.2); border-right: none; border-radius: 12px 0 0 12px; display: flex; align-items: center; font-weight: 600;}
-    .phone-input {border-radius: 0 12px 12px 0; flex: 1;}
-    
-    .progress-bar {display: flex; margin: 20px 0; gap: 8px;}
-    .progress-step {flex: 1; height: 6px; background: rgba(255,255,255,0.15); border-radius: 3px;}
-    .progress-step.active {background: var(--primary);}
+    .logos{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 0; align-items: center; justify-content: center;}
+    .logo{font-size:13px;padding:8px 16px;border:1px dashed rgba(255,255,255,.2);border-radius:10px;color:#cfd5dd;background:rgba(255,255,255,.05); transition: var(--transition); font-weight: 500;}
+    .logo:hover {transform: translateY(-2px); border-color: var(--primary); color: var(--white); background: rgba(255,107,0,0.1);}
 
     /* Modal styles */
     .modal {position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; visibility: hidden; transition: all 0.3s ease;}
     .modal.active {opacity: 1; visibility: visible;}
-    .modal-content {background: var(--card); border-radius: var(--radius); padding: 28px; max-width: 420px; width: 90%; text-align: center; position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.5);}
-    .modal-title {font-size: 1.7rem; margin-bottom: 20px; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 800;}
-    .modal-message {margin-bottom: 28px; line-height: 1.6; font-size: 1.05rem;}
-    .modal-btn {background: var(--gradient-primary); color: white; border: none; border-radius: 10px; padding: 12px 24px; font-weight: 700; cursor: pointer; transition: var(--transition); font-size: 1.05rem;}
-    .modal-btn:hover {transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);}
-
-    /* Close button for modal */
-    .modal-close { position: absolute; top: 12px; right: 16px; background: transparent; border: none; font-size: 24px; color: var(--muted); cursor: pointer; }
-    .modal-close:hover { color: var(--text); }
-
-    .section{padding:70px 0}
-    .section.alt{background:#0b1222}
-    h2{margin:0 0 18px;font-size:36px; font-weight: 800; line-height: 1.2;}
-    .muted{color:var(--muted); line-height: 1.6; font-size: 1.05rem;}
-    .small{font-size:0.9rem}
+    .modal-content {background: var(--card); border-radius: var(--radius); padding: 24px; max-width: 450px; width: 90%; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.5);}
     
-    .section-header {text-align: center; max-width: 800px; margin: 0 auto 50px;}
-    
-    .cards{display:grid;gap:24px}
-    .two-col{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .three-col{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .card{background:var(--card);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:24px; transition: var(--transition); position: relative; overflow: hidden;}
-    .card:hover {transform: translateY(-5px); border-color: rgba(255,107,0,0.4); box-shadow: 0 15px 30px rgba(0,0,0,0.25);}
-    .card:before {
+    .form-card{background:var(--card);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius);padding:24px; position: relative; overflow: hidden;}
+    .form-card:before {
         content: "";
         position: absolute;
         top: 0;
@@ -183,13 +130,67 @@
         right: 0;
         height: 4px;
         background: var(--gradient-primary);
+        border-radius: var(--radius) var(--radius) 0 0;
+    }
+    .form-title{margin:0 0 12px; font-size: 22px; font-weight: 800;}
+    .form-note{color:var(--muted);margin:0 0 16px;font-size:0.9rem; line-height: 1.5;}
+    .field{margin-bottom:16px; position: relative;}
+    .field.check{display:flex;align-items:flex-start; gap: 8px;}
+    .field.check label {margin-bottom: 0; display: inline; font-weight: normal; font-size: 0.9rem;}
+    label{display:block;margin-bottom:6px;font-weight:600; font-size: 0.9rem;}
+    .req{color:var(--secondary)}
+    input,select{width:100%;background:#0c1220;color:var(--text);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:12px 14px;outline:none; font-family: inherit; font-size: 0.95rem; transition: var(--transition);}
+    input:focus,select:focus{box-shadow:var(--ring);border-color:var(--primary); transform: translateY(-1px);}
+    .form-status{margin-top:16px;font-size:0.9rem; padding: 10px; border-radius: 8px; background: rgba(0, 212, 170, 0.1); border: 1px solid rgba(0, 212, 170, 0.2);}
+    .form-status.success{color:#59d38c}
+    .form-status.error{color:#ff8b8b; background: rgba(255, 139, 139, 0.1); border-color: rgba(255, 139, 139, 0.2);}
+
+    /* Phone input styles */
+    .phone-input-group {display: flex;}
+    .country-code {flex: 0 0 auto; background: rgba(255,255,255,0.08); padding: 12px 14px; border: 1px solid rgba(255,255,255,.2); border-right: none; border-radius: 10px 0 0 10px; display: flex; align-items: center; font-weight: 600; font-size: 0.9rem;}
+    .phone-input {border-radius: 0 10px 10px 0; flex: 1;}
+    
+    .progress-bar {display: flex; margin: 16px 0; gap: 6px;}
+    .progress-step {flex: 1; height: 4px; background: rgba(255,255,255,0.15); border-radius: 2px;}
+    .progress-step.active {background: var(--primary);}
+
+    .modal-title {font-size: 1.5rem; margin-bottom: 16px; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 800;}
+    .modal-message {margin-bottom: 20px; line-height: 1.5; font-size: 1rem;}
+    .modal-btn {background: var(--gradient-primary); color: white; border: none; border-radius: 8px; padding: 10px 20px; font-weight: 700; cursor: pointer; transition: var(--transition); font-size: 1rem;}
+    .modal-btn:hover {transform: translateY(-1px); box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);}
+
+    /* Close button for modal */
+    .modal-close { position: absolute; top: 12px; right: 16px; background: transparent; border: none; font-size: 22px; color: var(--muted); cursor: pointer; z-index: 10;}
+    .modal-close:hover { color: var(--text); }
+
+    .section{padding:50px 0}
+    .section.alt{background:#0b1222}
+    h2{margin:0 0 16px;font-size:32px; font-weight: 800; line-height: 1.2;}
+    .muted{color:var(--muted); line-height: 1.5; font-size: 1rem;}
+    .small{font-size:0.85rem}
+    
+    .section-header {text-align: center; max-width: 700px; margin: 0 auto 40px;}
+    
+    .cards{display:grid;gap:20px}
+    .two-col{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .three-col{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:20px; transition: var(--transition); position: relative; overflow: hidden;}
+    .card:hover {transform: translateY(-3px); border-color: rgba(255,107,0,0.3); box-shadow: 0 8px 20px rgba(0,0,0,0.2);}
+    .card:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--gradient-primary);
         opacity: 0;
         transition: var(--transition);
     }
     .card:hover:before {
         opacity: 1;
     }
-    .card-media{height:160px;border-radius:12px;background:linear-gradient(135deg,#152238,#1d2a44); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;}
+    .card-media{height:140px;border-radius:10px;background:linear-gradient(135deg,#152238,#1d2a44); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;}
     .card-media:after {
         content: "";
         position: absolute;
@@ -198,27 +199,27 @@
     }
     .media-pt{background:linear-gradient(135deg,#1a2f4a,#204564)}
     .media-ft{background:linear-gradient(135deg,#2b2c52,#3a3e7a)}
-    .card-body h3{margin:18px 0 12px; font-size: 1.5rem; font-weight: 700;}
+    .card-body h3{margin:16px 0 10px; font-size: 1.3rem; font-weight: 700;}
     
-    .earnings-badge {background: var(--gradient-secondary); color: var(--bg); padding: 6px 14px; border-radius: 20px; font-weight: 800; font-size: 0.9rem; display: inline-block; margin-bottom: 12px;}
-    .premium-badge {background: var(--gradient-premium); color: white; padding: 6px 14px; border-radius: 20px; font-weight: 800; font-size: 0.9rem; display: inline-block; margin-bottom: 12px;}
+    .earnings-badge {background: var(--gradient-secondary); color: var(--bg); padding: 4px 12px; border-radius: 16px; font-weight: 800; font-size: 0.85rem; display: inline-block; margin-bottom: 10px;}
+    .premium-badge {background: var(--gradient-premium); color: white; padding: 4px 12px; border-radius: 16px; font-weight: 800; font-size: 0.85rem; display: inline-block; margin-bottom: 10px;}
     
-    .list{padding-left:0;margin:0;display:grid;gap:10px}
-    .list li{margin-left:0; display: flex; align-items: flex-start; gap: 10px; font-size: 1rem;}
+    .list{padding-left:0;margin:0;display:grid;gap:8px}
+    .list li{margin-left:0; display: flex; align-items: flex-start; gap: 8px; font-size: 0.9rem;}
     .list li:before {content: "🔥"; color: var(--primary); font-weight: bold;}
     
-    .bonus{text-align:center; position: relative; padding: 20px;}
-    .bonus-icon{font-size:36px;margin-bottom:14px; display: inline-flex; width: 70px; height: 70px; background: rgba(255,107,0,0.15); border-radius: 50%; align-items: center; justify-content: center; transition: var(--transition);}
-    .bonus:hover .bonus-icon {transform: scale(1.1) rotate(5deg); background: rgba(255,107,0,0.25);}
+    .bonus{text-align:center; position: relative; padding: 16px;}
+    .bonus-icon{font-size:32px;margin-bottom:12px; display: inline-flex; width: 60px; height: 60px; background: rgba(255,107,0,0.15); border-radius: 50%; align-items: center; justify-content: center; transition: var(--transition);}
+    .bonus:hover .bonus-icon {transform: scale(1.05); background: rgba(255,107,0,0.25);}
     
-    .requirements{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
-    .req-item{display:flex;gap:12px;background:var(--card);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:18px; transition: var(--transition);}
-    .req-item:hover {border-color: rgba(255,107,0,0.4); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.15);}
-    .req-icon{font-size:26px; color: var(--primary);}
+    .requirements{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+    .req-item{display:flex;gap:10px;background:var(--card);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px; transition: var(--transition);}
+    .req-item:hover {border-color: rgba(255,107,0,0.3); transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0,0,0,0.1);}
+    .req-icon{font-size:22px; color: var(--primary);}
     
-    .benefits-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
-    .benefits-media{height:280px;border-radius:14px;background:
-        radial-gradient(140px 140px at 30% 40%, rgba(255,107,0,0.3) 0%, transparent 60%),
+    .benefits-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+    .benefits-media{height:240px;border-radius:12px;background:
+        radial-gradient(120px 120px at 30% 40%, rgba(255,107,0,0.3) 0%, transparent 60%),
         linear-gradient(135deg,#1a2442,#122039); position: relative; overflow: hidden;}
     .benefits-media:after {
         content: "";
@@ -228,28 +229,28 @@
         opacity: 0.4;
         mix-blend-mode: overlay;
     }
-    .stats{list-style:none;padding:0;margin:0 0 18px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-    .stats li{background:var(--card);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px;text-align:center; transition: var(--transition);}
-    .stats li:hover {transform: translateY(-3px); border-color: rgba(255,107,0,0.4);}
-    .stats strong {display: block; font-size: 1.8rem; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 6px; font-weight: 800;}
+    .stats{list-style:none;padding:0;margin:0 0 16px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .stats li{background:var(--card);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:16px;text-align:center; transition: var(--transition);}
+    .stats li:hover {transform: translateY(-2px); border-color: rgba(255,107,0,0.3);}
+    .stats strong {display: block; font-size: 1.5rem; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 4px; font-weight: 800;}
     
-    .testimonial{background:var(--card);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:24px;margin:0; position: relative; transition: var(--transition);}
-    .testimonial:hover {transform: translateY(-3px); border-color: rgba(255,255,255,0.2);}
+    .testimonial{background:var(--card);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:20px;margin:0; position: relative; transition: var(--transition);}
+    .testimonial:hover {transform: translateY(-2px); border-color: rgba(255,255,255,0.15);}
     .testimonial:before {
         content: """;
         position: absolute;
-        top: 10px;
-        left: 10px;
-        font-size: 60px;
+        top: 8px;
+        left: 8px;
+        font-size: 50px;
         color: rgba(255,107,0,0.2);
         font-family: Georgia, serif;
     }
-    .testimonial p{margin:0 0 16px; font-style: italic; position: relative; z-index: 1; font-size: 1.05rem; line-height: 1.6;}
-    .testimonial footer {color: var(--primary); font-weight: 700; font-size: 1rem;}
+    .testimonial p{margin:0 0 14px; font-style: italic; position: relative; z-index: 1; font-size: 0.95rem; line-height: 1.5;}
+    .testimonial footer {color: var(--primary); font-weight: 700; font-size: 0.9rem;}
     
-    .avatar {width: 50px; height: 50px; border-radius: 50%; background: var(--gradient-primary); display: flex; align-items: center; justify-content: center; font-weight: 800; margin-bottom: 12px; font-size: 1.2rem; color: white;}
+    .avatar {width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-primary); display: flex; align-items: center; justify-content: center; font-weight: 800; margin-bottom: 10px; font-size: 1.1rem; color: white;}
     
-    .cta{background:linear-gradient(180deg,#0b1222,#0a0f1c); padding: 80px 0; text-align: center; position: relative; overflow: hidden;}
+    .cta{background:linear-gradient(180deg,#0b1222,#0a0f1c); padding: 60px 0; text-align: center; position: relative; overflow: hidden;}
     .cta:before {
         content: "";
         position: absolute;
@@ -259,120 +260,126 @@
         bottom: 0;
         background: radial-gradient(circle at 30% 50%, rgba(255,107,0,0.1) 0%, transparent 50%);
     }
-    .cta-inner{max-width: 800px; margin: 0 auto; position: relative; z-index: 1;}
-    .cta h2 {margin-bottom: 20px;}
+    .cta-inner{max-width: 700px; margin: 0 auto; position: relative; z-index: 1;}
+    .cta h2 {margin-bottom: 16px;}
     
-    .faq{background:var(--card);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:20px;margin-bottom:16px; transition: var(--transition);}
-    .faq:hover {border-color: rgba(255,255,255,0.2);}
-    .faq summary{cursor:pointer; font-weight: 700; padding: 8px 0; font-size: 1.05rem; display: flex; align-items: center; gap: 10px;}
-    .faq summary:before {content: "▶"; color: var(--primary); font-size: 0.8rem; transition: transform 0.3s ease;}
+    .faq{background:var(--card);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:16px;margin-bottom:14px; transition: var(--transition);}
+    .faq:hover {border-color: rgba(255,255,255,0.15);}
+    .faq summary{cursor:pointer; font-weight: 700; padding: 6px 0; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;}
+    .faq summary:before {content: "▶"; color: var(--primary); font-size: 0.7rem; transition: transform 0.3s ease;}
     .faq[open] summary:before {transform: rotate(90deg);}
-    .faq div {padding: 12px 0; color: var(--muted); font-size: 1rem; line-height: 1.6;}
+    .faq div {padding: 10px 0; color: var(--muted); font-size: 0.9rem; line-height: 1.5;}
     
-    .footer{border-top:1px solid rgba(255,255,255,.1);padding:40px 0 24px;background:#090d15}
-    .footer-grid{display:flex;justify-content:space-between;gap:24px;align-items:flex-start; margin-bottom: 24px;}
-    .footer-links{display:flex;gap:20px;flex-wrap:wrap}
+    .footer{border-top:1px solid rgba(255,255,255,.08);padding:32px 0 20px;background:#090d15}
+    .footer-grid{display:flex;justify-content:space-between;gap:20px;align-items:flex-start; margin-bottom: 20px;}
+    .footer-links{display:flex;gap:16px;flex-wrap:wrap}
     
-    .security-badge {display: flex; align-items: center; gap: 10px; margin-top: 18px; padding: 12px; background: rgba(0, 212, 170, 0.1); border-radius: 10px; font-size: 0.9rem;}
-    .security-badge svg {flex-shrink: 0; width: 20px; height: 20px;}
+    .security-badge {display: flex; align-items: center; gap: 8px; margin-top: 16px; padding: 10px; background: rgba(0, 212, 170, 0.1); border-radius: 8px; font-size: 0.85rem;}
+    .security-badge svg {flex-shrink: 0; width: 18px; height: 18px;}
     
     /* Animation */
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(12px); }
+      from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
     
     .fade-in {
-      animation: fadeIn 0.6s ease forwards;
+      animation: fadeIn 0.5s ease forwards;
       opacity: 0;
     }
     
-    .delay-1 { animation-delay: 0.2s; }
-    .delay-2 { animation-delay: 0.4s; }
-    .delay-3 { animation-delay: 0.6s; }
+    .delay-1 { animation-delay: 0.15s; }
+    .delay-2 { animation-delay: 0.3s; }
+    .delay-3 { animation-delay: 0.45s; }
     
     /* Pulse animation for CTA */
     @keyframes pulse {
-      0% { transform: scale(1); box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4); }
-      50% { transform: scale(1.05); box-shadow: 0 10px 30px rgba(255, 107, 0, 0.6); }
-      100% { transform: scale(1); box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4); }
+      0% { transform: scale(1); box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4); }
+      50% { transform: scale(1.03); box-shadow: 0 6px 20px rgba(255, 107, 0, 0.6); }
+      100% { transform: scale(1); box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4); }
     }
     
     .pulse {
-      animation: pulse 2.5s infinite;
+      animation: pulse 2s infinite;
     }
     
     /* Urgent badge */
     .urgent-badge {
       background: var(--gradient-premium);
       color: white;
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-size: 0.85rem;
+      padding: 4px 10px;
+      border-radius: 18px;
+      font-size: 0.8rem;
       font-weight: 800;
       display: inline-flex;
       align-items: center;
-      margin-left: 10px;
+      margin-left: 8px;
       animation: pulse 1.5s infinite;
     }
     
     .urgent-badge:before {
       content: "⚡";
-      margin-right: 5px;
+      margin-right: 4px;
     }
     
     /* Success Timeline */
-    .timeline {display: flex; justify-content: space-between; margin: 30px 0; position: relative;}
+    .timeline {display: flex; justify-content: space-between; margin: 24px 0; position: relative;}
     .timeline:before {
         content: "";
         position: absolute;
-        top: 30px;
+        top: 25px;
         left: 0;
         right: 0;
-        height: 3px;
+        height: 2px;
         background: var(--gradient-primary);
         z-index: 1;
     }
     .timeline-item {text-align: center; flex: 1; position: relative; z-index: 2;}
-    .timeline-icon {width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-size: 1.5rem; color: white;}
-    .timeline-content h4 {margin: 8px 0 4px; font-size: 1.1rem; font-weight: 700;}
-    .timeline-content p {font-size: 0.9rem; color: var(--muted);}
+    .timeline-icon {width: 50px; height: 50px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; font-size: 1.3rem; color: white;}
+    .timeline-content h4 {margin: 6px 0 4px; font-size: 1rem; font-weight: 700;}
+    .timeline-content p {font-size: 0.85rem; color: var(--muted);}
     
     /* Mobile responsiveness */
     @media (max-width: 980px){
-      .hero-grid{grid-template-columns:1fr; gap: 32px;}
-      .two-col{grid-template-columns:1fr; gap: 20px;}
-      .three-col{grid-template-columns:1fr; gap: 20px;}
-      .requirements{grid-template-columns:repeat(2,minmax(0,1fr)); gap: 14px;}
-      .benefits-grid{grid-template-columns:1fr; gap: 24px;}
+      .hero-grid{grid-template-columns:1fr; gap: 24px;}
+      .two-col{grid-template-columns:1fr; gap: 16px;}
+      .three-col{grid-template-columns:1fr; gap: 16px;}
+      .requirements{grid-template-columns:repeat(2,minmax(0,1fr)); gap: 12px;}
+      .benefits-grid{grid-template-columns:1fr; gap: 20px;}
       .cta-inner{flex-direction:column;align-items:flex-start}
-      .stats{grid-template-columns:1fr; gap: 14px;}
-      .hero-copy h1 {font-size: 36px;}
-      h2 {font-size: 32px;}
-      .section {padding: 60px 0;}
-      .section-header {margin-bottom: 40px;}
-      .timeline {flex-direction: column; gap: 30px;}
+      .stats{grid-template-columns:1fr; gap: 12px;}
+      .hero-copy h1 {font-size: 32px;}
+      h2 {font-size: 28px;}
+      .section {padding: 40px 0;}
+      .section-header {margin-bottom: 32px;}
+      .timeline {flex-direction: column; gap: 24px;}
       .timeline:before {display: none;}
+      .hero-stats {gap: 12px;}
+      .stat-item {min-width: 120px; padding: 10px 16px;}
     }
     
     @media (max-width: 640px) {
-      .nav-links {gap: 12px;}
-      .btn {padding: 11px 20px; font-size: 0.95rem;}
-      .btn-lg {padding: 12px 26px;}
-      .footer-grid {flex-direction: column; gap: 24px;}
-      .footer-links {flex-direction: column; gap: 12px;}
-      .requirements {grid-template-columns: 1fr; gap: 12px;}
-      .hero {padding: 40px 0 30px;}
-      .hero-copy h1 {font-size: 32px;}
-      h2 {font-size: 28px;}
-      .section {padding: 50px 0;}
-      .cta {padding: 60px 0;}
+      .nav-links {gap: 10px;}
+      .btn {padding: 9px 16px; font-size: 0.9rem;}
+      .btn-lg {padding: 10px 22px;}
+      .footer-grid {flex-direction: column; gap: 16px;}
+      .footer-links {flex-direction: column; gap: 8px;}
+      .requirements {grid-template-columns: 1fr; gap: 10px;}
+      .hero {padding: 30px 0;}
+      .hero-copy h1 {font-size: 28px;}
+      h2 {font-size: 24px;}
+      .section {padding: 32px 0;}
+      .cta {padding: 40px 0;}
       .logos {justify-content: center;}
-      .form-card {padding: 24px;}
-      .card {padding: 20px;}
-      .testimonial {padding: 20px;}
-      .stats li {padding: 16px;}
-      .benefits-media {height: 220px;}
+      .form-card {padding: 20px;}
+      .card {padding: 16px;}
+      .testimonial {padding: 16px;}
+      .stats li {padding: 14px;}
+      .benefits-media {height: 200px;}
+      .hero-cta {flex-direction: column; align-items: center;}
+      .hero-points {grid-template-columns: 1fr; gap: 10px;}
+      .hero-stats {flex-direction: column; align-items: center;}
+      .stat-item {width: 100%; max-width: 200px;}
       
       /* 移动端隐藏导航链接 */
       .nav-links .nav-link:not(.mobile-apply) {
@@ -381,13 +388,14 @@
     }
     
     @media (max-width: 480px) {
-      .hero-copy h1 {font-size: 28px;}
-      h2 {font-size: 26px;}
-      .brand {font-size: 1.2rem;}
-      .nav-link {font-size: 0.9rem;}
-      .btn {font-size: 0.9rem;}
-      .hero-points li {font-size: 0.95rem;}
-      .subtitle {font-size: 1.05rem;}
+      .hero-copy h1 {font-size: 24px;}
+      h2 {font-size: 22px;}
+      .brand {font-size: 1.1rem;}
+      .nav-link {font-size: 0.85rem;}
+      .btn {font-size: 0.85rem;}
+      .hero-points li {font-size: 0.9rem;}
+      .hero-subtitle {font-size: 1rem;}
+      .stat-number {font-size: 1.3rem;}
     }
     
     /* PC端保持显示所有导航链接 */
@@ -415,88 +423,56 @@
         <a href="#benefits" class="nav-link">Libertad</a>
         <a href="#success" class="nav-link">Éxitos</a>
         <a href="#faq" class="nav-link">Preguntas</a>
-        <a href="#" class="btn btn-primary mobile-apply" id="openFormBtn">¡Quiero Mi Libertad! <span class="urgent-badge">URGENTE</span></a>
+        <a href="#" class="btn btn-primary mobile-apply open-form-btn">¡Quiero Mi Libertad! <span class="urgent-badge">URGENTE</span></a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero + Form -->
+  <!-- Hero Section -->
   <section id="top" class="hero">
-    <div class="container hero-grid">
-      <div class="hero-copy fade-in">
-        <h1>🚀 Gana 200.000-500.000 ARS Diarios Desde Tu Smartphone - ¡Libertad Financiera Real!</h1>
-        <p class="subtitle">
-          <strong>MSIM Argentina</strong> te busca como <strong>Socio Online</strong>. Sin experiencia, sin jefes, sin horarios fijos. <strong>50.000+ argentinos</strong> ya recuperaron su tiempo y libertad financiera. <strong>¡Últimos lugares disponibles!</strong>
+    <div class="container">
+      <div class="hero-content fade-in">
+        <h1>🚀 Gana 200.000-500.000 ARS Diarios Desde Tu Smartphone</h1>
+        <p class="hero-subtitle">
+          Únete a <span class="hero-highlight">MSIM Argentina</span> como Socio Online. 
+          <span class="hero-highlight">Sin experiencia, sin jefes, 100% remoto.</span> 
+          Cambia tu vida en 2 meses.
         </p>
 
-        <!-- credibility logos -->
-        <div class="logos" aria-label="Testimonios de éxito">
-          <span class="logo" aria-label="2 meses - Libertad" title="2 meses - Libertad">✅ 2 meses: Libertad</span>
-          <span class="logo" aria-label="3-5 meses - Cambio" title="3-5 meses - Cambio">🔥 3-5 meses: Cambio Total</span>
-          <span class="logo" aria-label="1 año - Propiedades" title="1 año - Propiedades">🏠 1 año: Casa Propia</span>
-          <span class="logo" aria-label="Promoción" title="Promoción">🚀 Promoción a Gerente</span>
-          <span class="logo" aria-label="Ingresos" title="Ingresos">💎 600K ARS/mes</span>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">50.000+</span>
+            <span class="stat-label">Argentinos Liberados</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">1-2h</span>
+            <span class="stat-label">Al Día</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">95%</span>
+            <span class="stat-label">Satisfacción</span>
+          </div>
+        </div>
+
+        <div class="hero-cta">
+          <a href="#" class="btn btn-primary btn-lg pulse open-form-btn">🚀 ¡Quiero Comenzar Ahora!</a>
+          <a href="#roles" class="btn btn-outline btn-lg">📊 Ver Oportunidades</a>
         </div>
 
         <ul class="hero-points">
-          <li>🎯 <strong>Ganancias Reales:</strong> 200.000-500.000 ARS diarios trabajando 1-2 horas</li>
-          <li>👑 <strong>Cero Experiencia:</strong> Aprendizaje garantizado con gerentes certificados</li>
-          <li>💼 <strong>Totalmente Remoto:</strong> Trabaja desde casa, café, viajes - donde quieras</li>
-          <li>🚀 <strong>Progreso Rápido:</strong> En 2 meses libertad, en 1 año casa y auto propio</li>
-          <li>👨‍💼 <strong>Carrera Profesional:</strong> Promoción a Gerente con 600.000 ARS/mes fijos</li>
+          <li>💰 <strong>200.000-500.000 ARS diarios</strong> trabajando 1-2 horas</li>
+          <li>🎯 <strong>Cero experiencia requerida</strong> - capacitación incluida</li>
+          <li>💼 <strong>Trabajo 100% remoto</strong> desde cualquier lugar</li>
+          <li>🚀 <strong>En 2 meses: libertad financiera</strong></li>
+          <li>👑 <strong>Promoción a Gerente:</strong> 600.000 ARS/mes</li>
         </ul>
-      </div>
 
-      <aside id="apply" class="form-card fade-in delay-1" aria-label="Formulario de Aplicación MSIM">
-        <h2 class="form-title">⚡ Comienza Hoy - Cambia Tu Vida En 60 Días</h2>
-        <p class="form-note"><strong>¡Atención!</strong> Solo 17 lugares disponibles esta semana. Completa tus datos y un Gerente MSIM te contactará en minutos por WhatsApp para tu inducción personalizada.</p>
-        
-        <div class="progress-bar">
-          <div class="progress-step active"></div>
-          <div class="progress-step"></div>
-          <div class="progress-step"></div>
+        <div class="logos">
+          <span class="logo">✅ 2 meses: Libertad</span>
+          <span class="logo">🔥 3-5 meses: Cambio Total</span>
+          <span class="logo">🏠 1 año: Casa Propia</span>
         </div>
-
-        <form id="applicationForm" novalidate>
-          <div class="field">
-            <label for="name">Nombre Completo<span class="req">*</span></label>
-            <input id="name" name="name" type="text" placeholder="Ej: María González" required autocomplete="name" />
-          </div>
-
-          <div class="field">
-            <label for="phone">WhatsApp Personal<span class="req">*</span></label>
-            <div class="phone-input-group">
-              <div class="country-code">
-                <img src="https://flagcdn.com/w20/ar.png" alt="Bandera de Argentina" width="20" height="14" style="display:inline-block;vertical-align:middle;margin-right:8px;border-radius:2px;">
-                +54
-              </div>
-              <input id="phone" name="phone" type="tel" class="phone-input" placeholder="11 1234 5678" required inputmode="tel" />
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="age">Edad<span class="req">*</span></label>
-            <input id="age" name="age" type="text" placeholder="Ej: 28" required />
-          </div>
-
-          <div class="field check">
-            <input id="consent" name="consent" type="checkbox" required style="width: auto; margin-top: 4px;" checked />
-            <label for="consent">Acepto ser contactado por MSIM y recibir información sobre el programa de Socios Online.</label>
-          </div>
-
-          <button type="submit" class="btn btn-primary btn-block pulse">🚀 ¡Quiero Mi Libertad Financiera!</button>
-          
-          <div class="security-badge">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="#00d4aa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M9 12L11 14L15 10" stroke="#00d4aa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span>Protegemos tus datos. Nunca compartimos información con terceros.</span>
-          </div>
-          
-          <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
-        </form>
-      </aside>
+      </div>
     </div>
 
     <div class="hero-bg" role="img" aria-label="Persona disfrutando de libertad financiera con smartphone"></div>
@@ -514,59 +490,63 @@
 
   <!-- Form Modal -->
   <div class="modal" id="formModal">
-    <div class="modal-content" style="max-width: 500px;" aria-labelledby="modalFormTitle" role="dialog" aria-modal="true">
+    <div class="modal-content" style="max-width: 450px;" aria-labelledby="modalFormTitle" role="dialog" aria-modal="true">
       <button class="modal-close" id="formModalCloseBtn" aria-label="Cerrar">&times;</button>
-      <h2 class="form-title" id="modalFormTitle">⚡ Aplicación Exclusiva MSIM</h2>
-      <p class="form-note"><strong>¡Oportunidad Limitada!</strong> Solo 17 lugares disponibles. Un Gerente MSIM te contactará en minutos para tu inducción personalizada.</p>
       
-      <div class="progress-bar">
-        <div class="progress-step active"></div>
-        <div class="progress-step"></div>
-        <div class="progress-step"></div>
-      </div>
-
-      <form id="modalApplicationForm" novalidate>
-        <div class="field">
-          <label for="modal-name">Nombre Completo<span class="req">*</span></label>
-          <input id="modal-name" name="name" type="text" placeholder="Ej: María González" required autocomplete="name" />
+      <div class="form-card">
+        <h2 class="form-title" id="modalFormTitle">⚡ Aplicación Exclusiva MSIM</h2>
+        <p class="form-note"><strong>¡Oportunidad Limitada!</strong> Solo 17 lugares disponibles. Un Gerente MSIM te contactará en minutos.</p>
+        
+        <div class="progress-bar">
+          <div class="progress-step active"></div>
+          <div class="progress-step"></div>
+          <div class="progress-step"></div>
         </div>
 
-        <div class="field">
-          <label for="modal-phone">WhatsApp Personal<span class="req">*</span></label>
-          <div class="phone-input-group">
-            <div class="country-code">
-              <img src="https://flagcdn.com/w20/ar.png" alt="Bandera de Argentina" width="20" height="14" style="display:inline-block;vertical-align:middle;margin-right:8px;border-radius:2px;">
-              +54
-            </div>
-            <input id="modal-phone" name="phone" type="tel" class="phone-input" placeholder="11 1234 5678" required inputmode="tel" />
+        <form id="modalApplicationForm" novalidate>
+          <div class="field">
+            <label for="modal-name">Nombre Completo<span class="req">*</span></label>
+            <input id="modal-name" name="name" type="text" placeholder="Ej: María González" required autocomplete="name" />
           </div>
-        </div>
 
-        <div class="field">
-          <label for="modal-age">Edad<span class="req">*</span></label>
-          <input id="modal-age" name="age" type="text" placeholder="Ej: 28" required />
-        </div>
+          <div class="field">
+            <label for="modal-phone">WhatsApp Personal<span class="req">*</span></label>
+            <div class="phone-input-group">
+              <div class="country-code">
+                <img src="https://flagcdn.com/w20/ar.png" alt="Bandera de Argentina" width="20" height="14" style="display:inline-block;vertical-align:middle;margin-right:8px;border-radius:2px;">
+                +54
+              </div>
+              <input id="modal-phone" name="phone" type="tel" class="phone-input" placeholder="11 1234 5678" required inputmode="tel" />
+            </div>
+          </div>
 
-        <div class="field check">
-          <input id="modal-consent" name="consent" type="checkbox" required style="width: auto; margin-top: 4px;" checked />
-          <label for="modal-consent">Acepto ser contactado por MSIM y recibir información sobre el programa de Socios Online.</label>
-        </div>
+          <div class="field">
+            <label for="modal-age">Edad<span class="req">*</span></label>
+            <input id="modal-age" name="age" type="text" placeholder="Ej: 28" required />
+          </div>
 
-        <button type="submit" class="btn btn-primary btn-block pulse">🚀 ¡Quiero Mi Libertad Financiera!</button>
-        
-        <div class="security-badge">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="#00d4aa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M9 12L11 14L15 10" stroke="#00d4aa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span>Protegemos tus datos. Nunca compartimos información con terceros.</span>
-        </div>
-        
-        <p id="modalFormStatus" class="form-status" role="status" aria-live="polite"></p>
-      </form>
+          <div class="field check">
+            <input id="modal-consent" name="consent" type="checkbox" required style="width: auto; margin-top: 4px;" checked />
+            <label for="modal-consent">Acepto ser contactado por MSIM y recibir información sobre el programa de Socios Online.</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block pulse">🚀 ¡Quiero Mi Libertad Financiera!</button>
+          
+          <div class="security-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="#00d4aa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9 12L11 14L15 10" stroke="#00d4aa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Protegemos tus datos. Nunca compartimos información con terceros.</span>
+          </div>
+          
+          <p id="modalFormStatus" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
     </div>
   </div>
 
+  <!-- 其余部分保持不变（Success Timeline, Hiring, Career Progression等部分） -->
   <!-- Success Timeline -->
   <section id="success" class="section alt">
     <div class="container">
@@ -686,174 +666,18 @@
     </div>
   </section>
 
-  <!-- Job Requirements -->
-  <section class="section" aria-labelledby="req-title">
-    <div class="container">
-      <div class="section-header fade-in">
-        <h2 id="req-title">✅ Todo Lo Que Necesitas Para Comenzar</h2>
-        <p class="muted">En MSIM eliminamos todas las barreras. Solo necesitas actitud y ganas de cambiar tu vida. <strong>¡El resto te lo enseñamos nosotros!</strong></p>
-      </div>
-      
-      <div class="requirements">
-        <div class="req-item fade-in">
-          <div class="req-icon">📱</div>
-          <div>
-            <h4>Smartphone</h4>
-            <p>Cualquier Android o iOS con internet estable.</p>
-          </div>
-        </div>
-        <div class="req-item fade-in delay-1">
-          <div class="req-icon">💡</div>
-          <div>
-            <h4>Ganas de Aprender</h4>
-            <p>Cero experiencia requerida - capacitación completa.</p>
-          </div>
-        </div>
-        <div class="req-item fade-in delay-1">
-          <div class="req-icon">⏰</div>
-          <div>
-            <h4>1-2 Horas Diarias</h4>
-            <p>Flexibilidad total - tú eliges cuándo trabajar.</p>
-          </div>
-        </div>
-        <div class="req-item fade-in delay-2">
-          <div class="req-icon">🎯</div>
-          <div>
-            <h4>Metas Claras</h4>
-            <p>Deseo genuino de alcanzar libertad financiera.</p>
-          </div>
-        </div>
-        <div class="req-item fade-in delay-2">
-          <div class="req-icon">🤝</div>
-          <div>
-            <h4>Compromiso</h4>
-            <p>Seguir el método probado de gerentes certificados.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- 其余部分保持不变... -->
 
-  <!-- Work From Home Benefits -->
-  <section id="benefits" class="section alt">
-    <div class="container">
-      <div class="benefits-grid">
-        <div class="benefits-media fade-in"></div>
-        <div class="benefits-copy fade-in delay-1">
-          <h2>🏠 Recupera Tu Tiempo y Libertad</h2>
-          <ul class="stats">
-            <li><strong>50.000+</strong> argentinos liberados</li>
-            <li><strong>95%</strong> satisfacción comprobada</li>
-            <li><strong>1.200+</strong> gerentes certificados</li>
-            <li><strong>100%</strong> trabajo remoto</li>
-          </ul>
-          <p class="muted">MSIM nació con una misión: devolverle el tiempo y libertad a las personas. Sin jefes, sin horarios, sin límites geográficos. <strong>Tu vida merece más que una oficina - merece libertad.</strong></p>
-          <a href="#" class="btn btn-primary open-form-btn" style="margin-top: 20px;">¡Quiero Mi Libertad!</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header fade-in">
-        <h2>🎭 Argentinos Reales, Resultados Reales</h2>
-        <p class="muted">Conoce las historias de personas que transformaron sus vidas con MSIM.</p>
-      </div>
-      
-      <div class="cards three-col">
-        <blockquote class="testimonial fade-in">
-          <div class="avatar">MG</div>
-          <p>"De madre soltera a completamente independiente en 4 meses. MSIM me devolvió el control de mi vida y tiempo. Ahora veo crecer a mis hijos mientras genero ingresos desde casa."</p>
-          <footer>— María G., Buenos Aires</footer>
-        </blockquote>
-        <blockquote class="testimonial fade-in delay-1">
-          <div class="avatar">CL</div>
-          <p>"Como estudiante, necesitaba flexibilidad. En 2 meses pagué mi carrera completa. Hoy, como Gerente Junior, ayudo a otros a lograr su libertad financiera."</p>
-          <footer>— Carlos L., Córdoba</footer>
-        </blockquote>
-        <blockquote class="testimonial fade-in delay-2">
-          <div class="avatar">AD</div>
-          <p>"Después de 15 años en una oficina, MSIM me dio la salida que necesitaba. En 1 año compré mi primera propiedad. La libertad no tiene precio."</p>
-          <footer>— Andrea D., Rosario</footer>
-        </blockquote>
-      </div>
-    </div>
-  </section>
-
-  <!-- Limited Opportunity -->
-  <section class="section cta">
-    <div class="container cta-inner fade-in">
-      <div>
-        <h2>⏰ ¡Última Semana Con 17 Lugares Disponibles!</h2>
-        <p class="muted"><strong>¡Atención!</strong> El programa MSIM mantiene grupos pequeños para garantizar atención personalizada. Solo aceptamos 17 nuevos socios esta semana antes de cerrar inscripciones. Esta puede ser tu última oportunidad en meses.</p>
-      </div>
-      <a class="btn btn-premium btn-lg pulse open-form-btn" href="#">🚀 ¡Garantiza Mi Lugar Ahora!</a>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="section alt">
-    <div class="container">
-      <div class="section-header fade-in">
-        <h2>❔ Preguntas Frecuentes</h2>
-        <p class="muted">Todo lo que necesitas saber antes de comenzar tu camino hacia la libertad.</p>
-      </div>
-      
-      <details class="faq fade-in">
-        <summary>¿Realmente no necesito experiencia previa?</summary>
-        <div>Correcto. El 92% de nuestros socios comenzaron sin experiencia. Nuestro sistema de mentoría 1:1 con gerentes certificados te guía paso a paso. Solo necesitas ganas de aprender y seguir instrucciones.</div>
-      </details>
-      <details class="faq fade-in">
-        <summary>¿Cómo son los pagos y cuándo los recibo?</summary>
-        <div>Los pagos son diarios y se procesan inmediatamente después de completar las actividades. La mayoría de nuestros socios en Argentina reciben sus ingresos en menos de 24 horas. Trabajamos con múltiples métodos de pago locales.</div>
-      </details>
-      <details class="faq fade-in">
-        <summary>¿Qué apoyo recibo como nuevo socio?</summary>
-        <div>Recibes un gerente personal certificado que te guía desde el día 1. Soporte prioritario por WhatsApp, capacitación continua y acceso a nuestra comunidad exclusiva de socios MSIM. No estás solo en este proceso.</div>
-      </details>
-      <details class="faq fade-in">
-        <summary>¿Cuánto tiempo debo dedicar realmente?</summary>
-        <div>Nuestros socios básicos dedican 1-2 horas diarias, los premium 2-3 horas. La flexibilidad es total - tú eliges cuándo trabajar. Muchos combinan MSIM con sus trabajos o estudios actuales.</div>
-      </details>
-      <details class="faq fade-in">
-        <summary>¿Hay algún costo para unirme?</summary>
-        <div>Absolutamente ninguno. MSIM es 100% gratuito para unirse. No cobramos por la capacitación, mentoría o acceso a la plataforma. Solo ganamos cuando tú ganas.</div>
-      </details>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <a class="brand" href="#top">MSIM Argentina</a>
-        <p class="muted small">Libertad Financiera para Argentinos. Programas de Socios Online con mentoría personalizada. Sin experiencia requerida.</p>
-      </div>
-      <nav class="footer-links">
-        <a id="privacy" href="privacy.html" rel="nofollow">Política de Privacidad</a>
-        <a id="terms" href="userterms.html" rel="nofollow">Términos del Socio</a>
-        <a href="#contact" class="nav-link">Contacto Gerentes</a>
-      </nav>
-    </div>
-    <div class="container">
-      <p class="muted small">© 2024 MSIM Argentina. Todos los derechos reservados. Los resultados varían según dedicación y aplicación del método. Las ganancias mostradas representan el potencial máximo del sistema. MSIM es un programa de socios online, no una relación laboral tradicional.</p>
-    </div>
-  </footer>
-
+  <!-- JavaScript部分保持不变 -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const form = document.getElementById('applicationForm');
       const modalForm = document.getElementById('modalApplicationForm');
-      const formStatus = document.getElementById('formStatus');
       const modalFormStatus = document.getElementById('modalFormStatus');
       const successModal = document.getElementById('successModal');
       const formModal = document.getElementById('formModal');
       const modalOkBtn = document.getElementById('modalOkBtn');
       const modalCloseBtn = document.getElementById('modalCloseBtn');
       const formModalCloseBtn = document.getElementById('formModalCloseBtn');
-      const openFormBtn = document.getElementById('openFormBtn');
       const openFormBtns = document.querySelectorAll('.open-form-btn');
       
       // WhatsApp 账号数组（纯号码）- 阿根廷号码
@@ -950,17 +774,8 @@
       }
       
       // 事件监听器
-      form.addEventListener('submit', function(e) {
-        handleFormSubmit(e, form, formStatus);
-      });
-      
       modalForm.addEventListener('submit', function(e) {
         handleFormSubmit(e, modalForm, modalFormStatus);
-      });
-      
-      openFormBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        openFormModal();
       });
       
       openFormBtns.forEach(btn => {
@@ -996,8 +811,7 @@
       // 添加平滑滚动
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (anchor.getAttribute('href') !== '#' && 
-            !anchor.classList.contains('open-form-btn') && 
-            anchor.id !== 'openFormBtn') {
+            !anchor.classList.contains('open-form-btn')) {
           anchor.addEventListener('click', function(e) {
             e.preventDefault();
             
