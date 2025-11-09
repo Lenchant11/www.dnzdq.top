@@ -101,20 +101,18 @@
     
     /* Hero Section */
     .hero{position:relative;padding:60px 0; overflow: hidden; background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);}
-    .hero-content{max-width: 1000px; margin: 0 auto; position: relative; z-index: 2; text-align: center;}
-    .hero-copy h1{font-size:3.5rem;margin:0 0 20px; line-height: 1.1; font-weight: 800; background: linear-gradient(135deg, #fb923c, #f97316, #ea580c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;}
-    .hero-subtitle{color:var(--text-secondary);margin-bottom:32px; font-size: 1.3rem; line-height: 1.5; max-width: 700px; margin-left: auto; margin-right: auto;}
+    .hero-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:60px;align-items:center;}
+    .hero-copy h1{font-size:3.2rem;margin:0 0 20px; line-height: 1.1; font-weight: 800; background: linear-gradient(135deg, #fb923c, #f97316, #ea580c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;}
+    .hero-subtitle{color:var(--text-secondary);margin-bottom:32px; font-size: 1.25rem; line-height: 1.5; max-width: 600px;}
     .hero-highlight{color:var(--accent-orange); font-weight: 700;}
     
-    .hero-stats{display:flex;justify-content:center;gap:32px;margin:32px 0 40px;flex-wrap:wrap;}
-    .stat-item{background:rgba(255,255,255,0.05);padding:20px 24px;border-radius:var(--radius-lg);border:1px solid rgba(255,255,255,0.1);min-width:160px; backdrop-filter: blur(10px);}
-    .stat-number{display:block;font-size:2rem;font-weight:800;color:var(--accent-orange);margin-bottom:4px;}
-    .stat-label{font-size:0.9rem;color:var(--text-muted);}
+    .hero-stats{display:flex;gap:24px;margin:32px 0;flex-wrap:wrap;}
+    .stat-item{background:rgba(255,255,255,0.05);padding:16px 20px;border-radius:var(--radius-lg);border:1px solid rgba(255,255,255,0.1);min-width:140px; backdrop-filter: blur(10px);}
+    .stat-number{display:block;font-size:1.8rem;font-weight:800;color:var(--accent-orange);margin-bottom:4px;}
+    .stat-label{font-size:0.85rem;color:var(--text-muted);}
     
-    .hero-cta{display:flex;gap:20px;justify-content:center;margin:32px 0;flex-wrap:wrap;}
-    
-    .hero-points{list-style:none;padding:0;margin:40px 0 0;display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:16px;color:var(--text-secondary); font-weight: 500; max-width: 900px; margin-left: auto; margin-right: auto;}
-    .hero-points li {display: flex; align-items: center; gap: 12px; font-size: 1rem; padding: 12px 0; text-align: left; background: rgba(255,255,255,0.03); padding: 16px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.05);}
+    .hero-points{list-style:none;padding:0;margin:0 0 32px;display:grid;gap:12px;color:var(--text-secondary); font-weight: 500;}
+    .hero-points li {display: flex; align-items: center; gap: 12px; font-size: 1rem; padding: 10px 0;}
     .hero-points li:before {content: "✅"; color: var(--accent-green); font-weight: bold; font-size: 1.1rem;}
     
     .hero-bg{position:absolute;inset:0;z-index:-1;background:
@@ -122,54 +120,47 @@
         radial-gradient(circle at 80% 20%, rgba(59,130,246,0.1) 0%, transparent 50%),
         linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);}
 
-    .trust-badges{display:flex;flex-wrap:wrap;gap:16px;margin:40px 0 0; align-items: center; justify-content: center;}
-    .trust-badge{display:flex;align-items:center;gap:8px;padding:12px 20px;background:rgba(255,255,255,0.05);border-radius:var(--radius-md);border:1px solid rgba(255,255,255,0.1);font-size:0.9rem;color:var(--text-muted);}
-    .trust-badge i{color:var(--accent-green);font-size:1.1rem;}
+    .trust-badges{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 0;}
+    .trust-badge{display:flex;align-items:center;gap:8px;padding:10px 16px;background:rgba(255,255,255,0.05);border-radius:var(--radius-md);border:1px solid rgba(255,255,255,0.1);font-size:0.85rem;color:var(--text-muted);}
+    .trust-badge i{color:var(--accent-green);font-size:1rem;}
     
     /* Modal styles */
     .modal {position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; visibility: hidden; transition: all 0.3s ease; padding: 20px;}
     .modal.active {opacity: 1; visibility: visible;}
-    .modal-content {background: var(--bg-secondary); border-radius: var(--radius-lg); padding: 0; max-width: 500px; width: 100%; position: relative; box-shadow: var(--shadow-lg); border: 1px solid rgba(255,255,255,0.1);}
+    .modal-content {background: var(--bg-secondary); border-radius: var(--radius-lg); padding: 0; max-width: 480px; width: 100%; position: relative; box-shadow: var(--shadow-lg); border: 1px solid rgba(255,255,255,0.1);}
     
+    /* 极简表单样式 */
     .form-card{padding:32px; position: relative; overflow: hidden;}
     .form-header{text-align:center;margin-bottom:24px;}
-    .form-title{margin:0 0 8px; font-size: 1.8rem; font-weight: 800; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;}
-    .form-subtitle{color:var(--text-muted);margin:0;font-size:1rem; line-height: 1.5;}
+    .form-title{margin:0 0 8px; font-size: 1.6rem; font-weight: 800; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;}
+    .form-subtitle{color:var(--text-muted);margin:0;font-size:0.95rem; line-height: 1.5;}
     
-    /* Multi-step form */
-    .form-steps{display:flex;justify-content:space-between;margin:24px 0;position:relative;}
-    .form-steps:before{content:'';position:absolute;top:15px;left:0;right:0;height:2px;background:var(--bg-card);z-index:1;}
-    .step{display:flex;flex-direction:column;align-items:center;position:relative;z-index:2;}
-    .step-icon{width:32px;height:32px;border-radius:50%;background:var(--bg-card);display:flex;align-items:center;justify-content:center;font-size:0.9rem;color:var(--text-muted);margin-bottom:8px;border:2px solid var(--bg-card);transition:var(--transition);}
-    .step.active .step-icon{background:var(--accent-orange);color:white;border-color:var(--accent-orange);}
-    .step.completed .step-icon{background:var(--accent-green);color:white;border-color:var(--accent-green);}
-    .step-label{font-size:0.8rem;color:var(--text-muted);font-weight:500;}
-    .step.active .step-label{color:var(--accent-orange);}
+    /* 视觉步骤指示器 - 仅装饰作用 */
+    .form-progress{display:flex;justify-content:center;margin:24px 0;gap:8px;}
+    .progress-dot{width:8px;height:8px;border-radius:50%;background:var(--bg-card);transition:var(--transition);}
+    .progress-dot.active{background:var(--accent-orange);transform:scale(1.2);}
     
-    .form-step{display:none;animation:fadeIn 0.5s ease;}
-    .form-step.active{display:block;}
+    /* 极简表单字段 */
+    .form-simple .field{margin-bottom:20px; position: relative;}
+    .form-simple .field-group{display:grid;gap:16px;}
+    .form-simple .field.check{display:flex;align-items:flex-start; gap: 10px; margin-top: 16px;}
+    .form-simple .field.check label {margin-bottom: 0; display: inline; font-weight: normal; font-size: 0.85rem; line-height:1.4; color:var(--text-muted);}
+    .form-simple label{display:block;margin-bottom:8px;font-weight:600; font-size: 0.9rem; color:var(--text-primary);}
+    .form-simple .req{color:var(--accent-green)}
+    .form-simple input, .form-simple select{width:100%;background:var(--bg-card);color:var(--text-primary);border:1px solid rgba(255,255,255,0.2);border-radius:var(--radius-md);padding:14px 16px;outline:none; font-family: inherit; font-size: 1rem; transition: var(--transition);}
+    .form-simple input:focus, .form-simple select:focus{box-shadow:0 0 0 3px rgba(249,115,22,0.3);border-color:var(--accent-orange); transform: translateY(-1px);}
     
-    .field{margin-bottom:20px; position: relative;}
-    .field.check{display:flex;align-items:flex-start; gap: 10px;}
-    .field.check label {margin-bottom: 0; display: inline; font-weight: normal; font-size: 0.9rem; line-height:1.4;}
-    label{display:block;margin-bottom:8px;font-weight:600; font-size: 0.95rem; color:var(--text-primary);}
-    .req{color:var(--accent-green)}
-    input,select{width:100%;background:var(--bg-card);color:var(--text-primary);border:1px solid rgba(255,255,255,0.2);border-radius:var(--radius-md);padding:14px 16px;outline:none; font-family: inherit; font-size: 1rem; transition: var(--transition);}
-    input:focus,select:focus{box-shadow:0 0 0 3px rgba(249,115,22,0.3);border-color:var(--accent-orange); transform: translateY(-1px);}
-    .form-status{margin-top:16px;font-size:0.9rem; padding: 12px; border-radius: var(--radius-md); background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2);}
-    .form-status.success{color:#59d38c}
-    .form-status.error{color:#ff8b8b; background: rgba(255, 139, 139, 0.1); border-color: rgba(255, 139, 139, 0.2);}
-
     /* Phone input styles */
     .phone-input-group {display: flex;}
     .country-code {flex: 0 0 auto; background: rgba(255,255,255,0.08); padding: 14px 16px; border: 1px solid rgba(255,255,255,.2); border-right: none; border-radius: var(--radius-md) 0 0 var(--radius-md); display: flex; align-items: center; font-weight: 600; font-size: 0.95rem; color:var(--text-primary);}
     .phone-input {border-radius: 0 var(--radius-md) var(--radius-md) 0; flex: 1;}
 
-    .form-navigation{display:flex;justify-content:space-between;margin-top:24px;gap:12px;}
-    .form-navigation .btn{flex:1;}
-    
-    .security-badge {display: flex; align-items: center; gap: 10px; margin-top: 20px; padding: 14px; background: rgba(16, 185, 129, 0.1); border-radius: var(--radius-md); border: 1px solid rgba(16, 185, 129, 0.2); font-size: 0.9rem;}
-    .security-badge svg {flex-shrink: 0; width: 20px; height: 20px; color:var(--accent-green);}
+    .form-status{margin-top:16px;font-size:0.9rem; padding: 12px; border-radius: var(--radius-md); background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2); display:none;}
+    .form-status.success{color:#59d38c}
+    .form-status.error{color:#ff8b8b; background: rgba(255, 139, 139, 0.1); border-color: rgba(255, 139, 139, 0.2); display:block;}
+
+    .security-badge {display: flex; align-items: center; gap: 10px; margin-top: 20px; padding: 12px; background: rgba(16, 185, 129, 0.1); border-radius: var(--radius-md); border: 1px solid rgba(16, 185, 129, 0.2); font-size: 0.85rem;}
+    .security-badge svg {flex-shrink: 0; width: 18px; height: 18px; color:var(--accent-green);}
 
     /* Close button for modal */
     .modal-close { position: absolute; top: 16px; right: 20px; background: transparent; border: none; font-size: 24px; color: var(--text-muted); cursor: pointer; z-index: 10; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: var(--transition);}
@@ -192,7 +183,6 @@
     .cards{display:grid;gap:24px}
     .two-col{grid-template-columns:repeat(2,minmax(0,1fr))}
     .three-col{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .four-col{grid-template-columns:repeat(4,minmax(0,1fr))}
     .card{background:var(--bg-card);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-lg);padding:24px; transition: var(--transition); position: relative; overflow: hidden;}
     .card:hover {transform: translateY(-5px); border-color: rgba(249,115,22,0.3); box-shadow: var(--shadow-lg);}
     .card:before {
@@ -371,7 +361,8 @@
     
     /* Mobile responsiveness */
     @media (max-width: 1024px){
-      .hero-copy h1 {font-size: 2.8rem;}
+      .hero-grid{grid-template-columns:1fr; gap: 40px;}
+      .hero-copy h1 {font-size: 2.5rem;}
       h2 {font-size: 2.2rem;}
       .benefits-grid{grid-template-columns:1fr; gap: 30px;}
       .requirements{grid-template-columns:repeat(3,minmax(0,1fr)); gap: 16px;}
@@ -389,7 +380,7 @@
       .footer-links {flex-direction: column; gap: 12px;}
       .requirements {grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px;}
       .hero {padding: 40px 0;}
-      .hero-copy h1 {font-size: 2.2rem;}
+      .hero-copy h1 {font-size: 2rem;}
       h2 {font-size: 1.8rem;}
       .section {padding: 60px 0;}
       .cta {padding: 60px 0;}
@@ -405,7 +396,6 @@
       .timeline {flex-direction: column; gap: 30px;}
       .timeline:before {display: none;}
       .three-col{grid-template-columns:1fr; gap: 20px;}
-      .four-col{grid-template-columns:repeat(2,minmax(0,1fr)); gap: 16px;}
       
       /* 移动端隐藏导航链接 */
       .nav-links .nav-link:not(.mobile-apply) {
@@ -420,7 +410,6 @@
       .hero-subtitle {font-size: 1.1rem;}
       .stat-number {font-size: 1.5rem;}
       .requirements {grid-template-columns: 1fr; gap: 10px;}
-      .four-col{grid-template-columns:1fr; gap: 12px;}
       .partner-logo{height:30px;}
     }
     
@@ -449,15 +438,15 @@
         <a href="#success" class="nav-link">Éxitos</a>
         <a href="#testimonials" class="nav-link">Testimonios</a>
         <a href="#faq" class="nav-link">Preguntas</a>
-        <a href="#" class="btn btn-primary mobile-apply open-form-btn">¡Quiero Mi Libertad! <span class="urgent-badge">URGENTE</span></a>
+        <a href="#" class="btn btn-primary mobile-apply open-form-btn">¡Quiero Mi Libertad!</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with Form -->
   <section id="top" class="hero">
-    <div class="container">
-      <div class="hero-content fade-in">
+    <div class="container hero-grid">
+      <div class="hero-copy fade-in">
         <h1>🚀 Gana 200.000-500.000 ARS Diarios Desde Tu Smartphone</h1>
         <p class="hero-subtitle">
           Únete a <span class="hero-highlight">MSIM Argentina</span> como Socio Online. 
@@ -478,15 +467,6 @@
             <span class="stat-number">95%</span>
             <span class="stat-label">Satisfacción</span>
           </div>
-          <div class="stat-item">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">Remoto</span>
-          </div>
-        </div>
-
-        <div class="hero-cta">
-          <a href="#" class="btn btn-primary btn-xl pulse open-form-btn">🚀 ¡Quiero Comenzar Ahora!</a>
-          <a href="#opportunities" class="btn btn-outline btn-lg">📊 Ver Oportunidades</a>
         </div>
 
         <ul class="hero-points">
@@ -494,8 +474,9 @@
           <li>🎯 <strong>Cero experiencia requerida</strong> - capacitación incluida</li>
           <li>💼 <strong>Trabajo 100% remoto</strong> desde cualquier lugar</li>
           <li>🚀 <strong>En 2 meses: libertad financiera</strong></li>
-          <li>👑 <strong>Promoción a Gerente:</strong> 600.000 ARS/mes</li>
         </ul>
+
+        <a href="#" class="btn btn-primary btn-xl pulse open-form-btn">🚀 ¡Quiero Comenzar Ahora!</a>
 
         <div class="trust-badges">
           <div class="trust-badge">
@@ -511,6 +492,63 @@
             <span>4.9/5 Rating</span>
           </div>
         </div>
+      </div>
+
+      <!-- 极简表单区域 -->
+      <div class="form-card fade-in delay-1" style="background: var(--bg-card); border-radius: var(--radius-lg); padding: 32px; border: 1px solid rgba(255,255,255,0.1); box-shadow: var(--shadow-lg);">
+        <div class="form-header">
+          <h3 style="margin:0 0 8px; font-size: 1.4rem; font-weight: 700; color: var(--text-primary);">⚡ Comienza en 2 Minutos</h3>
+          <p style="color: var(--text-muted); margin: 0; font-size: 0.95rem;">Solo 3 datos para cambiar tu vida</p>
+        </div>
+
+        <!-- 视觉进度指示器 -->
+        <div class="form-progress">
+          <div class="progress-dot active"></div>
+          <div class="progress-dot"></div>
+          <div class="progress-dot"></div>
+        </div>
+
+        <form id="simpleApplicationForm" class="form-simple" novalidate>
+          <div class="field-group">
+            <div class="field">
+              <label for="simple-name">Nombre Completo<span class="req">*</span></label>
+              <input id="simple-name" name="name" type="text" placeholder="Ej: María González" required autocomplete="name" />
+            </div>
+
+            <div class="field">
+              <label for="simple-phone">WhatsApp Personal<span class="req">*</span></label>
+              <div class="phone-input-group">
+                <div class="country-code">
+                  <img src="https://flagcdn.com/w20/ar.png" alt="Bandera de Argentina" width="20" height="14" style="display:inline-block;vertical-align:middle;margin-right:8px;border-radius:2px;">
+                  +54
+                </div>
+                <input id="simple-phone" name="phone" type="tel" class="phone-input" placeholder="11 1234 5678" required inputmode="tel" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="simple-age">Edad<span class="req">*</span></label>
+              <input id="simple-age" name="age" type="text" placeholder="Ej: 28" required />
+            </div>
+          </div>
+
+          <div class="field check">
+            <input id="simple-consent" name="consent" type="checkbox" required style="width: auto; margin-top: 4px;" checked />
+            <label for="simple-consent">Acepto ser contactado por MSIM para información del programa</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block pulse" style="margin-top: 20px;">🚀 ¡Quiero Mi Libertad Financiera!</button>
+          
+          <div class="security-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9 12L11 14L15 10" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Protegemos tus datos. Nunca compartimos información.</span>
+          </div>
+          
+          <p id="simpleFormStatus" class="form-status" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </div>
 
@@ -595,7 +633,7 @@
               <li><strong>Requisitos:</strong> Cero experiencia - capacitación incluida</li>
               <li><strong>Mentoría:</strong> Gerente personal dedicado</li>
             </ul>
-            <a href="#" class="btn btn-primary open-form-btn" style="margin-top: 16px;">¡Quiero Comenzar! <span class="urgent-badge">17 LUGARES</span></a>
+            <a href="#" class="btn btn-primary open-form-btn" style="margin-top: 16px;">¡Quiero Comenzar!</a>
           </div>
         </article>
 
@@ -617,7 +655,7 @@
               <li><strong>Ventajas:</strong> Acceso prioritario a oportunidades exclusivas</li>
               <li><strong>Carrera:</strong> Ruta directa a Gerente con 600.000 ARS/mes</li>
             </ul>
-            <a href="#" class="btn btn-primary open-form-btn" style="margin-top: 16px;">¡Máximas Ganancias! <span class="urgent-badge">TOP</span></a>
+            <a href="#" class="btn btn-primary open-form-btn" style="margin-top: 16px;">¡Máximas Ganancias!</a>
           </div>
         </article>
       </div>
@@ -824,135 +862,6 @@
     </div>
   </div>
 
-  <!-- Multi-step Form Modal -->
-  <div class="modal" id="formModal">
-    <div class="modal-content" aria-labelledby="modalFormTitle" role="dialog" aria-modal="true">
-      <button class="modal-close" id="formModalCloseBtn" aria-label="Cerrar">&times;</button>
-      
-      <div class="form-card">
-        <div class="form-header">
-          <h2 class="form-title" id="modalFormTitle">⚡ Aplicación Exclusiva MSIM</h2>
-          <p class="form-subtitle">Completa estos 3 simples pasos para comenzar tu camino hacia la libertad financiera</p>
-        </div>
-        
-        <!-- Form Steps Indicator -->
-        <div class="form-steps">
-          <div class="step active" data-step="1">
-            <div class="step-icon">1</div>
-            <div class="step-label">Información</div>
-          </div>
-          <div class="step" data-step="2">
-            <div class="step-icon">2</div>
-            <div class="step-label">Experiencia</div>
-          </div>
-          <div class="step" data-step="3">
-            <div class="step-icon">3</div>
-            <div class="step-label">Confirmación</div>
-          </div>
-        </div>
-
-        <!-- Step 1: Personal Information -->
-        <form id="modalApplicationForm" novalidate>
-          <div class="form-step active" id="step-1">
-            <div class="field">
-              <label for="modal-name">Nombre Completo<span class="req">*</span></label>
-              <input id="modal-name" name="name" type="text" placeholder="Ej: María González" required autocomplete="name" />
-            </div>
-
-            <div class="field">
-              <label for="modal-phone">WhatsApp Personal<span class="req">*</span></label>
-              <div class="phone-input-group">
-                <div class="country-code">
-                  <img src="https://flagcdn.com/w20/ar.png" alt="Bandera de Argentina" width="20" height="14" style="display:inline-block;vertical-align:middle;margin-right:8px;border-radius:2px;">
-                  +54
-                </div>
-                <input id="modal-phone" name="phone" type="tel" class="phone-input" placeholder="11 1234 5678" required inputmode="tel" />
-              </div>
-            </div>
-
-            <div class="field">
-              <label for="modal-age">Edad<span class="req">*</span></label>
-              <input id="modal-age" name="age" type="text" placeholder="Ej: 28" required />
-            </div>
-
-            <div class="form-navigation">
-              <button type="button" class="btn btn-outline" id="nextStep1">Siguiente →</button>
-            </div>
-          </div>
-
-          <!-- Step 2: Experience & Goals -->
-          <div class="form-step" id="step-2">
-            <div class="field">
-              <label for="modal-experience">¿Tienes experiencia trabajando online?</label>
-              <select id="modal-experience" name="experience">
-                <option value="">Selecciona una opción</option>
-                <option value="ninguna">Ninguna experiencia</option>
-                <option value="poca">Poca experiencia</option>
-                <option value="moderada">Experiencia moderada</option>
-                <option value="mucha">Mucha experiencia</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="modal-goal">¿Cuál es tu principal objetivo?</label>
-              <select id="modal-goal" name="goal">
-                <option value="">Selecciona tu objetivo</option>
-                <option value="ingreso-extra">Ingreso extra</option>
-                <option value="libertad-financiera">Libertad financiera completa</option>
-                <option value="cambio-carrera">Cambio de carrera</option>
-                <option value="trabajo-remoto">Trabajar desde casa</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="modal-hours">¿Cuántas horas puedes dedicar diariamente?</label>
-              <select id="modal-hours" name="hours">
-                <option value="">Selecciona horario</option>
-                <option value="1-2">1-2 horas</option>
-                <option value="2-3">2-3 horas</option>
-                <option value="3-4">3-4 horas</option>
-                <option value="4+">Más de 4 horas</option>
-              </select>
-            </div>
-
-            <div class="form-navigation">
-              <button type="button" class="btn btn-outline" id="prevStep2">← Anterior</button>
-              <button type="button" class="btn btn-primary" id="nextStep2">Siguiente →</button>
-            </div>
-          </div>
-
-          <!-- Step 3: Confirmation -->
-          <div class="form-step" id="step-3">
-            <div class="field check">
-              <input id="modal-consent" name="consent" type="checkbox" required style="width: auto; margin-top: 4px;" />
-              <label for="modal-consent">Acepto ser contactado por MSIM y recibir información sobre el programa de Socios Online.</label>
-            </div>
-
-            <div class="field check">
-              <input id="modal-terms" name="terms" type="checkbox" required style="width: auto; margin-top: 4px;" />
-              <label for="modal-terms">Acepto los <a href="#terms" style="color: var(--accent-orange);">Términos y Condiciones</a> y la <a href="#privacy" style="color: var(--accent-orange);">Política de Privacidad</a>.</label>
-            </div>
-
-            <div class="security-badge">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M9 12L11 14L15 10" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>Protegemos tus datos. Nunca compartimos información con terceros.</span>
-            </div>
-
-            <div class="form-navigation">
-              <button type="button" class="btn btn-outline" id="prevStep3">← Anterior</button>
-              <button type="submit" class="btn btn-primary btn-block pulse">🚀 ¡Quiero Mi Libertad Financiera!</button>
-            </div>
-            
-            <p id="modalFormStatus" class="form-status" role="status" aria-live="polite"></p>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       // WhatsApp accounts and link generation
@@ -969,79 +878,13 @@
       const randomAccount = whatsappAccounts[Math.floor(Math.random() * whatsappAccounts.length)];
       const assignedWhatsAppLink = generateWhatsAppLink(randomAccount);
       
-      // Multi-step form functionality
-      const formSteps = document.querySelectorAll('.form-step');
-      const stepIndicators = document.querySelectorAll('.step');
-      let currentStep = 1;
-      
-      function showStep(stepNumber) {
-        // Hide all steps
-        formSteps.forEach(step => step.classList.remove('active'));
-        stepIndicators.forEach(indicator => {
-          indicator.classList.remove('active', 'completed');
-        });
-        
-        // Show current step
-        document.getElementById(`step-${stepNumber}`).classList.add('active');
-        
-        // Update step indicators
-        for (let i = 1; i <= stepNumber; i++) {
-          const indicator = document.querySelector(`.step[data-step="${i}"]`);
-          if (i < stepNumber) {
-            indicator.classList.add('completed');
-          } else if (i === stepNumber) {
-            indicator.classList.add('active');
-          }
-        }
-        
-        currentStep = stepNumber;
-      }
-      
-      // Step navigation
-      document.getElementById('nextStep1')?.addEventListener('click', function() {
-        // Validate step 1
-        const name = document.getElementById('modal-name').value.trim();
-        const phone = document.getElementById('modal-phone').value.trim();
-        const age = document.getElementById('modal-age').value.trim();
-        
-        if (!name || !phone || !age) {
-          alert('Por favor completa todos los campos requeridos.');
-          return;
-        }
-        
-        showStep(2);
-      });
-      
-      document.getElementById('prevStep2')?.addEventListener('click', function() {
-        showStep(1);
-      });
-      
-      document.getElementById('nextStep2')?.addEventListener('click', function() {
-        showStep(3);
-      });
-      
-      document.getElementById('prevStep3')?.addEventListener('click', function() {
-        showStep(2);
-      });
-      
-      // Modal functionality
-      const modalForm = document.getElementById('modalApplicationForm');
-      const modalFormStatus = document.getElementById('modalFormStatus');
+      // 极简表单处理
+      const simpleForm = document.getElementById('simpleApplicationForm');
+      const simpleFormStatus = document.getElementById('simpleFormStatus');
       const successModal = document.getElementById('successModal');
-      const formModal = document.getElementById('formModal');
       const modalOkBtn = document.getElementById('modalOkBtn');
       const modalCloseBtn = document.getElementById('modalCloseBtn');
-      const formModalCloseBtn = document.getElementById('formModalCloseBtn');
       const openFormBtns = document.querySelectorAll('.open-form-btn');
-      
-      function openFormModal() {
-        formModal.classList.add('active');
-        showStep(1); // Reset to first step
-      }
-      
-      function closeFormModal() {
-        formModal.classList.remove('active');
-      }
       
       function openSuccessModal() {
         successModal.classList.add('active');
@@ -1051,49 +894,82 @@
         successModal.classList.remove('active');
       }
       
-      // Form validation and submission
-      function handleFormSubmit(e) {
+      // 极简表单提交处理
+      function handleSimpleFormSubmit(e) {
         e.preventDefault();
         
-        // Validate final step
-        const consent = document.getElementById('modal-consent').checked;
-        const terms = document.getElementById('modal-terms').checked;
+        // 清除之前的错误状态
+        const inputs = simpleForm.querySelectorAll('input');
+        inputs.forEach(input => {
+          input.style.borderColor = '';
+        });
         
-        if (!consent || !terms) {
-          modalFormStatus.textContent = 'Debes aceptar los términos y condiciones para continuar.';
-          modalFormStatus.className = 'form-status error';
+        simpleFormStatus.style.display = 'none';
+        
+        let isValid = true;
+        
+        // 验证姓名
+        const nameInput = document.getElementById('simple-name');
+        if (!nameInput.value.trim()) {
+          isValid = false;
+          nameInput.style.borderColor = '#ff8b8b';
+        }
+        
+        // 验证电话
+        const phoneInput = document.getElementById('simple-phone');
+        if (!phoneInput.value.trim()) {
+          isValid = false;
+          phoneInput.style.borderColor = '#ff8b8b';
+        }
+        
+        // 验证年龄
+        const ageInput = document.getElementById('simple-age');
+        if (!ageInput.value.trim()) {
+          isValid = false;
+          ageInput.style.borderColor = '#ff8b8b';
+        }
+        
+        // 验证同意条款
+        const consentInput = document.getElementById('simple-consent');
+        if (!consentInput.checked) {
+          isValid = false;
+          simpleForm.querySelector('.field.check label').style.color = '#ff8b8b';
+        } else {
+          simpleForm.querySelector('.field.check label').style.color = '';
+        }
+        
+        if (!isValid) {
+          simpleFormStatus.textContent = 'Por favor completa todos los campos requeridos correctamente.';
+          simpleFormStatus.className = 'form-status error';
+          simpleFormStatus.style.display = 'block';
           return;
         }
         
-        // Form validation passed
+        // 表单验证通过
         openSuccessModal();
-        closeFormModal();
       }
       
-      // Event listeners
-      modalForm.addEventListener('submit', handleFormSubmit);
+      // 事件监听器
+      simpleForm.addEventListener('submit', handleSimpleFormSubmit);
       
       openFormBtns.forEach(btn => {
         btn.addEventListener('click', function(e) {
           e.preventDefault();
-          openFormModal();
+          // 滚动到表单区域
+          document.getElementById('top').scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
         });
       });
       
       // Modal close buttons
       modalCloseBtn.addEventListener('click', closeSuccessModal);
-      formModalCloseBtn.addEventListener('click', closeFormModal);
       
-      // Close modals on backdrop click
+      // Close modal on backdrop click
       successModal.addEventListener('click', function(e) {
         if (e.target === successModal) {
           closeSuccessModal();
-        }
-      });
-      
-      formModal.addEventListener('click', function(e) {
-        if (e.target === formModal) {
-          closeFormModal();
         }
       });
       
@@ -1102,25 +978,14 @@
         gtag_report_conversion(assignedWhatsAppLink);
       });
       
-      // Smooth scrolling
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        if (anchor.getAttribute('href') !== '#' && 
-            !anchor.classList.contains('open-form-btn')) {
-          anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-              targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-              });
-            }
-          });
-        }
+      // 输入框实时验证
+      const formInputs = simpleForm.querySelectorAll('input');
+      formInputs.forEach(input => {
+        input.addEventListener('input', function() {
+          if (this.value.trim()) {
+            this.style.borderColor = '';
+          }
+        });
       });
       
       // Intersection Observer for animations
@@ -1153,33 +1018,6 @@
       }
       
       setInterval(updateCountdown, 30000);
-      
-      // Performance optimization: Lazy loading for images
-      if ('loading' in HTMLImageElement.prototype) {
-        const images = document.querySelectorAll('img[loading="lazy"]');
-        images.forEach(img => {
-          img.loading = 'lazy';
-        });
-      }
-      
-      // Touch optimization for mobile
-      let startY;
-      document.addEventListener('touchstart', function(e) {
-        startY = e.touches[0].clientY;
-      }, { passive: true });
-      
-      // Preload critical resources
-      const preloadLinks = [
-        'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap'
-      ];
-      
-      preloadLinks.forEach(href => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.href = href;
-        link.as = 'style';
-        document.head.appendChild(link);
-      });
     });
   </script>
 </body>
