@@ -154,10 +154,10 @@
     .form-simple input, .form-simple select{width:100%;background:var(--bg-card);color:var(--text-primary);border:1px solid rgba(255,255,255,0.2);border-radius:var(--radius-md);padding:14px 16px;outline:none; font-family: inherit; font-size: 1rem; transition: var(--transition);}
     .form-simple input:focus, .form-simple select:focus{box-shadow:0 0 0 3px rgba(249,115,22,0.3);border-color:var(--accent-orange); transform: translateY(-1px);}
     
-    /* Telegram input styles */
-    .telegram-input-group {display: flex;}
-    .telegram-prefix {flex: 0 0 auto; background: rgba(255,255,255,0.08); padding: 14px 16px; border: 1px solid rgba(255,255,255,.2); border-right: none; border-radius: var(--radius-md) 0 0 var(--radius-md); display: flex; align-items: center; font-weight: 600; font-size: 0.95rem; color:var(--text-primary);}
-    .telegram-input {border-radius: 0 var(--radius-md) var(--radius-md) 0; flex: 1;}
+    /* Phone input styles */
+    .phone-input-group {display: flex;}
+    .country-code {flex: 0 0 auto; background: rgba(255,255,255,0.08); padding: 14px 16px; border: 1px solid rgba(255,255,255,.2); border-right: none; border-radius: var(--radius-md) 0 0 var(--radius-md); display: flex; align-items: center; font-weight: 600; font-size: 0.95rem; color:var(--text-primary);}
+    .phone-input {border-radius: 0 var(--radius-md) var(--radius-md) 0; flex: 1;}
 
     .form-status{margin-top:16px;font-size:0.9rem; padding: 12px; border-radius: var(--radius-md); background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2); display:none;}
     .form-status.success{color:#59d38c}
@@ -520,12 +520,13 @@
             </div>
 
             <div class="field">
-              <label for="simple-telegram">Usuario de Telegram<span class="req">*</span></label>
-              <div class="telegram-input-group">
-                <div class="telegram-prefix">
-                  <span style="color: var(--telegram-blue); font-weight: 700;">@</span>
+              <label for="simple-phone">Teléfono para Contacto<span class="req">*</span></label>
+              <div class="phone-input-group">
+                <div class="country-code">
+                  <img src="https://flagcdn.com/w20/ar.png" alt="Bandera de Argentina" width="20" height="14" style="display:inline-block;vertical-align:middle;margin-right:8px;border-radius:2px;">
+                  +54
                 </div>
-                <input id="simple-telegram" name="telegram" type="text" class="telegram-input" placeholder="tu_usuario" required />
+                <input id="simple-phone" name="phone" type="tel" class="phone-input" placeholder="11 1234 5678" required inputmode="tel" />
               </div>
             </div>
 
@@ -768,8 +769,8 @@
         <div class="req-item fade-in">
           <div class="req-icon">📱</div>
           <div>
-            <h4>Telegram</h4>
-            <p>Cuenta activa de Telegram para comunicación.</p>
+            <h4>Smartphone</h4>
+            <p>Cualquier Android o iOS con internet estable.</p>
           </div>
         </div>
         <div class="req-item fade-in delay-1">
@@ -883,7 +884,9 @@
       const telegramAccounts = [  
         "tg0001",
         "tg0002",
-        "tg0003"
+        "tg0003",
+        "tg0004",
+        "tg0005"
       ];
       
       function generateTelegramLink(username) {
@@ -932,11 +935,11 @@
           nameInput.style.borderColor = '#ff8b8b';
         }
         
-        // 验证Telegram用户名
-        const telegramInput = document.getElementById('simple-telegram');
-        if (!telegramInput.value.trim()) {
+        // 验证电话
+        const phoneInput = document.getElementById('simple-phone');
+        if (!phoneInput.value.trim()) {
           isValid = false;
-          telegramInput.style.borderColor = '#ff8b8b';
+          phoneInput.style.borderColor = '#ff8b8b';
         }
         
         // 验证年龄
