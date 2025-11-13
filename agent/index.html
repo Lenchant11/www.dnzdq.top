@@ -47,9 +47,11 @@
       --accent-green: #10b981;
       --accent-purple: #8b5cf6;
       --accent-yellow: #eab308;
+      --telegram-blue: #0088cc;
       --gradient-primary: linear-gradient(135deg, #f97316, #ea580c);
       --gradient-secondary: linear-gradient(135deg, #3b82f6, #1d4ed8);
       --gradient-success: linear-gradient(135deg, #10b981, #059669);
+      --gradient-telegram: linear-gradient(135deg, #0088cc, #006699);
       --radius-sm: 8px;
       --radius-md: 12px;
       --radius-lg: 16px;
@@ -85,6 +87,8 @@
     .btn-primary:hover{transform: translateY(-2px); box-shadow: var(--shadow-lg);}
     .btn-secondary{background:var(--gradient-secondary);color:white; box-shadow: var(--shadow-md);}
     .btn-secondary:hover{transform: translateY(-2px); box-shadow: var(--shadow-lg);}
+    .btn-telegram{background:var(--gradient-telegram);color:white; box-shadow: var(--shadow-md);}
+    .btn-telegram:hover{transform: translateY(-2px); box-shadow: var(--shadow-lg);}
     .btn-outline{background:transparent;color:var(--text-primary);border:2px solid var(--accent-orange);}
     .btn-outline:hover{background:var(--accent-orange);color:white; transform: translateY(-2px);}
     .btn:focus{outline:none;box-shadow:0 0 0 3px rgba(249,115,22,0.3)}
@@ -150,10 +154,10 @@
     .form-simple input, .form-simple select{width:100%;background:var(--bg-card);color:var(--text-primary);border:1px solid rgba(255,255,255,0.2);border-radius:var(--radius-md);padding:14px 16px;outline:none; font-family: inherit; font-size: 1rem; transition: var(--transition);}
     .form-simple input:focus, .form-simple select:focus{box-shadow:0 0 0 3px rgba(249,115,22,0.3);border-color:var(--accent-orange); transform: translateY(-1px);}
     
-    /* Phone input styles */
-    .phone-input-group {display: flex;}
-    .country-code {flex: 0 0 auto; background: rgba(255,255,255,0.08); padding: 14px 16px; border: 1px solid rgba(255,255,255,.2); border-right: none; border-radius: var(--radius-md) 0 0 var(--radius-md); display: flex; align-items: center; font-weight: 600; font-size: 0.95rem; color:var(--text-primary);}
-    .phone-input {border-radius: 0 var(--radius-md) var(--radius-md) 0; flex: 1;}
+    /* Telegram input styles */
+    .telegram-input-group {display: flex;}
+    .telegram-prefix {flex: 0 0 auto; background: rgba(255,255,255,0.08); padding: 14px 16px; border: 1px solid rgba(255,255,255,.2); border-right: none; border-radius: var(--radius-md) 0 0 var(--radius-md); display: flex; align-items: center; font-weight: 600; font-size: 0.95rem; color:var(--text-primary);}
+    .telegram-input {border-radius: 0 var(--radius-md) var(--radius-md) 0; flex: 1;}
 
     .form-status{margin-top:16px;font-size:0.9rem; padding: 12px; border-radius: var(--radius-md); background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2); display:none;}
     .form-status.success{color:#59d38c}
@@ -168,7 +172,7 @@
 
     .modal-title {font-size: 1.5rem; margin-bottom: 16px; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 800;}
     .modal-message {margin-bottom: 24px; line-height: 1.5; font-size: 1rem; color:var(--text-secondary);}
-    .modal-btn {background: var(--gradient-primary); color: white; border: none; border-radius: var(--radius-md); padding: 12px 24px; font-weight: 600; cursor: pointer; transition: var(--transition); font-size: 1rem;}
+    .modal-btn {background: var(--gradient-telegram); color: white; border: none; border-radius: var(--radius-md); padding: 12px 24px; font-weight: 600; cursor: pointer; transition: var(--transition); font-size: 1rem;}
     .modal-btn:hover {transform: translateY(-1px); box-shadow: var(--shadow-md);}
 
     /* Section Styles */
@@ -516,13 +520,12 @@
             </div>
 
             <div class="field">
-              <label for="simple-phone">WhatsApp Personal<span class="req">*</span></label>
-              <div class="phone-input-group">
-                <div class="country-code">
-                  <img src="https://flagcdn.com/w20/ar.png" alt="Bandera de Argentina" width="20" height="14" style="display:inline-block;vertical-align:middle;margin-right:8px;border-radius:2px;">
-                  +54
+              <label for="simple-telegram">Usuario de Telegram<span class="req">*</span></label>
+              <div class="telegram-input-group">
+                <div class="telegram-prefix">
+                  <span style="color: var(--telegram-blue); font-weight: 700;">@</span>
                 </div>
-                <input id="simple-phone" name="phone" type="tel" class="phone-input" placeholder="11 1234 5678" required inputmode="tel" />
+                <input id="simple-telegram" name="telegram" type="text" class="telegram-input" placeholder="tu_usuario" required />
               </div>
             </div>
 
@@ -537,7 +540,10 @@
             <label for="simple-consent">Acepto ser contactado por MSIM para información del programa</label>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-block pulse" style="margin-top: 20px;">🚀 ¡Quiero Mi Libertad Financiera!</button>
+          <button type="submit" class="btn btn-telegram btn-block pulse" style="margin-top: 20px;">
+            <span style="margin-right: 8px;">📱</span> 
+            ¡Conecta con Tu Gerente en Telegram!
+          </button>
           
           <div class="security-badge">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -585,7 +591,7 @@
           <div class="timeline-icon">🚀</div>
           <div class="timeline-content">
             <h4>Día 1</h4>
-            <p><strong>Inducción Personalizada</strong><br>Gerente certificado te guía paso a paso</p>
+            <p><strong>Inducción Personalizada</strong><br>Gerente certificado te contacta por Telegram</p>
           </div>
         </div>
         <div class="timeline-item fade-in delay-1">
@@ -631,9 +637,12 @@
               <li><strong>Ingresos Diarios:</strong> Pagos inmediatos tras completar actividades</li>
               <li><strong>Equipo:</strong> Solo smartphone con internet</li>
               <li><strong>Requisitos:</strong> Cero experiencia - capacitación incluida</li>
-              <li><strong>Mentoría:</strong> Gerente personal dedicado</li>
+              <li><strong>Mentoría:</strong> Gerente personal por Telegram</li>
             </ul>
-            <a href="#" class="btn btn-primary open-form-btn" style="margin-top: 16px;">¡Quiero Comenzar!</a>
+            <a href="#" class="btn btn-telegram open-form-btn" style="margin-top: 16px;">
+              <span style="margin-right: 8px;">📱</span> 
+              Conectar en Telegram
+            </a>
           </div>
         </article>
 
@@ -655,7 +664,10 @@
               <li><strong>Ventajas:</strong> Acceso prioritario a oportunidades exclusivas</li>
               <li><strong>Carrera:</strong> Ruta directa a Gerente con 600.000 ARS/mes</li>
             </ul>
-            <a href="#" class="btn btn-primary open-form-btn" style="margin-top: 16px;">¡Máximas Ganancias!</a>
+            <a href="#" class="btn btn-telegram open-form-btn" style="margin-top: 16px;">
+              <span style="margin-right: 8px;">📱</span> 
+              Conectar en Telegram
+            </a>
           </div>
         </article>
       </div>
@@ -756,8 +768,8 @@
         <div class="req-item fade-in">
           <div class="req-icon">📱</div>
           <div>
-            <h4>Smartphone</h4>
-            <p>Cualquier Android o iOS con internet estable.</p>
+            <h4>Telegram</h4>
+            <p>Cuenta activa de Telegram para comunicación.</p>
           </div>
         </div>
         <div class="req-item fade-in delay-1">
@@ -799,7 +811,10 @@
         <h2>⏰ ¡Última Semana Con 17 Lugares Disponibles!</h2>
         <p class="muted"><strong>¡Atención!</strong> El programa MSIM mantiene grupos pequeños para garantizar atención personalizada. Solo aceptamos 17 nuevos socios esta semana antes de cerrar inscripciones. Esta puede ser tu última oportunidad en meses.</p>
       </div>
-      <a class="btn btn-primary btn-xl pulse open-form-btn" href="#">🚀 ¡Garantiza Mi Lugar Ahora!</a>
+      <a class="btn btn-telegram btn-xl pulse open-form-btn" href="#">
+        <span style="margin-right: 8px;">📱</span> 
+        ¡Garantiza Mi Lugar en Telegram!
+      </a>
     </div>
   </section>
 
@@ -821,7 +836,7 @@
       </details>
       <details class="faq fade-in">
         <summary>¿Qué apoyo recibo como nuevo socio?</summary>
-        <div>Recibes un gerente personal certificado que te guía desde el día 1. Soporte prioritario por WhatsApp, capacitación continua y acceso a nuestra comunidad exclusiva de socios MSIM. No estás solo en este proceso.</div>
+        <div>Recibes un gerente personal certificado que te guía desde el día 1 a través de Telegram. Soporte prioritario, capacitación continua y acceso a nuestra comunidad exclusiva de socios MSIM. No estás solo en este proceso.</div>
       </details>
       <details class="faq fade-in">
         <summary>¿Cuánto tiempo debo dedicar realmente?</summary>
@@ -857,26 +872,27 @@
     <div class="modal-content" aria-labelledby="modalTitle" role="dialog" aria-modal="true">
       <button class="modal-close" id="modalCloseBtn" aria-label="Cerrar">&times;</button>
       <h3 class="modal-title" id="modalTitle">🎉 ¡Felicitaciones!</h3>
-      <p class="modal-message">Tu aplicación a MSIM Argentina ha sido recibida. Un Gerente certificado te contactará inmediatamente por WhatsApp para comenzar tu proceso de libertad financiera.</p>
-      <button class="modal-btn" id="modalOkBtn">Continuar a WhatsApp</button>
+      <p class="modal-message">Tu aplicación a MSIM Argentina ha sido recibida. Un Gerente certificado te contactará inmediatamente por Telegram para comenzar tu proceso de libertad financiera.</p>
+      <button class="modal-btn" id="modalOkBtn">Continuar a Telegram</button>
     </div>
   </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // WhatsApp accounts and link generation
-      const whatsappAccounts = [  
-        "27728244686",
-        "27795890246"
+      // Telegram accounts and link generation
+      const telegramAccounts = [  
+        "msim_argentina_manager",
+        "msim_support_team"
       ];
       
-      function generateWhatsAppLink(phoneNumber) {
-        const message = encodeURIComponent("¡Hola! Estoy interesado/a en el programa de Socios Online de MSIM. Quiero comenzar mi camino hacia la libertad financiera.");
-        return `https://wa.me/${phoneNumber}?text=${message}`;
+      function generateTelegramLink(username) {
+        // Remove @ if present and create telegram link
+        const cleanUsername = username.replace('@', '');
+        return `https://t.me/${cleanUsername}`;
       }
       
-      const randomAccount = whatsappAccounts[Math.floor(Math.random() * whatsappAccounts.length)];
-      const assignedWhatsAppLink = generateWhatsAppLink(randomAccount);
+      const randomAccount = telegramAccounts[Math.floor(Math.random() * telegramAccounts.length)];
+      const assignedTelegramLink = generateTelegramLink(randomAccount);
       
       // 极简表单处理
       const simpleForm = document.getElementById('simpleApplicationForm');
@@ -915,11 +931,11 @@
           nameInput.style.borderColor = '#ff8b8b';
         }
         
-        // 验证电话
-        const phoneInput = document.getElementById('simple-phone');
-        if (!phoneInput.value.trim()) {
+        // 验证Telegram用户名
+        const telegramInput = document.getElementById('simple-telegram');
+        if (!telegramInput.value.trim()) {
           isValid = false;
-          phoneInput.style.borderColor = '#ff8b8b';
+          telegramInput.style.borderColor = '#ff8b8b';
         }
         
         // 验证年龄
@@ -975,7 +991,7 @@
       
       // Success modal OK button
       modalOkBtn.addEventListener('click', function() {
-        gtag_report_conversion(assignedWhatsAppLink);
+        gtag_report_conversion(assignedTelegramLink);
       });
       
       // 输入框实时验证
